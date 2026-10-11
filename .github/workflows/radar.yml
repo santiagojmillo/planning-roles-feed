@@ -27,7 +27,7 @@ jobs:
         run: |
           git clone --filter=blob:none https://github.com/career-ops-hq/career-ops.git career-ops
           git -C career-ops checkout 8cb0161f
-          cd career-ops && npm ci --ignore-scripts --no-audit --no-fund
+          cd career-ops && npm install --ignore-scripts --no-audit --no-fund
 
       - name: Collect live roles
         run: bash radar/run.sh
@@ -37,7 +37,7 @@ jobs:
         run: |
           git config user.name "job-radar"
           git config user.email "job-radar@users.noreply.github.com"
-          git add out state logs/sweep-summary.log
+          git add -A out state logs/sweep-summary.log 2>/dev/null || true
           git commit -m "radar $(date -u +%F)" || exit 0
           git pull --rebase
           git push
