@@ -1,0 +1,5 @@
+sweep greenhouse: exit 0 in 124s
+sweep lever: exit 0 in 198s
+sweep ashby: exit 0 in 47s
+sweep workday: exit 124 in 1200s (TIMED OUT — matches from this ATS lost)
+sweep icims: exit 124 in 1200s (TIMED OUT — matches from this ATS lost)
