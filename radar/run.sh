@@ -5,7 +5,8 @@ set -u
 ROOT="$(cd "$(dirname "$0")/.." && pwd)"
 CO="$(cd "${CO_DIR:-$ROOT/career-ops}" && pwd)"
 SWEEP_ATS="${RADAR_SWEEP_ATS:-greenhouse lever ashby workday icims}"
-SWEEP_MIN="${RADAR_SWEEP_MINUTES:-20}"   # cap per ATS (matches are only written when a pass finishes)
+SWEEP_MIN="${RADAR_SWEEP_MINUTES:-20}"   # default cap per ATS (matches are only written when a pass finishes)
+SLOW_MIN="${RADAR_SLOW_MINUTES:-90}"     # Workday / iCIMS directories are large
 mkdir -p "$ROOT/logs" "$ROOT/tmp" "$ROOT/state" "$ROOT/out"
 
 cp "$ROOT/config/portals.yml" "$CO/portals.yml"
@@ -16,8 +17,8 @@ printf '# Pipeline\n\n## Pending\n\n## Processed\n' > "$CO/data/pipeline.md"
 echo "== tracked boards"; (cd "$CO" && node scan.mjs --since 3) > "$ROOT/logs/scan.log" 2>&1; tail -3 "$ROOT/logs/scan.log"
 : > "$ROOT/logs/sweep.log"; : > "$ROOT/logs/sweep-summary.log"
 for ats in $SWEEP_ATS; do
-  start=$(date +%s)
-  (cd "$CO" && timeout "${SWEEP_MIN}m" node scan-ats-full.mjs --since 3 --ats "$ats") >> "$ROOT/logs/sweep.log" 2>&1
+  start=$(date +%s); cap=$SWEEP_MIN; case "$ats" in workday|icims) cap=$SLOW_MIN;; esac
+  (cd "$CO" && timeout "${cap}m" node scan-ats-full.mjs --since 3 --ats "$ats") >> "$ROOT/logs/sweep.log" 2>&1
   code=$?
   echo "sweep $ats: exit $code in $(( $(date +%s) - start ))s$([ $code -eq 124 ] && echo ' (TIMED OUT — matches from this ATS lost)')" | tee -a "$ROOT/logs/sweep-summary.log"
 done
