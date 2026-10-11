@@ -2,7 +2,7 @@ name: job-radar
 
 on:
   schedule:
-    - cron: '0 10 * * *'   # 05:00 Bogotá, daily
+    - cron: '0 8 * * *'    # 03:00 Bogotá, daily (done before the 07:00 routine)
   workflow_dispatch:
 
 permissions:

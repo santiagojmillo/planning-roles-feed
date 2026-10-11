@@ -212,10 +212,4 @@ tracked_companies:
 
   - name: Seed Health
     careers_url: https://job-boards.greenhouse.io/seed
-    api: https://boards-api.greenhouse.io/v1/boards/seed/jobs
-    enabled: true
-
-  - name: Quince
-    careers_url: https://job-boards.greenhouse.io/quince
-    api: https://boards-api.greenhouse.io/v1/boards/quince/jobs
-    enabled: true
+    api: https://boards-api.greenhouse.io/v1/boards/see
