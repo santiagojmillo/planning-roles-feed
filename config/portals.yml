@@ -1,0 +1,221 @@
+# job-radar scanner config (read by career-ops scan.mjs / scan-ats-full.mjs in CI).
+# Target: demand & supply planning, S&OP/IBP leadership. Live postings only.
+max_posting_age_days: 3
+
+title_filter:
+  positive:
+    # -- Core planning --
+    - "Demand Plann"
+    - "Supply Plann"
+    - "Inventory Plann"
+    - "Inventory Manag"
+    - "Replenishment"
+    - "Forecast"
+    - "S&OP"
+    - "S&OE"
+    - "word:IBP"
+    - "Integrated Business Planning"
+    - "Sales and Operations Planning"
+    - "Sales & Operations Planning"
+    - "Supply Chain Plann"
+    - "Planning Manager"
+    - "Planning Director"
+    - "Planning Lead"
+    - "Head + Planning"
+    - "Director + Planning"
+    - "VP + Planning"
+    - "Senior Planner"
+    - "Sr. Planner"
+    - "Lead Planner"
+    - "Merchandise Plann"
+    - "Open to Buy"
+    # -- Supply chain / ops leadership (DTC archetype) --
+    - "Director + Supply Chain"
+    - "Head + Supply Chain"
+    - "VP + Supply Chain"
+    - "Supply Chain Manager"
+    - "Head of Operations"
+    - "Director of Operations"
+    # -- Transformation / consulting (planning-systems vendors) --
+    - "Supply Chain + Consultant"
+    - "Planning + Consultant"
+    - "Solution Consultant"
+    - "Functional Consultant"
+    - "Supply Chain Transformation"
+    - "Supply Chain Analytics"
+    # -- Spanish / Portuguese --
+    - "Planeación"
+    - "Planeacion"
+    - "Planificación"
+    - "Planificacion"
+    - "Planejamento"
+    - "Demanda"
+    - "Abastecimiento"
+    - "Cadena de Suministro"
+    - "Cadena de Abastecimiento"
+    - "Supply Chain"
+
+  negative:
+    - "word:Intern"
+    - "word:Interns"
+    - "Internship"
+    - "Junior"
+    - "word:Jr"
+    - "Assistant"
+    - "Auxiliar"
+    - "Practicante"
+    - "Aprendiz"
+    - "Pasante"
+    - "Warehouse Associate"
+    - "Driver"
+    - "Event Plann"
+    - "Financial Plann"
+    - "Media Plann"
+    - "Account Plann"
+    - "Estate Plann"
+    - "Urban Plann"
+    - "Travel Plann"
+    - "Wedding"
+    - "Production Plann"
+    - "Workforce Plann"
+    - "Software Engineer"
+    - "Data Engineer"
+    - "Data Scientist"
+    - "Director of Engineering"
+    - "Working Student"
+    - "Coordinator"
+    - "word:Shift"
+    - "Quality Manager"
+
+title_filter_full:
+  # Tighter net for the reverse sweep over every public ATS board.
+  positive:
+    - "Demand Plann"
+    - "Supply Plann"
+    - "Inventory Plann"
+    - "S&OP"
+    - "S&OE"
+    - "word:IBP"
+    - "Integrated Business Planning"
+    - "Sales and Operations Planning"
+    - "Sales & Operations Planning"
+    - "Sales, Inventory"
+    - "Supply Chain Plann"
+    - "Head + Planning"
+    - "Director + Planning"
+    - "VP + Planning"
+    - "Planning Manager"
+    - "Planning Director"
+    - "Merchandise Plann"
+    - "Replenishment Manager"
+    - "Director + Supply Chain"
+    - "Head + Supply Chain"
+    - "Planeación"
+    - "Planeacion"
+    - "Planificación"
+    - "Planificacion"
+    - "Planejamento"
+    - "Abastecimiento"
+  negative:
+    - "word:Intern"
+    - "Internship"
+    - "Junior"
+    - "Analyst"
+    - "Specialist"
+    - "Coordinator"
+    - "Assistant"
+    - "Clerk"
+    - "Buyer"
+    - "Financial Plann"
+    - "Media Plann"
+    - "Event Plann"
+    - "Account Plann"
+    - "Production Plann"
+    - "Workforce Plann"
+    - "Estate Plann"
+    - "Urban Plann"
+    - "Capacity Plann"
+    - "Engineer"
+    - "Data Scientist"
+    - "word:Shift"
+    - "Auxiliar"
+    - "Practicante"
+    - "Aprendiz"
+    - "Analista"
+    - "Técnico"
+    - "Tecnico"
+    - "Ingeniero"
+    - "Financier"
+    - "Financial"
+    - "Producción"
+    - "Produccion"
+    - "Revenue Operations"
+    - "GTM"
+
+tracked_companies:
+
+  - name: PAVOI
+    careers_url: https://jobs.ashbyhq.com/pavoi
+    enabled: true
+
+  - name: Grüns
+    careers_url: https://job-boards.greenhouse.io/gruns
+    api: https://boards-api.greenhouse.io/v1/boards/gruns/jobs
+    enabled: true
+
+  - name: OLIPOP
+    careers_url: https://job-boards.greenhouse.io/olipop
+    api: https://boards-api.greenhouse.io/v1/boards/olipop/jobs
+    enabled: true
+
+  - name: Babylist
+    careers_url: https://job-boards.greenhouse.io/babylist
+    api: https://boards-api.greenhouse.io/v1/boards/babylist/jobs
+    enabled: true
+
+  - name: Willow
+    careers_url: https://job-boards.greenhouse.io/willowinnovations
+    api: https://boards-api.greenhouse.io/v1/boards/willowinnovations/jobs
+    enabled: true
+
+  - name: OpenLoop
+    careers_url: https://jobs.ashbyhq.com/openloophealth
+    enabled: true
+
+  - name: Brooklinen
+    careers_url: https://jobs.ashbyhq.com/brooklinen
+    enabled: true
+
+  - name: Rothy's
+    careers_url: https://jobs.ashbyhq.com/rothys
+    enabled: true
+
+  - name: Mejuri
+    careers_url: https://job-boards.greenhouse.io/mejuri
+    api: https://boards-api.greenhouse.io/v1/boards/mejuri/jobs
+    enabled: true
+
+  - name: Oura
+    careers_url: https://job-boards.greenhouse.io/oura
+    api: https://boards-api.greenhouse.io/v1/boards/oura/jobs
+    enabled: true
+
+  - name: Misfits Market
+    careers_url: https://job-boards.greenhouse.io/misfitsmarket
+    api: https://boards-api.greenhouse.io/v1/boards/misfitsmarket/jobs
+    enabled: true
+
+  - name: HelloFresh
+    careers_url: https://job-boards.greenhouse.io/hellofresh
+    api: https://boards-api.greenhouse.io/v1/boards/hellofresh/jobs
+    enabled: true
+
+  - name: Seed Health
+    careers_url: https://job-boards.greenhouse.io/seed
+    api: https://boards-api.greenhouse.io/v1/boards/seed/jobs
+    enabled: true
+
+  - name: Quince
+    careers_url: https://job-boards.greenhouse.io/quince
+    api: https://boards-api.greenhouse.io/v1/boards/quince/jobs
+    enabled: true
