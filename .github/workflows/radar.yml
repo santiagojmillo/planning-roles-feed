@@ -2,7 +2,11 @@ name: job-radar
 
 on:
   schedule:
-    - cron: '0 8 * * *'    # 03:00 Bogotá, daily (done before the 07:00 routine)
+    # GitHub delays on-the-hour schedules (2026-10-12: 9 h late). Three off-minute
+    # attempts; the guard step skips once today's results exist.
+    - cron: '17 4 * * *'   # 23:17 Bogotá (previous evening)
+    - cron: '7 6 * * *'    # 01:07 Bogotá
+    - cron: '37 8 * * *'   # 03:37 Bogotá
   workflow_dispatch:
 
 permissions:
@@ -19,21 +23,32 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
+      - name: Skip if today's results already exist
+        id: guard
+        run: |
+          today=$(date -u +%F)
+          if [ "${{ github.event_name }}" = "schedule" ] && git fetch -q origin main && git show origin/main:out/latest.json 2>/dev/null | grep -q "\"generated_at\": \"$today"; then
+            echo "skip=true" >> "$GITHUB_OUTPUT"; echo "Results for $today already published — skipping."
+          fi
+
       - uses: actions/setup-node@v4
+        if: steps.guard.outputs.skip != 'true'
         with:
           node-version: 24
 
       - name: Fetch career-ops (pinned)
+        if: steps.guard.outputs.skip != 'true'
         run: |
           git clone --filter=blob:none https://github.com/career-ops-hq/career-ops.git career-ops
           git -C career-ops checkout 8cb0161f
           cd career-ops && npm install --ignore-scripts --no-audit --no-fund
 
       - name: Collect live roles
+        if: steps.guard.outputs.skip != 'true'
         run: bash radar/run.sh
 
       - name: Publish results
-        if: always()
+        if: always() && steps.guard.outputs.skip != 'true'
         run: |
           git config user.name "job-radar"
           git config user.email "job-radar@users.noreply.github.com"
