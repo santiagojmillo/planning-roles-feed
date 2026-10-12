@@ -1,0 +1,123 @@
+{
+ "generated_at": "2026-10-12T19:02:41.277Z",
+ "window_days": 3,
+ "counts": {
+  "candidates": 1044,
+  "undated": 0,
+  "too_old": 113,
+  "title": 802,
+  "location": 116,
+  "already_seen": 5,
+  "dup_in_run": 0,
+  "new": 8
+ },
+ "sources": {
+  "ats": {
+   "candidates": 58
+  },
+  "linkedin": {
+   "queries": 62,
+   "pages": 234,
+   "blocked": 18,
+   "cards": 2276
+  },
+  "boards": {
+   "magneto": {
+    "sitemap": 29169,
+    "candidates": 4,
+    "fetched": 4
+   },
+   "getonbrd": {
+    "items": 81
+   },
+   "remotive": {
+    "items": 45
+   }
+  }
+ },
+ "new": [
+  {
+   "source": "linkedin:us-remote",
+   "url": "https://www.linkedin.com/jobs/view/4476001580",
+   "title": "Director, Strategy & Planning | United States | Remote",
+   "company": "Ladders",
+   "location": "United States",
+   "posted": "2026-10-12",
+   "age_days": 0,
+   "lane": "remote"
+  },
+  {
+   "source": "linkedin:spain",
+   "url": "https://www.linkedin.com/jobs/view/4477289651",
+   "title": "SAP IBP Planning Consultant",
+   "company": "Accenture España",
+   "location": "Barcelona, Catalonia, Spain",
+   "posted": "2026-10-12",
+   "age_days": 0,
+   "lane": "spain"
+  },
+  {
+   "source": "ats",
+   "url": "https://jobs.lever.co/jobgether/8087d0b3-e992-4c6b-a1df-a9050bbc7e94",
+   "company": "jobgether",
+   "title": "Director, AI Solutions Strategy & Planning",
+   "location": "US",
+   "comp": "",
+   "posted": "2026-10-12",
+   "age_days": 0,
+   "lane": "us-country"
+  },
+  {
+   "source": "linkedin:us-remote",
+   "url": "https://www.linkedin.com/jobs/view/4414911430",
+   "title": "Supply Planning Manager",
+   "company": "Industrial Electric Mfg. (IEM)",
+   "location": "United States",
+   "posted": "2026-10-12",
+   "age_days": 0,
+   "lane": "us-country"
+  },
+  {
+   "source": "linkedin:us-remote",
+   "url": "https://www.linkedin.com/jobs/view/4450091775",
+   "title": "Executive Director, Sales Operations Forecasting and Planning",
+   "company": "Synopsys Inc",
+   "location": "United States",
+   "posted": "2026-10-12",
+   "age_days": 0,
+   "lane": "us-country"
+  },
+  {
+   "source": "linkedin:us-remote",
+   "url": "https://www.linkedin.com/jobs/view/4449173750",
+   "title": "Senior Director, Global Tax Planning",
+   "company": "BeOne Medicines",
+   "location": "United States",
+   "posted": "2026-10-10",
+   "age_days": 2,
+   "lane": "us-country"
+  },
+  {
+   "source": "ats",
+   "url": "https://risepoint.wd503.myworkdayjobs.com/risepoint/job/US---Remote/Director--PDM-Planning---Operations_JR101357",
+   "company": "risepoint",
+   "title": "Director, PDM Planning & Operations",
+   "location": "US - Remote",
+   "comp": "",
+   "posted": "2026-10-09",
+   "age_days": 3,
+   "lane": "remote"
+  },
+  {
+   "source": "ats",
+   "url": "https://airliquidehr.wd3.myworkdayjobs.com/airliquideexternalcareer/job/Spain-MADRID/PLANNING-MANAGER_R10097102",
+   "company": "airliquidehr",
+   "title": "PLANNING MANAGER",
+   "location": "Spain, MADRID",
+   "comp": "",
+   "posted": "2026-10-09",
+   "age_days": 3,
+   "lane": "spain"
+  }
+ ]
+}
