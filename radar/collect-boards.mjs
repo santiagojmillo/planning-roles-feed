@@ -6,7 +6,14 @@ const DAYS = Number(process.env.RADAR_DAYS || 3);
 const today = new Date();
 const ageDays = (d) => (today - new Date(d)) / 86400000;
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
-const get = (url) => fetch(url, { headers: { 'User-Agent': UA } });
+async function get(url) {
+  for (let i = 0; ; i++) {
+    try { return await fetch(url, { headers: { 'User-Agent': UA } }); } catch (e) {
+      if (i >= 2) throw e;
+      await new Promise((r) => setTimeout(r, 3000 * (i + 1)));
+    }
+  }
+}
 
 const PLAN_SLUG = /(planeacion|planning|demand|demanda|s-op|sop|ibp|abastecimiento|cadena-de-suministro|cadena-de-abastecimiento|supply|inventario|forecast|pronostico)/;
 const LEVEL_SLUG = /(director|gerente|jefe|head|lider|manager|coordinador-nacional|lead)/;
@@ -67,6 +74,26 @@ try {
   }
   stats.remotive = { items: n };
 } catch (e) { stats.remotive = { error: String(e) }; }
+
+// SGestión / T-Apps candidate portals (Colombian ATS). Add more apps here.
+const SG_APPS = [{ app: 'sg_chazey', company: 'Chazey Partners Colombia (GBS)' }];
+for (const { app, company } of SG_APPS) {
+  try {
+    const base = 'https://www.sgestion.co/sg_panel/link/';
+    const page = await get(`${base}empleo.php?app=${app}&lang=es`);
+    const cookie = (page.headers.getSetCookie?.() || []).map((c) => c.split(';')[0]).join('; ');
+    const csrf = (await page.text()).match(/"csrf":"([a-f0-9]+)"/)?.[1] || '';
+    const res = await fetch(`${base}portalCandidato/vacantes.php?app=${app}&lang=es`, {
+      headers: { 'User-Agent': UA, Accept: 'application/json', 'X-Requested-With': 'XMLHttpRequest', 'X-CSRF-Token': csrf, Cookie: cookie },
+    });
+    const vac = (await res.json())?.data?.vacantes || [];
+    for (const v of vac) {
+      jobs.push({ source: `sgestion:${app}`, url: `${base}empleo.php?app=${app}&vacante=${v.id}&lang=es`, title: v.titulo || '',
+        company, location: `${v.ciudad || 'Medellín'}, Colombia${v.modalidad ? ` (${v.modalidad})` : ''}`, posted: (v.publicada || '').slice(0, 10) });
+    }
+    stats[`sgestion:${app}`] = { items: vac.length };
+  } catch (e) { stats[`sgestion:${app}`] = { error: String(e) }; }
+}
 
 process.stderr.write(`boards: ${JSON.stringify(stats)}\n`);
 process.stdout.write(JSON.stringify({ stats, jobs }));
