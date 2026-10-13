@@ -86,8 +86,7 @@ jobs:
       - name: Collect live roles
         if: steps.guard.outputs.skip != 'true'
         env:
-          GOOGLE_CSE_KEY: ${{ secrets.GOOGLE_CSE_KEY }}   # optional — see README "Optional: Google search"
-          GOOGLE_CSE_CX: ${{ secrets.GOOGLE_CSE_CX }}
+          APIFY_TOKEN: ${{ secrets.APIFY_TOKEN }}   # optional — Google searches via Apify, see README "Google search via Apify"
         run: bash radar/run.sh
 
       - name: Publish results

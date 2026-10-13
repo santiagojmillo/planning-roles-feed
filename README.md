@@ -7,15 +7,18 @@ the LinkedIn public jobs listing, Magneto, GetOnBoard and Remotive.
 Runs in GitHub Actions at 03:00 Bogotá. Output: `out/latest.json` and `out/latest.md` (only roles not reported before).
 Built on [career-ops](https://github.com/career-ops-hq/career-ops) (MIT).
 
-## Optional: Google search (free) — restores LinkedIn feed-post discovery
+## Optional: Google search via Apify — restores LinkedIn feed-post discovery
 
-Headhunters in Colombia announce senior vacancies as LinkedIn *posts*, not job listings. Google indexes those posts;
-`radar/collect-google.mjs` runs ~18 date-filtered searches a day through Google's Programmable Search JSON API
-(free tier: 100 queries/day) and adds the results as `feed_posts` / `jobs` in `out/latest.json`. It is a no-op until two
-repository secrets exist:
+Headhunters in Colombia announce senior vacancies as LinkedIn *posts*, not job listings. Google indexes those posts.
+Google's own Custom Search JSON API is closed to new customers (shutdown 2027-01-01), so `radar/collect-google.mjs`
+runs the 12 date-filtered searches through Apify's [Google Search Results Scraper](https://apify.com/apify/google-search-scraper)
+($0.0045 per result page → about $0.05 a night, $1.60 a month, within Apify's free $5/month credit) and adds the
+results as `feed_posts` / `jobs` in `out/latest.json`. It is a no-op until one repository secret exists:
 
-1. Create a Programmable Search Engine at https://programmablesearchengine.google.com/ → *Add* → choose **Search the entire web** → copy its **Search engine ID** (`cx`).
-2. Create an API key at https://console.cloud.google.com/apis/credentials (enable "Custom Search API" for the project).
-3. Add both as secrets: `gh secret set GOOGLE_CSE_KEY -R <owner>/<repo>` and `gh secret set GOOGLE_CSE_CX -R <owner>/<repo>`.
+1. Apify console → Settings → API & Integrations → copy a **Personal API token** (or create one named `job-radar`).
+2. `gh secret set APIFY_TOKEN -R <owner>/<repo>`
 
-The next run picks them up automatically. Without them the "google" source reports `skipped` and nothing else changes.
+A budget guard reads the account's live usage before every run and spreads what is left over the days remaining
+in the billing cycle, keeping `RADAR_APIFY_RESERVE_USD` (default $0.30) untouched for anything else that uses the
+same credit; when the credit is low it runs fewer searches (highest-value first) or none, and says so in
+`stats.budget`. Without the secret the "google" source reports `skipped` and nothing else changes.

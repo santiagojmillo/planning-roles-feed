@@ -54,11 +54,12 @@ function kwTest(kw, title) {
 const tff = portals.title_filter_full || portals.title_filter;
 const tfMain = portals.title_filter || tff;
 const passes = (tf, t) => tf.positive.some((k) => kwTest(k, t)) && !tf.negative.some((k) => kwTest(k, t));
-// The 'worldwide' LinkedIn lane searches for roles that SAY they hire from anywhere; any supply-chain/planning/
-// operations title may carry that, so it only has to clear the negative list — the body must then confirm the
-// phrase (dropped as 'phrase-not-in-body' otherwise).
+// The 'worldwide' sources (LinkedIn phrase lane, Google "open to applicants worldwide" pages) search for roles that
+// SAY they hire from anywhere; any supply-chain/planning/operations title may carry that, so it only has to clear
+// the negative list — the body must then confirm the phrase (dropped as 'phrase-not-in-body' otherwise).
+const WORLDWIDE = new Set(['linkedin:worldwide', 'google:jobs-worldwide']);
 const LOOSE_SC = /(supply|planning|planeaci|planific|inventor|s&op|\bibp\b|operations|operaciones|logistic|log[ií]stica|procurement|sourcing|abastec|fulfil)/i;
-const titleOk = (t, source) => (source === 'linkedin:worldwide'
+const titleOk = (t, source) => (WORLDWIDE.has(source)
   ? LOOSE_SC.test(t) && !tff.negative.some((k) => kwTest(k, t))
   : passes(source === 'ats' ? tfMain : tff, t));
 
@@ -92,7 +93,7 @@ for (const f of ['linkedin', 'boards']) {
   sources[f] = d.stats;
   cands.push(...d.jobs);
 }
-// Google Programmable Search (radar/collect-google.mjs): date-filtered job links + LinkedIn feed posts. Optional.
+// Google results via Apify (radar/collect-google.mjs): date-filtered job links + LinkedIn feed posts. Optional (APIFY_TOKEN).
 const google = readJson(path.join(ROOT, 'tmp/google.json'), null);
 if (google) { sources.google = google.stats; cands.push(...(google.jobs || [])); }
 const feedPostsRaw = google?.feed_posts || [];
@@ -247,12 +248,13 @@ const CONTAINERS = ['show-more-less-html__markup', 'job-body', 'job-description'
 async function fetchGeneric(url) {
   const r = await httpGet(url);
   if (!r.ok) return { error: r.error };
-  const html = r.text; const lines = []; let ldText = ''; let posted = null; let location = '';
+  const html = r.text; const lines = []; let ldText = ''; let posted = null; let location = ''; let company = '';
   for (const block of html.match(/<script[^>]*application\/ld\+json[^>]*>([\s\S]*?)<\/script>/gi) || []) {
     try {
       const parsed = JSON.parse(block.replace(/^<script[^>]*>|<\/script>$/gi, '').trim());
       for (const node of [].concat(parsed?.['@graph'] || parsed)) {
         if (!node || !/JobPosting/.test(String(node['@type']))) continue;
+        if (node.hiringOrganization?.name) company = cleanText(String(node.hiringOrganization.name));
         if (node.jobLocationType) lines.push(`Workplace: ${/TELECOMMUTE/i.test(node.jobLocationType) ? 'Remote' : node.jobLocationType}`);
         const alr = [].concat(node.applicantLocationRequirements || []).map((x) => x?.name).filter(Boolean);
         if (alr.length) lines.push(`Applicant location requirements: ${alr.join(', ')}`);
@@ -275,7 +277,7 @@ async function fetchGeneric(url) {
     if (stripped.length > body.length) body = stripped;
   }
   if (!body) return { error: 'empty body' };
-  return { meta: lines.join('\n'), text: body, posted, location };
+  return { meta: lines.join('\n'), text: body, posted, location, company };
 }
 async function fetchDetail(j) {
   const url = j.url || ''; let m;
@@ -293,7 +295,7 @@ async function fetchDetail(j) {
 // Fetch order: postings whose eligibility depends on the body first (Colombia / Spain non-metro, LATAM, US country-level),
 // then Medellín / Bogotá / Madrid metro (kept anyway; body only enriches), then US cities, then everything else.
 const priority = (j) => {
-  if (j.source === 'linkedin:worldwide') return 4; // phrase-search padding: fetch last, never starve the real lanes
+  if (WORLDWIDE.has(j.source)) return 4; // phrase-search padding: fetch last, never starve the real lanes
   const g = geo(j.location);
   if (g.country === 'CO') return g.metro || g.countryLevel ? 1 : 0;
   if (g.country === 'ES') return g.metro ? 1 : 0;
@@ -344,7 +346,7 @@ for (const j of survivors) {
     else if (g.country === 'LATAM' && g.countryLevel) verdict = { lane: 'latam-remote', drop_reason: null };
     else verdict = { lane: null, drop_reason: j.detail_error?.startsWith('skipped') ? 'detail-skipped' : 'detail-failed' };
   }
-  if (verdict.lane && j.source === 'linkedin:worldwide' && !fields.intl_ok) verdict = { lane: null, drop_reason: 'phrase-not-in-body' };
+  if (verdict.lane && WORLDWIDE.has(j.source) && !fields.intl_ok) verdict = { lane: null, drop_reason: 'phrase-not-in-body' };
   if (!verdict.lane) {
     const why = verdict.drop_reason === 'us-only' ? `us-only: ${fields.us_only_signals.join(' | ')}`.slice(0, 160)
       : /^detail-/.test(verdict.drop_reason) ? j.detail_error
@@ -407,4 +409,4 @@ if (droppedReasons.length) {
   md.push('');
 }
 writeFileSync(path.join(OUT, 'latest.md'), md.join('\n'));
-consol
+console.log(`radar${DRY ? ' (dry run → out/dry-run)' : ''}: ${fresh.length} new live roles; ${JSON.stringify(counts)}`);
