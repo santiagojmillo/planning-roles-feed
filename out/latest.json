@@ -1,189 +1,123 @@
 {
- "generated_at": "2026-10-13T13:22:39.249Z",
+ "generated_at": "2026-10-12T19:02:41.277Z",
  "window_days": 3,
  "counts": {
-  "candidates": 960,
+  "candidates": 1044,
   "undated": 0,
-  "too_old": 131,
-  "title": 730,
-  "location": 77,
-  "already_seen": 6,
-  "dup_in_run": 2,
-  "new": 14
+  "too_old": 113,
+  "title": 802,
+  "location": 116,
+  "already_seen": 5,
+  "dup_in_run": 0,
+  "new": 8
  },
  "sources": {
   "ats": {
-   "candidates": 41
+   "candidates": 58
   },
   "linkedin": {
    "queries": 62,
-   "pages": 205,
+   "pages": 234,
    "blocked": 18,
-   "cards": 1938
+   "cards": 2276
   },
   "boards": {
    "magneto": {
-    "sitemap": 28896,
-    "candidates": 0,
-    "fetched": 0
+    "sitemap": 29169,
+    "candidates": 4,
+    "fetched": 4
    },
    "getonbrd": {
     "items": 81
    },
    "remotive": {
-    "items": 48
-   },
-   "sgestion:sg_chazey": {
-    "items": 9
+    "items": 45
    }
   }
  },
  "new": [
   {
-   "source": "linkedin:madrid",
-   "url": "https://www.linkedin.com/jobs/view/4478784831",
-   "title": "DIRECTOR/A DE SUPPLY CHAIN & LOGÍSTICA",
-   "company": "About your talent",
-   "location": "Madrid, Community of Madrid, Spain",
-   "posted": "2026-10-13",
+   "source": "linkedin:us-remote",
+   "url": "https://www.linkedin.com/jobs/view/4476001580",
+   "title": "Director, Strategy & Planning | United States | Remote",
+   "company": "Ladders",
+   "location": "United States",
+   "posted": "2026-10-12",
+   "age_days": 0,
+   "lane": "remote"
+  },
+  {
+   "source": "linkedin:spain",
+   "url": "https://www.linkedin.com/jobs/view/4477289651",
+   "title": "SAP IBP Planning Consultant",
+   "company": "Accenture España",
+   "location": "Barcelona, Catalonia, Spain",
+   "posted": "2026-10-12",
    "age_days": 0,
    "lane": "spain"
   },
   {
    "source": "ats",
-   "url": "https://jobs.lever.co/jobgether/750d86d3-b7d3-4d8a-a47b-0e831e9a22b4",
+   "url": "https://jobs.lever.co/jobgether/8087d0b3-e992-4c6b-a1df-a9050bbc7e94",
    "company": "jobgether",
-   "title": "Sr. Demand Planner",
+   "title": "Director, AI Solutions Strategy & Planning",
    "location": "US",
    "comp": "",
-   "posted": "2026-10-13",
-   "age_days": 0,
-   "lane": "us-country"
-  },
-  {
-   "source": "ats",
-   "url": "https://jobs.lever.co/jobgether/b84129ec-5c72-4307-804d-a06a71bee9be",
-   "company": "jobgether",
-   "title": "Senior Manager, Global E2E Product Supply Planning & RCCP",
-   "location": "US",
-   "comp": "",
-   "posted": "2026-10-13",
+   "posted": "2026-10-12",
    "age_days": 0,
    "lane": "us-country"
   },
   {
    "source": "linkedin:us-remote",
-   "url": "https://www.linkedin.com/jobs/view/4459262190",
-   "title": "Principal Supply Demand Planner – Spares & FRUs - Supply Chain Operations",
-   "company": "Oracle",
+   "url": "https://www.linkedin.com/jobs/view/4414911430",
+   "title": "Supply Planning Manager",
+   "company": "Industrial Electric Mfg. (IEM)",
    "location": "United States",
-   "posted": "2026-10-13",
+   "posted": "2026-10-12",
    "age_days": 0,
    "lane": "us-country"
   },
   {
    "source": "linkedin:us-remote",
-   "url": "https://www.linkedin.com/jobs/view/4468791402",
-   "title": "Merchandise Planner",
-   "company": "Backcountry",
+   "url": "https://www.linkedin.com/jobs/view/4450091775",
+   "title": "Executive Director, Sales Operations Forecasting and Planning",
+   "company": "Synopsys Inc",
    "location": "United States",
-   "posted": "2026-10-13",
+   "posted": "2026-10-12",
    "age_days": 0,
    "lane": "us-country"
   },
   {
    "source": "linkedin:us-remote",
-   "url": "https://www.linkedin.com/jobs/view/4469945908",
-   "title": "Director, Legal Entity Planning & Forecast",
+   "url": "https://www.linkedin.com/jobs/view/4449173750",
+   "title": "Senior Director, Global Tax Planning",
    "company": "BeOne Medicines",
    "location": "United States",
-   "posted": "2026-10-13",
-   "age_days": 0,
+   "posted": "2026-10-10",
+   "age_days": 2,
    "lane": "us-country"
   },
   {
    "source": "ats",
-   "url": "https://jobs.ashbyhq.com/halter/4f7e3b47-c3ce-485c-b862-20bedddda774",
-   "company": "halter",
-   "title": "Material Supply Planner",
-   "location": "New Zealand · Remote",
+   "url": "https://risepoint.wd503.myworkdayjobs.com/risepoint/job/US---Remote/Director--PDM-Planning---Operations_JR101357",
+   "company": "risepoint",
+   "title": "Director, PDM Planning & Operations",
+   "location": "US - Remote",
    "comp": "",
-   "posted": "2026-10-12",
-   "age_days": 1,
+   "posted": "2026-10-09",
+   "age_days": 3,
    "lane": "remote"
   },
   {
    "source": "ats",
-   "url": "https://jobs.ashbyhq.com/halter/de14ec26-efde-4985-9ad5-e335b663a15a",
-   "company": "halter",
-   "title": "Global Inventory Planner",
-   "location": "New Zealand · Remote",
+   "url": "https://airliquidehr.wd3.myworkdayjobs.com/airliquideexternalcareer/job/Spain-MADRID/PLANNING-MANAGER_R10097102",
+   "company": "airliquidehr",
+   "title": "PLANNING MANAGER",
+   "location": "Spain, MADRID",
    "comp": "",
-   "posted": "2026-10-12",
-   "age_days": 1,
-   "lane": "remote"
-  },
-  {
-   "source": "ats",
-   "url": "https://icf.wd5.myworkdayjobs.com/icfexternal_career_site/job/Florida-Remote-Office-FL99/Director--Environmental-Planning_R2602940",
-   "company": "icf",
-   "title": "Director, Environmental Planning",
-   "location": "Florida Remote Office (FL99) · S Carolina Remote Office (SC99) · N Carolina Remote Office (NC99) · Georgia Remote Office (GA99)",
-   "comp": "",
-   "posted": "2026-10-12",
-   "age_days": 1,
-   "lane": "remote"
-  },
-  {
-   "source": "ats",
-   "url": "https://sbdinc.wd1.myworkdayjobs.com/stanley_black_decker_career_site/job/Towson-MD-United-States/Senior-Director--Compensation---GSC_REQ-1000049270",
-   "company": "sbdinc",
-   "title": "Senior Director, Compensation - Global Supply Chain",
-   "location": "Towson, MD, United States · New Britain, CT, United States · United States of America - Remote · Charlotte, NC, United States",
-   "comp": "",
-   "posted": "2026-10-12",
-   "age_days": 1,
-   "lane": "remote"
-  },
-  {
-   "source": "linkedin:us-remote",
-   "url": "https://www.linkedin.com/jobs/view/4477930465",
-   "title": "Sr. Demand Planner (Remote)",
-   "company": "RectorSeal",
-   "location": "United States",
-   "posted": "2026-10-12",
-   "age_days": 1,
-   "lane": "remote"
-  },
-  {
-   "source": "linkedin:us-remote",
-   "url": "https://www.linkedin.com/jobs/view/4476078382",
-   "title": "Merchandise Planner - Lands' End Outfitters (Remote)",
-   "company": "Lands' End",
-   "location": "Dodgeville, WI",
-   "posted": "2026-10-12",
-   "age_days": 1,
-   "lane": "remote"
-  },
-  {
-   "source": "linkedin:us-remote",
-   "url": "https://www.linkedin.com/jobs/view/4478591883",
-   "title": "Senior Manager, Global E2E Product Supply Planning & RCCP",
-   "company": "BioMarin Pharmaceutical Inc.",
-   "location": "United States",
-   "posted": "2026-10-12",
-   "age_days": 1,
-   "lane": "us-country"
-  },
-  {
-   "source": "linkedin:us-remote",
-   "url": "https://www.linkedin.com/jobs/view/4478584182",
-   "title": "SAP IBP Solution architect",
-   "company": "NeerInfo Solutions",
-   "location": "United States",
-   "posted": "2026-10-12",
-   "age_days": 1,
-   "lane": "us-country"
+   "posted": "2026-10-09",
+   "age_days": 3,
+   "lane": "spain"
   }
  ]
 }
