@@ -28,5 +28,6 @@ cp "$CO/data/scan-history.tsv" "$ROOT/state/scan-history.tsv" 2>/dev/null
 
 echo "== linkedin"; node "$ROOT/radar/collect-linkedin.mjs" > "$ROOT/tmp/linkedin.json" 2> "$ROOT/logs/linkedin.log"; cat "$ROOT/logs/linkedin.log"
 echo "== boards"; node "$ROOT/radar/collect-boards.mjs" > "$ROOT/tmp/boards.json" 2> "$ROOT/logs/boards.log"; cat "$ROOT/logs/boards.log"
+echo "== google"; node "$ROOT/radar/collect-google.mjs" > "$ROOT/tmp/google.json" 2> "$ROOT/logs/google.log"; cat "$ROOT/logs/google.log"
 echo "== build"; node "$ROOT/radar/build.mjs" "$CO"
 echo "== latest.md"; head -3 "$ROOT/out/latest.md" 2>/dev/null || echo "out/latest.md missing"

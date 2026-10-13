@@ -8,8 +8,8 @@
 //       RADAR_LI_TPR=r259200                  time window (LinkedIn f_TPR value)
 //       RADAR_LI_MAX_CONSECUTIVE_FAILS=8      skip the rest after N consecutive queries with no page (0 = never)
 //       RADAR_LI_MAX_MINUTES=150              skip the rest once the run exceeds this budget (0 = never);
-//                                             the full matrix is ~127 queries and took ~43 s/query under
-//                                             today's 429 rate (~20% of requests), i.e. ~90 min
+//                                             the full matrix is 58 queries (Boolean lanes); ~43 s/query under
+//                                             a 20% 429 rate, i.e. ~40 min
 // Output (stdout): {stats, jobs:[{source:'linkedin:<lane>', url, title, company, location, posted}]}
 //   stats.queries[]        {lane, loc, kw, status, pages, cards[, error]} — one per (location, keyword) query
 //   stats.failed_queries[] {lane, loc, kw, status} — the ones whose last page request did not succeed
@@ -31,30 +31,35 @@ const MAX_CONSECUTIVE_FAILS = Number(process.env.RADAR_LI_MAX_CONSECUTIVE_FAILS 
 const MAX_MINUTES = Number(process.env.RADAR_LI_MAX_MINUTES ?? 150);
 
 // ── Lanes ──
-const CO_KW = ['planeacion', 'planeacion de demanda', 'demand planning', 'supply chain', 'S&OP', 'abastecimiento',
-  'cadena de suministro', 'director de planeacion', 'jefe de planeacion', 'gerente de planeacion', 'IBP', 'inventarios'];
-const US_KW = ['remote demand planning', 'demand planning manager remote', 'remote demand planning director', 'remote S&OP',
-  'remote supply planning manager', 'remote IBP', 'remote supply chain planning', 'remote inventory planning manager',
-  'remote head of planning', 'senior planner remote S&OP'];
-const LATAM_KW = ['demand planning', 'supply planning', 'S&OP', 'supply chain planning', 'IBP', 'head of planning',
-  'planning manager', 'planeación de demanda', 'planificación de la demanda', 'gerente de planeamiento',
-  'gerente de planificación', 'planejamento de demanda', 'gerente de planejamento'];
+// Boolean searches from the owner's playbook (2026-10-06). Verified on the public endpoint 2026-10-13: the C1
+// string returned 10/10 manager-level cards where the plain keyword "demand planning" returned 4/10, so one
+// Boolean query replaces a dozen plain ones (58 queries total instead of 127). AND / OR / NOT must be upper-case.
+const C1 = '("demand planning" OR "supply planning" OR "S&OP" OR "IBP" OR "integrated business planning" OR "SIOP" OR "S&OE" OR "inventory planning" OR replenishment) AND (manager OR lead OR head OR director) NOT (media OR advertising OR intern)';
+const C2 = '("planeación de la demanda" OR "planeacion de la demanda" OR "planificación de la demanda" OR abastecimiento OR "S&OP" OR inventarios OR reabastecimiento) AND (gerente OR jefe OR líder OR director) NOT (practicante OR aprendiz OR auxiliar OR medios OR publicidad)';
+const C_REMOTE = '("demand planning" OR "supply planning" OR "S&OP" OR "IBP" OR "inventory planning" OR "supply chain planning") AND (manager OR head OR director OR lead) AND (remote OR remoto OR "work from home") NOT intern';
+const PT = '("demand planning" OR "supply planning" OR "S&OP" OR planejamento) AND (Portuguese OR português OR Brazil OR Brasil OR LATAM) AND (manager OR head OR director OR regional OR gerente)';
+const DTC = '(replenishment OR "inventory planning" OR "open to buy" OR "supply chain manager" OR "head of supply chain") AND (Shopify OR ecommerce OR e-commerce OR DTC OR Amazon OR "consumer brand") AND (manager OR head OR director)';
+const RARE = '(CPIM OR APICS OR DDMRP OR "contract manufacturers" OR "excess and obsolete") AND (planning OR "supply chain") AND (manager OR head OR director OR lead)';
+// Roles that say they hire from anywhere — the body must confirm it (build.mjs drops 'worldwide' items whose text lacks the phrase).
+const WORLDWIDE = [
+  '"open to applicants worldwide" ("supply chain" OR planning OR operations OR inventory)',
+  '("work from anywhere" OR "remote worldwide" OR "globally distributed" OR "anywhere in the world") AND ("supply chain" OR planning OR inventory)',
+  '("LATAM" OR "Latin America" OR Colombia) AND ("demand planning" OR "supply planning" OR "S&OP" OR "inventory planning" OR "supply chain manager") AND (remote OR contractor)',
+];
 
 const LANES = {
-  colombia: { locs: ['Medellín, Antioquia, Colombia', 'Bogotá, D.C., Capital District, Colombia', 'Colombia'], kws: CO_KW },
-  'us-remote': { locs: ['United States'], kws: US_KW },
-  madrid: { locs: ['Madrid, Community of Madrid, Spain'], kws: ['demand planning', 'supply chain planning', 'S&OP', 'IBP'] },
-  spain: {
-    locs: ['Spain'],
-    kws: ['LATAM supply chain', 'LATAM demand planning', 'Latin America supply chain', 'Americas demand planning',
-      'remote demand planning', 'remote supply chain planning', 'remote S&OP', 'planificación de la demanda remoto'],
-  },
-  'latam-remote': { locs: ['Latin America'], kws: ['remote demand planning', 'remote S&OP', 'remote supply planning', 'demand planning LATAM'] },
-  mexico: { locs: ['Mexico'], kws: LATAM_KW },
-  argentina: { locs: ['Argentina'], kws: LATAM_KW },
-  chile: { locs: ['Chile'], kws: LATAM_KW },
-  peru: { locs: ['Peru'], kws: LATAM_KW },
-  brazil: { locs: ['Brazil'], kws: LATAM_KW },
+  colombia: { locs: ['Medellín, Antioquia, Colombia', 'Bogotá, D.C., Capital District, Colombia', 'Colombia'], kws: [C2, C1, 'planeación', 'S&OP', 'abastecimiento'] },
+  'us-remote': { locs: ['United States'], kws: [C_REMOTE, 'remote demand planning', 'remote S&OP', 'remote supply planning manager', 'remote inventory planning manager', 'remote head of planning', RARE] },
+  madrid: { locs: ['Madrid, Community of Madrid, Spain'], kws: [C1, 'demand planning', 'S&OP', 'IBP'] },
+  spain: { locs: ['Spain'], kws: [C_REMOTE, 'LATAM supply chain', 'LATAM demand planning', 'Latin America supply chain', 'remote S&OP'] },
+  'latam-remote': { locs: ['Latin America'], kws: [C_REMOTE, C1, C2, 'remote demand planning', PT] },
+  mexico: { locs: ['Mexico'], kws: [C1, C2] },
+  argentina: { locs: ['Argentina'], kws: [C1, C2] },
+  chile: { locs: ['Chile'], kws: [C1, C2] },
+  peru: { locs: ['Peru'], kws: [C1, C2] },
+  brazil: { locs: ['Brazil'], kws: [C1, PT, 'planejamento de demanda'] },
+  worldwide: { locs: ['United States', 'Latin America', 'Colombia'], kws: WORLDWIDE, maxStart: 10 },
+  dtc: { locs: ['United States', 'Latin America'], kws: [DTC], maxStart: 30 },
 };
 
 const requested = (process.env.RADAR_LI_LANES || '').split(',').map((s) => s.trim()).filter(Boolean);
@@ -149,7 +154,8 @@ for (const q of queries) {
     rec.status = 'skipped';
     rec.error = overBudget ? `time budget of ${MAX_MINUTES} min exceeded` : `${consecutiveFails} consecutive queries with no page`;
   } else {
-    for (let start = 0; start < MAX_START;) {
+    const maxStart = LANES[q.lane].maxStart ?? MAX_START; // phrase lanes are padded with fuzzy matches: fewer pages
+    for (let start = 0; start < maxStart;) {
       if (start > 0) await sleep(jitter(PAGE_DELAY_MS));
       const page = await fetchPage(q.kw, q.loc, start);
       rec.status = page.status;

@@ -54,7 +54,13 @@ function kwTest(kw, title) {
 const tff = portals.title_filter_full || portals.title_filter;
 const tfMain = portals.title_filter || tff;
 const passes = (tf, t) => tf.positive.some((k) => kwTest(k, t)) && !tf.negative.some((k) => kwTest(k, t));
-const titleOk = (t, source) => passes(source === 'ats' ? tfMain : tff, t);
+// The 'worldwide' LinkedIn lane searches for roles that SAY they hire from anywhere; any supply-chain/planning/
+// operations title may carry that, so it only has to clear the negative list — the body must then confirm the
+// phrase (dropped as 'phrase-not-in-body' otherwise).
+const LOOSE_SC = /(supply|planning|planeaci|planific|inventor|s&op|\bibp\b|operations|operaciones|logistic|log[ií]stica|procurement|sourcing|abastec|fulfil)/i;
+const titleOk = (t, source) => (source === 'linkedin:worldwide'
+  ? LOOSE_SC.test(t) && !tff.negative.some((k) => kwTest(k, t))
+  : passes(source === 'ats' ? tfMain : tff, t));
 
 // ── Aggregator drop list (config/portals.yml: aggregator_companies) ──
 const AGGREGATORS = (Array.isArray(portals.aggregator_companies) ? portals.aggregator_companies : ['jobgether', 'ladders', 'jobicy', 'remotestack', 'remote rocketship'])
@@ -86,6 +92,10 @@ for (const f of ['linkedin', 'boards']) {
   sources[f] = d.stats;
   cands.push(...d.jobs);
 }
+// Google Programmable Search (radar/collect-google.mjs): date-filtered job links + LinkedIn feed posts. Optional.
+const google = readJson(path.join(ROOT, 'tmp/google.json'), null);
+if (google) { sources.google = google.stats; cands.push(...(google.jobs || [])); }
+const feedPostsRaw = google?.feed_posts || [];
 
 // ── Pass 1: undated → age → title → aggregator → dedup within run → already_seen ──
 const statePath = path.join(ROOT, 'state/seen.json');
@@ -283,6 +293,7 @@ async function fetchDetail(j) {
 // Fetch order: postings whose eligibility depends on the body first (Colombia / Spain non-metro, LATAM, US country-level),
 // then Medellín / Bogotá / Madrid metro (kept anyway; body only enriches), then US cities, then everything else.
 const priority = (j) => {
+  if (j.source === 'linkedin:worldwide') return 4; // phrase-search padding: fetch last, never starve the real lanes
   const g = geo(j.location);
   if (g.country === 'CO') return g.metro || g.countryLevel ? 1 : 0;
   if (g.country === 'ES') return g.metro ? 1 : 0;
@@ -333,6 +344,7 @@ for (const j of survivors) {
     else if (g.country === 'LATAM' && g.countryLevel) verdict = { lane: 'latam-remote', drop_reason: null };
     else verdict = { lane: null, drop_reason: j.detail_error?.startsWith('skipped') ? 'detail-skipped' : 'detail-failed' };
   }
+  if (verdict.lane && j.source === 'linkedin:worldwide' && !fields.intl_ok) verdict = { lane: null, drop_reason: 'phrase-not-in-body' };
   if (!verdict.lane) {
     const why = verdict.drop_reason === 'us-only' ? `us-only: ${fields.us_only_signals.join(' | ')}`.slice(0, 160)
       : /^detail-/.test(verdict.drop_reason) ? j.detail_error
@@ -351,12 +363,22 @@ for (const j of survivors) {
 for (const j of fresh) markSeen(j);
 for (const [k, d] of Object.entries(seen)) if (ageDays(d) > 90) delete seen[k];
 counts.new = fresh.length;
+// LinkedIn feed posts found by Google (collect-google.mjs): within the window and not seen before. The routine
+// judges them with its FEED-POST HANDLING rules; the radar only dates, dedups and carries the text.
+const feedPosts = [];
+for (const fp of feedPostsRaw) {
+  if (!fp?.url || !fp.posted || Number.isNaN(Date.parse(fp.posted))) continue;
+  const age = ageDays(fp.posted); if (age > DAYS) continue;
+  const k = normUrl(fp.url); if (seen[k]) continue;
+  feedPosts.push({ ...fp, age_days: age }); seen[k] = today;
+}
+counts.feed_posts = feedPosts.length;
 fresh.sort((a, b) => LANE_ORDER.indexOf(a.lane) - LANE_ORDER.indexOf(b.lane) || a.age_days - b.age_days || a.company.localeCompare(b.company));
 sources.detail = { fetched: counts.detail_fetched, failed: counts.detail_failed, skipped: counts.detail_skipped, max: MAX_DETAIL, ...fetchStats, mode: SKIP_DETAIL ? 'skipped (RADAR_SKIP_DETAIL)' : 'live' };
 
 // ── Write ──
 mkdirSync(path.join(OUT, 'history'), { recursive: true });
-const report = { generated_at: now.toISOString(), window_days: DAYS, dry_run: DRY || undefined, counts, sources, dropped_samples: dropped, new: fresh };
+const report = { generated_at: now.toISOString(), window_days: DAYS, dry_run: DRY || undefined, counts, sources, dropped_samples: dropped, new: fresh, feed_posts: feedPosts };
 writeFileSync(path.join(OUT, 'latest.json'), JSON.stringify(report, null, 1));
 writeFileSync(path.join(OUT, `history/${today}.json`), JSON.stringify(report, null, 1));
 if (!DRY) { mkdirSync(path.join(ROOT, 'state'), { recursive: true }); writeFileSync(statePath, JSON.stringify(seen)); }
@@ -370,6 +392,11 @@ const md = [`# Job radar — ${today}${DRY ? ' (dry run)' : ''}`, '', `New live 
   '| Age | Lane | Remote | Company | Title | Location | Salary | Flags | Source |', '|---|---|---|---|---|---|---|---|---|',
   ...fresh.map((j) => `| ${j.age_days}d | ${j.lane} | ${remoteTxt(j.remote)} | ${cell(j.company)} | [${cell(j.title)}](${j.url}) | ${cell(j.location)} | ${cell(j.salary || '')} | ${cell(flags(j))} | ${j.source} |`),
   '', '```', JSON.stringify(compact({ counts, sources }), null, 1), '```', ''];
+if (feedPosts.length) {
+  md.push('## Feed posts (LinkedIn posts found via Google, ≤ window)', '');
+  for (const fp of feedPosts) md.push(`- ${fp.age_days}d · ${cell(fp.author || '?')} — [${cell((fp.text || '').slice(0, 110))}…](${fp.url})`);
+  md.push('');
+}
 const droppedReasons = Object.keys(dropped).sort((a, b) => counts.not_eligible[b] - counts.not_eligible[a]);
 if (droppedReasons.length) {
   md.push('## Dropped (samples)', '');
@@ -380,4 +407,4 @@ if (droppedReasons.length) {
   md.push('');
 }
 writeFileSync(path.join(OUT, 'latest.md'), md.join('\n'));
-console.log(`radar${DRY ? ' (dry run → out/dry-run)' : ''}: ${fresh.length} new live roles; ${JSON.stringify(counts)}`);
+consol
