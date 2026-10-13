@@ -4,3 +4,4 @@ logs/*
 !logs/sweep-summary.log
 node_modules/
 .DS_Store
+out/dry-run/

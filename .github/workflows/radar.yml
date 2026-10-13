@@ -2,15 +2,26 @@ name: job-radar
 
 on:
   schedule:
-    # GitHub delays on-the-hour schedules (2026-10-12: 9 h late). Three off-minute
-    # attempts; the guard step skips once today's results exist.
-    - cron: '17 4 * * *'   # 23:17 Bogotá (previous evening)
-    - cron: '7 6 * * *'    # 01:07 Bogotá
-    - cron: '37 8 * * *'   # 03:37 Bogotá
+    # GitHub delays scheduled runs on this repo by 7–9 h (seen 2026-10-12 and
+    # 2026-10-13), so fire six off-minute attempts, one every 2 h from 00:23 to
+    # 10:23 UTC. The guard step skips once today's (UTC) results are published or
+    # another run is already active, so at most one attempt does real work.
+    - cron: '23 0 * * *'    # 19:23 Bogotá (previous evening)
+    - cron: '23 2 * * *'    # 21:23 Bogotá
+    - cron: '23 4 * * *'    # 23:23 Bogotá
+    - cron: '23 6 * * *'    # 01:23 Bogotá
+    - cron: '23 8 * * *'    # 03:23 Bogotá
+    - cron: '23 10 * * *'   # 05:23 Bogotá
   workflow_dispatch:
+    inputs:
+      force:
+        description: "Run even if today's results already exist or another run is active"
+        type: boolean
+        default: false
 
 permissions:
   contents: write
+  actions: read   # guard step lists this workflow's runs with gh
 
 concurrency:
   group: job-radar
@@ -23,13 +34,42 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Skip if today's results already exist
+      - name: Guard (skip if today's results exist or another run is active)
         id: guard
+        env:
+          GH_TOKEN: ${{ github.token }}
+          EVENT: ${{ github.event_name }}
+          FORCE: ${{ inputs.force }}
+          RUN_ID: ${{ github.run_id }}
+          REPO: ${{ github.repository }}
         run: |
           today=$(date -u +%F)
-          if [ "${{ github.event_name }}" = "schedule" ] && git fetch -q origin main && git show origin/main:out/latest.json 2>/dev/null | grep -q "\"generated_at\": \"$today"; then
-            echo "skip=true" >> "$GITHUB_OUTPUT"; echo "Results for $today already published — skipping."
+          skip() { echo "skip=true" >> "$GITHUB_OUTPUT"; echo "SKIP: $*"; exit 0; }
+
+          if [ "$FORCE" = "true" ]; then
+            echo "force=true ($EVENT): running even if today's results exist or another run is active."
+          else
+            # 1) Today's results already on origin/main? Applies to schedule AND workflow_dispatch.
+            git fetch -q origin main || echo "warn: could not fetch origin/main; treating as no results yet"
+            published=$(git show origin/main:out/latest.json 2>/dev/null | grep -o '"generated_at": "[^"]*' | head -1 | cut -d'"' -f4 || true)
+            if [ "${published:0:10}" = "$today" ]; then
+              skip "results for $today (UTC) already published on origin/main (generated_at=$published, event=$EVENT). Re-run with force=true to override."
+            fi
+            echo "no results for $today on origin/main yet (latest generated_at=${published:-none})."
+
+            # 2) Another run of this workflow in progress or queued? Ignore this run's own id.
+            for status in in_progress queued; do
+              others=$(gh run list -R "$REPO" --workflow radar.yml --status "$status" --json databaseId \
+                         --jq "[.[] | select(.databaseId != $RUN_ID)] | length" 2>/dev/null || echo 0)
+              if [ "${others:-0}" -gt 0 ] 2>/dev/null; then
+                skip "another job-radar run is $status ($others other run(s); this run is $RUN_ID) — letting it finish instead."
+              fi
+              echo "no other run $status."
+            done
           fi
+
+          echo "skip=false" >> "$GITHUB_OUTPUT"
+          echo "proceeding (event=$EVENT, force=${FORCE:-false}, today=$today)."
 
       - uses: actions/setup-node@v4
         if: steps.guard.outputs.skip != 'true'

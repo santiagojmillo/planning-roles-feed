@@ -2,6 +2,10 @@
 # Target: demand & supply planning, S&OP/IBP leadership. Live postings only.
 max_posting_age_days: 3
 
+# Aggregator employers (job boards that re-list other companies' roles).
+# Not a career-ops key (scan.mjs ignores it); read by job-radar post-processing.
+aggregator_companies: [jobgether, ladders, theladders, jobicy, remotestack, remote rocketship, lensa]
+
 title_filter:
   positive:
     # -- Core planning --
@@ -43,6 +47,9 @@ title_filter:
     - "Functional Consultant"
     - "Supply Chain Transformation"
     - "Supply Chain Analytics"
+    - "Solution Principal"
+    - "Presales + Planning"
+    - "Pre-Sales + Planning"
     # -- Spanish / Portuguese --
     - "Planeación"
     - "Planeacion"
@@ -86,6 +93,44 @@ title_filter:
     - "Coordinator"
     - "word:Shift"
     - "Quality Manager"
+    # -- Corporate / finance / HR "planning" (not supply chain) --
+    - "Legal"
+    - "Environmental"
+    - "Compensation"
+    - "Benefits"
+    - "Payroll"
+    - "Treasury"
+    - "word:Tax"
+    - "word:Budget"
+    - "Presupuesto"
+    - "Control de Gestión"
+    - "Estratégic"
+    - "Strategic Plann"
+    - "Strategy & Planning"
+    - "Strategy and Planning"
+    - "Clinical"
+    - "Revenue"
+    - "Sales Operations"
+    - "word:GTM"
+    - "word:PDM"
+    - "AI Solutions"
+    # -- Other planning professions --
+    - "Urban"
+    - "City Plann"
+    - "Transportation Plann"
+    - "stem:Event"
+    # -- Tool-specialist / IT-architecture titles --
+    - "Architect"
+    - "Anaplan"
+    - "word:o9"
+    # -- Vendor-board sales & engineering noise --
+    - "Account Executive"
+    - "Account Director"
+    - "Account Manager"
+    - "Strategic Accounts"
+    - "Sales Enablement"
+    - "Support Engineer"
+    - "Developer"
 
 title_filter_full:
   # Tighter net for the reverse sweep over every public ATS board.
@@ -151,6 +196,47 @@ title_filter_full:
     - "Produccion"
     - "Revenue Operations"
     - "GTM"
+    # -- Corporate / finance / HR "planning" (not supply chain) --
+    - "Legal"
+    - "Environmental"
+    - "Compensation"
+    - "Benefits"
+    - "Payroll"
+    - "Treasury"
+    - "word:Tax"
+    - "word:Budget"
+    - "Presupuesto"
+    - "Control de Gestión"
+    - "Estratégic"
+    - "Strategic Plann"
+    - "Strategy & Planning"
+    - "Strategy and Planning"
+    - "Clinical"
+    - "Revenue"
+    - "Sales Operations"
+    - "word:PDM"
+    - "AI Solutions"
+    # -- Other planning professions --
+    - "Urban"
+    - "City Plann"
+    - "Transportation Plann"
+    - "stem:Event"
+    - "Wedding"
+    # -- Tool-specialist / IT-architecture titles (reverse sweep only: on the
+    #    tracked vendor boards these product names appear in real consulting titles) --
+    - "Architect"
+    - "Anaplan"
+    - "word:o9"
+    - "Kinaxis"
+    - "SAP IBP"
+    # -- Vendor-board sales & engineering noise --
+    - "Account Executive"
+    - "Account Director"
+    - "Account Manager"
+    - "Strategic Accounts"
+    - "Sales Enablement"
+    - "Support Engineer"
+    - "Developer"
 
 tracked_companies:
 
@@ -218,4 +304,36 @@ tracked_companies:
   - name: Quince
     careers_url: https://job-boards.greenhouse.io/quince
     api: https://boards-api.greenhouse.io/v1/boards/quince/jobs
+    enabled: true
+
+  # -- Planning-software vendors & planning consultancies --
+
+  - name: RELEX Solutions
+    careers_url: https://job-boards.greenhouse.io/relex
+    api: https://boards-api.greenhouse.io/v1/boards/relex/jobs
+    enabled: true
+
+  - name: Westernacher Consulting
+    careers_url: https://jobs.eu.lever.co/westernacher
+    enabled: true
+
+  - name: Bluecrux
+    careers_url: https://bluecrux.recruitee.com
+    enabled: true
+
+  - name: Kinaxis
+    careers_url: https://careers-kinaxis.icims.com
+    enabled: true
+
+  - name: o9 Solutions
+    careers_url: https://o9solutions.wd5.myworkdayjobs.com/o9SolutionsExternal
+    enabled: true
+
+  - name: Blue Yonder
+    careers_url: https://careers.blueyonder.com
+    provider: phenom
+    phenom:
+      lang: en_us
+      country: us
+      urlPrefix: us/en
     enabled: true
