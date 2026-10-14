@@ -1,27 +1,23 @@
 [
   {
-    "searchQuery": { "term": "site:linkedin.com/posts (\"planeación de la demanda\" OR \"planeacion de la demanda\" OR \"demand planning\") (vacante OR buscamos OR \"estamos buscando\" OR oportunidad OR hiring) Colombia", "url": "http://www.google.com.co/search?q=site%3Alinkedin.com%2Fposts+...&hl=en&tbs=qdr%3Ad4", "countryCode": "CO" },
-    "hasNextPage": true,
+    "searchQuery": { "term": "site:linkedin.com/posts vacante (gerente OR director OR jefe) planeación", "url": "http://www.google.com.co/search?q=site%3Alinkedin.com%2Fposts+vacante+%28gerente+OR+director+OR+jefe%29+planeaci%C3%B3n&hl=en&tbs=qdr%3Ad4", "countryCode": "CO" },
     "organicResults": [
-      { "position": 1, "title": "Grupo GreenLand - vacante", "url": "https://es.linkedin.com/posts/compa%C3%B1%C3%ADa-greenland_vacante-activity-7426636972191870976-lfcO", "description": "Vacante | Jefe de Planeación de la Demanda ¡Haz parte del equipo que cultiva bienestar! Ubicación: Envigado, Antioquia Modalidad: ...", "date": null, "displayedUrl": "240+ reactions  ·  8 months ago", "websiteTitle": "LinkedIn · Grupo GreenLand" },
-      { "position": 2, "title": "Empleo como Jefe planeación demanda - medellín en AUTECO", "url": "https://es.linkedin.com/posts/diana-m-b37006134_empleo-como-jefe-planeaci%C3%B3n-demanda-medell%C3%ADn-activity-7353829200388059137-Jd1C", "description": "Estamos buscando a nuestro próximo/a Jefe de Planeación de la Demanda! En Auteco seguimos impulsando la movilidad y la innovación en Colombia, ...", "date": null, "displayedUrl": "https://es.linkedin.com › posts", "websiteTitle": "LinkedIn" },
-      { "position": 3, "title": "EQDS' Post", "url": "https://www.linkedin.com/posts/e-qube-digital-services_hiring-supplychain-supplychainanalytics-activity-7515735740597669888-wQ8t", "description": "Urgent Hiring | Supply Chain Analyst / Supply Chain Implementation ... (Demand Planning, Inventory, Forecasting, Production, S&OP) Experience in ...", "date": null, "displayedUrl": "80+ reactions", "websiteTitle": "LinkedIn · EQDS" }
+      { "position": 1, "title": "Publicación de Example Talent", "url": "https://es.linkedin.com/posts/example-talent_vacante-gerente-planeacion-activity-7515700000000000000-AbCd", "description": "Vacante: Gerente de Planeación de la Demanda – Medellín. Buscamos líder con experiencia en S&OP ...", "date": null, "displayedUrl": "20+ reactions", "websiteTitle": "LinkedIn · Example Talent" },
+      { "position": 2, "title": "Example Talent - vacante", "url": "https://www.linkedin.com/posts/example-talent_vacante-gerente-planeacion-activity-7515700000000000000-AbCd?trk=public_post", "description": "Duplicate of the post above under www.", "date": null, "displayedUrl": "20+ reactions", "websiteTitle": "LinkedIn" },
+      { "position": 3, "title": "Publicación de Example Foods", "url": "https://es.linkedin.com/posts/example-foods_vacante-jefe-planeacion-activity-7490089475843379200-Zz11", "description": "Vacante | Jefe de Planeación ...", "date": null, "displayedUrl": "2 months ago", "websiteTitle": "LinkedIn · Example Foods" },
+      { "position": 4, "title": "Publicación de Example Brewery", "url": "https://es.linkedin.com/posts/example-brewery_celebramos-activity-7515600000000000000-Qq22", "description": "Celebramos 10 años con nuestros clientes en todo el país ...", "date": null, "displayedUrl": "60+ reactions", "websiteTitle": "LinkedIn · Example Brewery" },
+      null
     ]
   },
   {
-    "searchQuery": { "term": "site:linkedin.com/jobs/view (open to applicants worldwide OR work from anywhere OR anywhere in the world OR remote worldwide) (supply chain OR planning OR inventory OR S&OP OR replenishment)", "url": "http://www.google.com/search?q=site%3Alinkedin.com%2Fjobs%2Fview+%28%22open+to+applicants+worldwide%22+OR+%22work+from+anywhere%22+OR+%22anywhere+in+the+world%22+OR+%22remote+worldwide%22%29+%28%22supply+chain%22+OR+planning+OR+inventory+OR+%22S%26OP%22+OR+replenishment%29&hl=en&tbs=qdr%3Ad4", "countryCode": "US" },
-    "hasNextPage": true,
+    "searchQuery": { "term": "site:linkedin.com/posts \"demand planning\" hiring", "url": "http://www.google.com/search?q=site%3Alinkedin.com%2Fposts+%22demand+planning%22+hiring&hl=en&tbs=qdr%3Ad4", "countryCode": "US" },
     "organicResults": [
-      { "position": 1, "title": "Supply Chain & Operations Manager", "url": "https://www.linkedin.com/jobs/view/supply-chain-operations-manager-at-super-speciosa-4474507972", "description": "Supply Chain & Operations Manager. Super Speciosa United States ... Location: Remote — open to applicants worldwide. Visa sponsorship is ...Read more", "date": "2026-10-02T12:00:00.000Z", "displayedUrl": "https://www.linkedin.com › jobs › view › supply-chain-o...", "websiteTitle": "LinkedIn" },
-      { "position": 2, "title": "Acme Foods hiring Demand Planning Manager in Bogotá, Capital District, Colombia | LinkedIn", "url": "https://co.linkedin.com/jobs/view/demand-planning-manager-at-acme-foods-4470000001", "description": "Open to applicants worldwide ... S&OP ...", "date": null, "displayedUrl": "https://co.linkedin.com › jobs › view", "websiteTitle": "LinkedIn" },
-      { "position": 3, "title": "Gerente de Planeación de Demanda - Bogotá | Empresa Ejemplo - Computrabajo", "url": "https://co.computrabajo.com/trabajo-de-gerente-planeacion-demanda-en-bogota-DC#ID", "description": "...", "date": "2026-10-12T12:00:00.000Z", "displayedUrl": "https://co.computrabajo.com › ...", "websiteTitle": "Computrabajo" },
-      { "position": 4, "title": "Demand Planning Manager | Careers", "url": "https://example.wd5.myworkdayjobs.com/en-US/External/job/Bogota-Colombia/Demand-Planning-Manager_R12345", "description": "...", "date": null, "displayedUrl": "https://example.wd5.myworkdayjobs.com › ...", "websiteTitle": "Workday" },
-      { "position": 5, "title": "Some unrelated page", "url": "https://www.example.com/not-a-job", "description": "...", "date": null, "displayedUrl": "example.com", "websiteTitle": "Example" }
+      { "position": 1, "title": "Example Brand's Post", "url": "https://www.linkedin.com/posts/example-brand_hiring-demandplanning-activity-7515650000000000000-Ee33", "description": "We're hiring a Demand Planning Manager — remote, open to candidates in Latin America ...", "date": null, "displayedUrl": "10+ reactions", "websiteTitle": "LinkedIn · Example Brand" },
+      { "position": 2, "title": "Demand Planning Manager | Example Co", "url": "https://www.linkedin.com/jobs/view/demand-planning-manager-at-example-co-4470000001", "description": "A job page, not a post.", "date": null, "displayedUrl": "linkedin.com › jobs", "websiteTitle": "LinkedIn" }
     ]
   },
   {
-    "searchQuery": { "term": "site:linkedin.com/posts vacante planeación (gerente OR director OR jefe) Colombia", "url": "http://www.google.com/search?q=...&hl=en&tbs=qdr%3Ad7", "countryCode": "US" },
-    "hasNextPage": false,
+    "searchQuery": { "term": "site:linkedin.com/posts something this collector never asked for", "url": "http://www.google.com/search?q=x", "countryCode": "US" },
     "organicResults": []
   }
 ]

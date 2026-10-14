@@ -76,6 +76,18 @@ jobs:
         with:
           node-version: 24
 
+      # The Apify token lives ONLY in this step: the later steps run third-party code (career-ops and its npm
+      # dependencies), which never sees it. Same UTC day → the collector reuses state/google-cache.json (no charge).
+      - name: LinkedIn posts via Google (Apify)
+        if: steps.guard.outputs.skip != 'true'
+        env:
+          APIFY_TOKEN: ${{ secrets.APIFY_TOKEN }}   # optional — see README "LinkedIn posts via Google"
+          RADAR_DAYS: '3'
+        run: |
+          mkdir -p tmp logs state
+          node radar/collect-google.mjs > tmp/google.json 2> logs/google.log || true
+          cat logs/google.log
+
       - name: Fetch career-ops (pinned)
         if: steps.guard.outputs.skip != 'true'
         run: |
@@ -86,7 +98,7 @@ jobs:
       - name: Collect live roles
         if: steps.guard.outputs.skip != 'true'
         env:
-          APIFY_TOKEN: ${{ secrets.APIFY_TOKEN }}   # optional — Google searches via Apify, see README "Google search via Apify"
+          RADAR_GOOGLE_PRECOLLECTED: '1'   # tmp/google.json comes from the step above
         run: bash radar/run.sh
 
       - name: Publish results

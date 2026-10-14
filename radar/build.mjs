@@ -54,10 +54,12 @@ function kwTest(kw, title) {
 const tff = portals.title_filter_full || portals.title_filter;
 const tfMain = portals.title_filter || tff;
 const passes = (tf, t) => tf.positive.some((k) => kwTest(k, t)) && !tf.negative.some((k) => kwTest(k, t));
-// The 'worldwide' sources (LinkedIn phrase lane, Google "open to applicants worldwide" pages) search for roles that
-// SAY they hire from anywhere; any supply-chain/planning/operations title may carry that, so it only has to clear
-// the negative list — the body must then confirm the phrase (dropped as 'phrase-not-in-body' otherwise).
-const WORLDWIDE = new Set(['linkedin:worldwide', 'google:jobs-worldwide']);
+// The 'worldwide' LinkedIn lane searches for roles that SAY they hire from anywhere; any supply-chain/planning/
+// operations title may carry that, so it only has to clear the negative list. When such a role would only qualify
+// as a long shot (us-remote-unstated / remote-other-intl), the body must confirm the phrase ('phrase-not-in-body'
+// otherwise); a role located in Colombia, LATAM or Spain keeps its lane — it qualifies on its own.
+const WORLDWIDE = new Set(['linkedin:worldwide']);
+const PHRASE_LANES = new Set(['us-remote-unstated', 'remote-other-intl']);
 const LOOSE_SC = /(supply|planning|planeaci|planific|inventor|s&op|\bibp\b|operations|operaciones|logistic|log[ií]stica|procurement|sourcing|abastec|fulfil)/i;
 const titleOk = (t, source) => (WORLDWIDE.has(source)
   ? LOOSE_SC.test(t) && !tff.negative.some((k) => kwTest(k, t))
@@ -93,7 +95,7 @@ for (const f of ['linkedin', 'boards']) {
   sources[f] = d.stats;
   cands.push(...d.jobs);
 }
-// Google results via Apify (radar/collect-google.mjs): date-filtered job links + LinkedIn feed posts. Optional (APIFY_TOKEN).
+// LinkedIn feed posts found through Google via Apify (radar/collect-google.mjs). Optional (APIFY_TOKEN).
 const google = readJson(path.join(ROOT, 'tmp/google.json'), null);
 if (google) { sources.google = google.stats; cands.push(...(google.jobs || [])); }
 const feedPostsRaw = google?.feed_posts || [];
@@ -346,7 +348,7 @@ for (const j of survivors) {
     else if (g.country === 'LATAM' && g.countryLevel) verdict = { lane: 'latam-remote', drop_reason: null };
     else verdict = { lane: null, drop_reason: j.detail_error?.startsWith('skipped') ? 'detail-skipped' : 'detail-failed' };
   }
-  if (verdict.lane && WORLDWIDE.has(j.source) && !fields.intl_ok) verdict = { lane: null, drop_reason: 'phrase-not-in-body' };
+  if (verdict.lane && WORLDWIDE.has(j.source) && !fields.intl_ok && PHRASE_LANES.has(verdict.lane)) verdict = { lane: null, drop_reason: 'phrase-not-in-body' };
   if (!verdict.lane) {
     const why = verdict.drop_reason === 'us-only' ? `us-only: ${fields.us_only_signals.join(' | ')}`.slice(0, 160)
       : /^detail-/.test(verdict.drop_reason) ? j.detail_error
@@ -367,14 +369,16 @@ for (const [k, d] of Object.entries(seen)) if (ageDays(d) > 90) delete seen[k];
 counts.new = fresh.length;
 // LinkedIn feed posts found by Google (collect-google.mjs): within the window and not seen before. The routine
 // judges them with its FEED-POST HANDLING rules; the radar only dates, dedups and carries the text.
-const feedPosts = [];
+const feedPosts = []; const feedCounts = { undated: 0, too_old: 0, already_seen: 0 };
 for (const fp of feedPostsRaw) {
-  if (!fp?.url || !fp.posted || Number.isNaN(Date.parse(fp.posted))) continue;
-  const age = ageDays(fp.posted); if (age > DAYS) continue;
-  const k = normUrl(fp.url); if (seen[k]) continue;
+  if (!fp?.url) continue;
+  if (!fp.posted || Number.isNaN(Date.parse(fp.posted))) { feedCounts.undated++; continue; }
+  const age = ageDays(fp.posted); if (age > DAYS) { feedCounts.too_old++; continue; }
+  const k = normUrl(fp.url); if (seen[k]) { feedCounts.already_seen++; continue; }
   feedPosts.push({ ...fp, age_days: age }); seen[k] = today;
 }
 counts.feed_posts = feedPosts.length;
+if (feedPostsRaw.length) counts.feed_dropped = feedCounts;
 fresh.sort((a, b) => LANE_ORDER.indexOf(a.lane) - LANE_ORDER.indexOf(b.lane) || a.age_days - b.age_days || a.company.localeCompare(b.company));
 sources.detail = { fetched: counts.detail_fetched, failed: counts.detail_failed, skipped: counts.detail_skipped, max: MAX_DETAIL, ...fetchStats, mode: SKIP_DETAIL ? 'skipped (RADAR_SKIP_DETAIL)' : 'live' };
 
