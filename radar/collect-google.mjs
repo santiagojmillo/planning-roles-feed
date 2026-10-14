@@ -16,9 +16,12 @@
 // to judge. Expect a few candidate posts a night, many of which the routine will discard.
 //
 // Budget guard: GET /v2/users/me/limits → spend (max − used − RESERVE) evenly over the days left in the cycle;
-// RESERVE (default $0.30) stays for the routine's own Apify runs. Same UTC day → reuse that day's results from
-// state/google-cache.json instead of searching again (a retried or forced run never pays twice; RADAR_GOOGLE_FRESH=1
-// overrides). The token goes in an Authorization header, never in a URL. Never throws; always exits 0.
+// RESERVE (default $0.30) stays for the routine's own Apify runs. Only `low_credit` is published (the repo and its
+// Actions logs are public). Same UTC day → reuse that day's results from tmp/google-cache.json (restored from the
+// GitHub Actions cache by the workflow), written only when every search succeeded, so a retried or forced run never
+// pays twice and a failed night can be retried (RADAR_GOOGLE_FRESH=1 forces new searches). A night where every
+// search failed is reported in `skipped`, never as "0 posts". The token goes in an Authorization header, never in a
+// URL, and is scrubbed from every stored message. Never throws; always exits 0 with valid JSON.
 //
 // Test without a token: RADAR_TODAY=2026-10-14 RADAR_GOOGLE_FIXTURE=radar/fixtures/google-serp.sample.json RADAR_GOOGLE_NO_FETCH=1 node radar/collect-google.mjs
 // Output (stdout): {stats, jobs: [], feed_posts:[{url, author, posted, text, query, fetch_error}]}
@@ -28,11 +31,12 @@ import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
-const TOKEN = process.env.APIFY_TOKEN;
+const RAW_TOKEN = process.env.APIFY_TOKEN || '';
+const TOKEN = /^[A-Za-z0-9_-]{10,200}$/.test(RAW_TOKEN.trim()) ? RAW_TOKEN.trim() : '';
 const FIXTURE = process.env.RADAR_GOOGLE_FIXTURE;
 const NO_FETCH = process.env.RADAR_GOOGLE_NO_FETCH === '1';
 const FRESH = process.env.RADAR_GOOGLE_FRESH === '1';
-const CACHE = process.env.RADAR_GOOGLE_CACHE || path.join(ROOT, 'state/google-cache.json');
+const CACHE = process.env.RADAR_GOOGLE_CACHE || path.join(ROOT, 'tmp/google-cache.json');
 const DAYS = Number(process.env.RADAR_DAYS || 3);
 const MAX_QUERIES = Number(process.env.RADAR_GOOGLE_MAX_QUERIES || 12);
 const RESERVE = Number(process.env.RADAR_APIFY_RESERVE_USD || 0.30);
@@ -40,17 +44,18 @@ const MAX_POST_FETCH = Number(process.env.RADAR_GOOGLE_MAX_POSTS || 40);
 const CHUNK = 5;                              // queries per Apify run (keeps each run well inside its timeout)
 const PAGE_USD = 0.0045;                      // actor price per Google result page, FREE tier (pay-per-event, 2026-10)
 const ACTOR = 'apify~google-search-scraper';
-const API = 'https://api.apify.com/v2';
+const API = process.env.RADAR_APIFY_API || 'https://api.apify.com/v2';   // override for tests only
 const UA = 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36';
 const today = /^\d{4}-\d{2}-\d{2}$/.test(process.env.RADAR_TODAY || '') ? process.env.RADAR_TODAY : new Date().toISOString().slice(0, 10);
 
 let out = {
-  stats: { backend: 'apify', queries_planned: 0, queries_skipped: 0, queries: 0, pages_charged: 0, usd_total: 0, results: 0, other_urls: 0, duplicates: 0, posts_found: 0, posts_old: 0, posts_offtopic: 0, post_fetches: 0, errors: [], by_query: {}, runs: [] },
+  stats: { backend: 'apify', queries_planned: 0, queries_skipped: 0, queries: 0, queries_failed: 0, pages_charged: 0, usd_total: 0, results: 0, other_urls: 0, duplicates: 0, posts_found: 0, posts_old: 0, posts_offtopic: 0, post_fetches: 0, errors: [], by_query: {}, runs: [] },
   jobs: [], feed_posts: [],
 };
-const emit = () => process.stdout.write(JSON.stringify(out));
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 const log = (s) => process.stderr.write(`google: ${s}\n`);
+// Every message that may be stored or printed goes through safe(): the token can never reach the public repo/logs.
+const safe = (s) => { let t = String(s ?? ''); for (const k of [RAW_TOKEN, TOKEN]) if (k) t = t.split(k).join('[token]'); return t.replace(/\s+/g, ' ').slice(0, 200); };
 const dec = (s) => String(s ?? '').replace(/&amp;/g, '&').replace(/&#39;|&apos;/g, "'").replace(/&quot;/g, '"').replace(/&lt;/g, '<').replace(/&gt;/g, '>').replace(/&nbsp;/g, ' ').replace(/\s+/g, ' ').trim();
 const ageDays = (d) => Math.floor((Date.parse(today) - Date.parse(d)) / 86400000);
 const cut = (s, n) => (s.length > n ? `${s.slice(0, n - 1).trimEnd()}…` : s);
@@ -79,28 +84,33 @@ const PLAN_RE = /(planeaci[oó]n|planificaci[oó]n|planeador|planificador|planni
 const HIRE_RE = /(vacante|buscamos|estamos buscando|se busca|b[uú]squeda|contratando|convocatoria|oportunidad|post[uú]late|aplica|[uú]nete|hiring|we'?re hiring|is hiring|join (our|the) team|looking for|open (role|position)|apply)/i;
 
 // ── Apify REST: token in the Authorization header. Only idempotent calls are retried (a timed-out POST /runs may
-// already have started — and be billing — a run, so it is never re-sent; HTTP 429 means nothing was created). ──
+// already have started — and be billing — a run, so it is never re-sent; HTTP 429 means nothing was created).
+// The body is read inside the try: a connection that drops mid-body is a failed call, not a crash. ──
 async function api(p, { method = 'GET', body, query, retry = method === 'GET' } = {}) {
   const u = new URL(API + p);
   for (const [k, v] of Object.entries(query || {})) u.searchParams.set(k, String(v));
   const headers = { Authorization: `Bearer ${TOKEN}` };
   if (body) headers['Content-Type'] = 'application/json';
   for (let attempt = 0; attempt < 3; attempt++) {
-    let r;
-    try { r = await fetch(u, { method, headers, body, signal: AbortSignal.timeout(30000) }); } catch (e) {
-      const msg = e?.name === 'TimeoutError' ? 'timeout' : (e?.cause?.code || e?.message || String(e));
+    let r; let text;
+    try {
+      r = await fetch(u, { method, headers, body, signal: AbortSignal.timeout(30000) });
+      text = await r.text();
+    } catch (e) {
+      const msg = safe(e?.name === 'TimeoutError' ? 'timeout' : (e?.cause?.code || e?.name || 'network error'));
       if (!retry || attempt === 2) return { ok: false, status: 0, error: msg };
       await sleep(3000 * (attempt + 1)); continue;
     }
     if (r.status === 429 && attempt < 2) { await sleep(5000 * (attempt + 1)); continue; }
     if (r.status >= 500 && retry && attempt < 2) { await sleep(3000 * (attempt + 1)); continue; }
-    const text = await r.text(); let json = null; try { json = JSON.parse(text); } catch { /* not json */ }
-    if (!r.ok) return { ok: false, status: r.status, error: `HTTP ${r.status}: ${String(json?.error?.message || text).slice(0, 160)}` };
+    let json = null; try { json = JSON.parse(text); } catch { /* not json */ }
+    if (!r.ok) return { ok: false, status: r.status, error: safe(`HTTP ${r.status}: ${json?.error?.message || text}`) };
     return { ok: true, status: r.status, json };
   }
   return { ok: false, status: 0, error: 'retries exhausted' };
 }
 
+// Tonight's allowance in result pages. Kept internal: only low_credit is published.
 async function budget() {
   const r = await api('/users/me/limits');
   if (!r.ok) return { error: r.error };
@@ -109,9 +119,7 @@ async function budget() {
   const end = Date.parse(d.monthlyUsageCycle?.endAt || '');
   if (!Number.isFinite(used) || !Number.isFinite(max) || Number.isNaN(end)) return { error: 'unexpected limits payload' };
   const daysLeft = Math.max(1, Math.ceil((end - Date.now()) / 86400000));
-  const perNight = Math.max(0, (max - used - RESERVE) / daysLeft);
-  // Published: the allowance only — no account balances (the repo and its Actions logs are public).
-  return { days_left: daysLeft, reserve_usd: RESERVE, per_night_usd: +perNight.toFixed(4), pages_allowed: Math.floor(perNight / PAGE_USD) };
+  return { pages_allowed: Math.floor(Math.max(0, (max - used - RESERVE) / daysLeft) / PAGE_USD) };
 }
 
 const TERMINAL = new Set(['SUCCEEDED', 'FAILED', 'TIMED-OUT', 'ABORTED']);
@@ -136,7 +144,7 @@ async function waitRun(run) {
     if (!TERMINAL.has(d.status)) continue;
     run.status = d.status; run.usd = Number(d.usageTotalUsd ?? 0); run.pages = Number(d.chargedEventCounts?.['search-page-scraped'] ?? 0);
     run.secs = Math.round((Date.parse(d.finishedAt) - Date.parse(d.startedAt)) / 1000);
-    if (d.status !== 'SUCCEEDED') run.error = d.statusMessage || d.status;
+    if (d.status !== 'SUCCEEDED') run.error = safe(d.statusMessage || d.status);
     if (pollErrors) run.poll_errors = pollErrors;
     return run;
   }
@@ -147,7 +155,7 @@ async function waitRun(run) {
 async function runItems(run) {
   if (!run._dataset) return [];
   const r = await api(`/datasets/${run._dataset}/items`, { query: { clean: 'true', fields: 'searchQuery,organicResults' } });
-  if (!r.ok) { run.error = `${run.error ? `${run.error}; ` : ''}dataset: ${r.error}`; return []; }
+  if (!r.ok) { run.dataset_error = r.error; return []; }
   return Array.isArray(r.json) ? r.json : [];
 }
 
@@ -182,79 +190,106 @@ async function fetchPost(url) {
     const author = h.match(/"author"\s*:\s*\{[^}]*?"name"\s*:\s*"([^"]+)"/)?.[1] || h.match(/data-tracking-control-name="public_post_feed-actor-name"[^>]*>([\s\S]*?)</)?.[1] || '';
     const published = h.match(/"datePublished"\s*:\s*"([^"]+)"/)?.[1] || null;
     return { text: dec(body.replace(/<[^>]+>/g, ' ')), author: dec(author.replace(/<[^>]+>/g, ' ')), published: published ? published.slice(0, 10) : null };
-  } catch (e) { return { error: e?.message || String(e) }; }
+  } catch (e) { return { error: safe(e?.name === 'TimeoutError' ? 'timeout' : (e?.cause?.code || e?.message)) }; }
 }
 
-// ── Main ──
-if (FIXTURE) {
-  out.stats.backend = `fixture:${FIXTURE}`;
-  for (const it of JSON.parse(readFileSync(FIXTURE, 'utf-8'))) ingest(it);
-  out.stats.queries = out.stats.queries_planned = Q.length;
-} else {
-  let cached = null;
-  if (!FRESH) { try { const c = JSON.parse(readFileSync(CACHE, 'utf-8')); if (c?.date === today && c.output?.stats) cached = c.output; } catch { /* no cache yet */ } }
-  if (cached) {
-    out = cached; out.stats.reused_same_day = true;
-    log(`already searched today (${today}) — reusing those results instead of paying again (RADAR_GOOGLE_FRESH=1 to override)`);
-    emit(); process.exit(0);
+// ── Main (returns true when the night's results may be cached for the rest of the UTC day) ──
+async function search() {
+  if (FIXTURE) {
+    out.stats.backend = `fixture:${FIXTURE}`;
+    for (const it of JSON.parse(readFileSync(FIXTURE, 'utf-8'))) ingest(it);
+    out.stats.queries = out.stats.queries_planned = Q.length;
+    return false;
   }
-  if (!TOKEN) {
-    out.stats.skipped = 'not set up: APIFY_TOKEN missing (README → "LinkedIn posts via Google")';
-    log(out.stats.skipped); emit(); process.exit(0);
+  if (!FRESH) {
+    let cached = null;
+    try { const c = JSON.parse(readFileSync(CACHE, 'utf-8')); if (c?.date === today && c.output?.stats) cached = c.output; } catch { /* no cache yet */ }
+    if (cached) {
+      out = cached; out.stats.reused_same_day = true;
+      log(`already searched today (${today}) — reusing those results instead of paying again (RADAR_GOOGLE_FRESH=1 to override)`);
+      return 'reused';
+    }
   }
+  if (RAW_TOKEN && !TOKEN) { out.stats.skipped = 'not set up: the APIFY_TOKEN secret has an unexpected format (check it for spaces or line breaks)'; log(out.stats.skipped); return false; }
+  if (!TOKEN) { out.stats.skipped = 'not set up: APIFY_TOKEN missing (README → "LinkedIn posts via Google")'; log(out.stats.skipped); return false; }
   const b = await budget();
   let allowed = MAX_QUERIES;
   if (b.error) { allowed = Math.min(allowed, 4); out.stats.errors.push({ stage: 'limits', error: b.error }); log(`credit check failed (${b.error}) — capping at ${allowed} searches`); }
-  else { out.stats.budget = { ...b, low_credit: b.pages_allowed < Q.length }; allowed = Math.min(allowed, b.pages_allowed); }
+  else { out.stats.budget = { low_credit: b.pages_allowed < Q.length }; allowed = Math.min(allowed, b.pages_allowed); }
   const planned = Q.slice(0, Math.max(0, allowed));
   out.stats.queries_planned = planned.length; out.stats.queries_skipped = Q.length - planned.length;
   if (!planned.length) {
     out.stats.skipped = 'Apify credit too low tonight — the rest is kept for the 7 am routine; searches resume as the credit allows (it renews monthly)';
-    log(out.stats.skipped);
-  } else {
-    log(`${planned.length}/${Q.length} searches tonight (allowance $${b.per_night_usd ?? '?'} → ${b.pages_allowed ?? '?'} pages)`);
-    const batches = [];
-    for (const country of [...new Set(planned.map((x) => x.country))]) {
-      const qs = planned.filter((x) => x.country === country);
-      for (let i = 0; i < qs.length; i += CHUNK) batches.push([country, qs.slice(i, i + CHUNK)]);
-    }
-    const runs = [];
-    for (const [country, qs] of batches) runs.push(await startRun(country, qs));   // free plan: 5 concurrent runs
-    await Promise.all(runs.map(waitRun));
-    for (const run of runs) {
-      if (run.status === 'NOT-STARTED') { out.stats.errors.push({ stage: 'start', country: run.country, error: run.error }); continue; }
-      for (const it of await runItems(run)) ingest(it);
-      out.stats.queries += run.queries; out.stats.pages_charged += run.pages || 0; out.stats.usd_total = +(out.stats.usd_total + (run.usd || 0)).toFixed(4);
-      if (run.error) out.stats.errors.push({ stage: 'run', country: run.country, status: run.status, error: run.error });
-    }
-    out.stats.runs = runs;
+    log(out.stats.skipped); return false;
   }
+  log(`${planned.length}/${Q.length} searches tonight`);
+  const batches = [];
+  for (const country of [...new Set(planned.map((x) => x.country))]) {
+    const qs = planned.filter((x) => x.country === country);
+    for (let i = 0; i < qs.length; i += CHUNK) batches.push([country, qs.slice(i, i + CHUNK)]);
+  }
+  const runs = [];
+  for (const [country, qs] of batches) runs.push(await startRun(country, qs));   // free plan: 5 concurrent runs
+  out.stats.runs = runs;
+  await Promise.all(runs.map(waitRun));
+  for (const run of runs) {
+    if (run.status === 'NOT-STARTED') { out.stats.errors.push({ stage: 'start', country: run.country, error: run.error }); continue; }
+    for (const it of await runItems(run)) ingest(it);
+    out.stats.pages_charged += run.pages || 0; out.stats.usd_total = +(out.stats.usd_total + (run.usd || 0)).toFixed(4);
+    if (run.dataset_error) out.stats.errors.push({ stage: 'dataset', country: run.country, error: run.dataset_error });
+    if (run.error) out.stats.errors.push({ stage: 'run', country: run.country, status: run.status, error: run.error });
+  }
+  const good = runs.filter((r) => r.status === 'SUCCEEDED' && !r.dataset_error);
+  out.stats.queries = good.reduce((n, r) => n + r.queries, 0);
+  out.stats.queries_failed = planned.length - out.stats.queries;
+  const firstError = out.stats.errors.find((e) => e.stage !== 'limits')?.error || 'unknown error';
+  if (!good.length) {
+    // A dead source must never read as a quiet night (owner, 2026-10-13).
+    out.stats.skipped = `searches failed tonight (${firstError}) — not a quiet night; they run again tomorrow`;
+    log(out.stats.skipped);
+  } else if (out.stats.queries_failed) {
+    out.stats.failed = `${out.stats.queries_failed} of ${planned.length} searches failed (${firstError})`;
+  }
+  return out.stats.queries_failed === 0;
 }
 
 // ── Posts: date from the id (free) → drop old → read the post → keep on-topic vacancies ──
-out.stats.posts_found = posts.length;
-let fetches = 0;
-for (const p of posts) {
-  let posted = postDate(p.url) || p.serp_date;
-  if (posted && ageDays(posted) > DAYS) { out.stats.posts_old++; continue; }
-  let text = p.snippet; let author = p.title; let fetchError = null;
-  if (NO_FETCH) fetchError = 'skipped: RADAR_GOOGLE_NO_FETCH';
-  else if (fetches >= MAX_POST_FETCH) fetchError = 'skipped: post-fetch cap';
-  else {
-    fetches++;
-    const r = await fetchPost(p.url);
-    if (r.error) fetchError = r.error; else { text = r.text || text; author = r.author || author; posted = posted || r.published; }
-    await sleep(1500);
+async function readPosts() {
+  out.stats.posts_found = posts.length;
+  let fetches = 0;
+  for (const p of posts) {
+    let posted = postDate(p.url) || p.serp_date;
+    if (posted && ageDays(posted) > DAYS) { out.stats.posts_old++; continue; }
+    let text = p.snippet; let author = p.title; let fetchError = null;
+    if (NO_FETCH) fetchError = 'skipped: RADAR_GOOGLE_NO_FETCH';
+    else if (fetches >= MAX_POST_FETCH) fetchError = 'skipped: post-fetch cap';
+    else {
+      fetches++;
+      const r = await fetchPost(p.url);
+      if (r.error) fetchError = r.error; else { text = r.text || text; author = r.author || author; posted = posted || r.published; }
+      await sleep(1500);
+    }
+    if (posted && ageDays(posted) > DAYS) { out.stats.posts_old++; continue; }
+    const all = `${p.title} ${p.snippet} ${text}`;
+    if (!PLAN_RE.test(all) || !HIRE_RE.test(all)) { out.stats.posts_offtopic++; continue; }
+    out.feed_posts.push({ url: p.url, query: p.query, posted: posted || null, author, text: cut(text, 400), fetch_error: fetchError });
   }
-  if (posted && ageDays(posted) > DAYS) { out.stats.posts_old++; continue; }
-  const all = `${p.title} ${p.snippet} ${text}`;
-  if (!PLAN_RE.test(all) || !HIRE_RE.test(all)) { out.stats.posts_offtopic++; continue; }
-  out.feed_posts.push({ url: p.url, query: p.query, posted: posted || null, author, text: cut(text, 400), fetch_error: fetchError });
+  out.stats.post_fetches = fetches;
+  out.stats.posts_kept = out.feed_posts.length;
 }
-out.stats.post_fetches = fetches;
-out.stats.posts_kept = out.feed_posts.length;
-if (!FIXTURE && TOKEN) {
-  try { mkdirSync(path.dirname(CACHE), { recursive: true }); writeFileSync(CACHE, JSON.stringify({ date: today, output: out })); } catch (e) { log(`cache not written: ${e.message}`); }
+
+try {
+  const cacheable = await search();
+  if (cacheable !== 'reused') {
+    await readPosts();
+    if (cacheable === true) {
+      try { mkdirSync(path.dirname(CACHE), { recursive: true }); writeFileSync(CACHE, JSON.stringify({ date: today, output: out })); } catch (e) { log(`cache not written: ${safe(e?.message)}`); }
+    }
+    log(`${out.stats.queries} searches ok, ${out.stats.queries_failed} failed, ${out.stats.pages_charged} pages, $${out.stats.usd_total}: ${out.stats.results} results → ${posts.length} posts (${out.stats.posts_old} older than ${DAYS} days, ${out.stats.posts_offtopic} off-topic) → ${out.feed_posts.length} kept (${out.stats.errors.length} errors)`);
+  }
+} catch (e) {
+  out.stats.errors.push({ stage: 'crash', error: safe(e?.message || e) });
+  out.stats.skipped ||= `collector error (${safe(e?.message || e)}) — not a quiet night`;
+  log(out.stats.skipped);
 }
-log(`${out.stats.queries} searches, ${out.stats.pages_charged} pages, $${out.stats.usd_total}: ${out.stats.results} results → ${posts.length} posts (${out.stats.posts_old} older than ${DAYS} days, ${out.stats.posts_offtopic} off-topic) → ${out.feed_posts.length} kept (${out.stats.errors.length} errors)`);
-emit();
+process.stdout.write(JSON.stringify(out));

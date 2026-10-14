@@ -76,17 +76,42 @@ jobs:
         with:
           node-version: 24
 
+      - name: Today's date (UTC)
+        id: day
+        if: steps.guard.outputs.skip != 'true'
+        run: echo "day=$(date -u +%F)" >> "$GITHUB_OUTPUT"
+
+      # Same UTC day → reuse that day's Google results instead of paying again. They live in the Actions cache (not
+      # in git), so re-runs on an older commit and queued runs find them too, and the publish step never conflicts.
+      - name: Restore today's Google results
+        id: gcache
+        if: steps.guard.outputs.skip != 'true'
+        uses: actions/cache/restore@v4
+        with:
+          path: tmp/google-cache.json
+          key: google-cache-${{ steps.day.outputs.day }}
+
       # The Apify token lives ONLY in this step: the later steps run third-party code (career-ops and its npm
-      # dependencies), which never sees it. Same UTC day → the collector reuses state/google-cache.json (no charge).
+      # dependencies), which never sees it.
       - name: LinkedIn posts via Google (Apify)
         if: steps.guard.outputs.skip != 'true'
         env:
           APIFY_TOKEN: ${{ secrets.APIFY_TOKEN }}   # optional — see README "LinkedIn posts via Google"
           RADAR_DAYS: '3'
+          RADAR_TODAY: ${{ steps.day.outputs.day }}
         run: |
-          mkdir -p tmp logs state
+          mkdir -p tmp logs
+          rm -f state/google-cache.json   # old location (commit 175632c kept it in git); the publish step records the removal
           node radar/collect-google.mjs > tmp/google.json 2> logs/google.log || true
           cat logs/google.log
+
+      - name: Save today's Google results
+        if: steps.guard.outputs.skip != 'true' && steps.gcache.outputs.cache-hit != 'true' && hashFiles('tmp/google-cache.json') != ''
+        continue-on-error: true
+        uses: actions/cache/save@v4
+        with:
+          path: tmp/google-cache.json
+          key: google-cache-${{ steps.day.outputs.day }}
 
       - name: Fetch career-ops (pinned)
         if: steps.guard.outputs.skip != 'true'

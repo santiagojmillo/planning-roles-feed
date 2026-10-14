@@ -40,7 +40,8 @@ const C_REMOTE = '("demand planning" OR "supply planning" OR "S&OP" OR "IBP" OR 
 const PT = '("demand planning" OR "supply planning" OR "S&OP" OR planejamento) AND (Portuguese OR português OR Brazil OR Brasil OR LATAM) AND (manager OR head OR director OR regional OR gerente)';
 const DTC = '(replenishment OR "inventory planning" OR "open to buy" OR "supply chain manager" OR "head of supply chain") AND (Shopify OR ecommerce OR e-commerce OR DTC OR Amazon OR "consumer brand") AND (manager OR head OR director)';
 const RARE = '(CPIM OR APICS OR DDMRP OR "contract manufacturers" OR "excess and obsolete") AND (planning OR "supply chain") AND (manager OR head OR director OR lead)';
-// Roles that say they hire from anywhere — the body must confirm it (build.mjs drops 'worldwide' items whose text lacks the phrase).
+// Roles that say they hire from anywhere — the body must confirm it (build.mjs drops 'worldwide' items whose text lacks the
+// phrase, unless the title passes the normal filter and the role sits in a Colombia/LATAM/Spain lane on its own merits).
 const WORLDWIDE = [
   '"open to applicants worldwide" ("supply chain" OR planning OR operations OR inventory)',
   '("work from anywhere" OR "remote worldwide" OR "globally distributed" OR "anywhere in the world") AND ("supply chain" OR planning OR inventory)',

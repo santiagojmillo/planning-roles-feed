@@ -55,9 +55,10 @@ const tff = portals.title_filter_full || portals.title_filter;
 const tfMain = portals.title_filter || tff;
 const passes = (tf, t) => tf.positive.some((k) => kwTest(k, t)) && !tf.negative.some((k) => kwTest(k, t));
 // The 'worldwide' LinkedIn lane searches for roles that SAY they hire from anywhere; any supply-chain/planning/
-// operations title may carry that, so it only has to clear the negative list. When such a role would only qualify
-// as a long shot (us-remote-unstated / remote-other-intl), the body must confirm the phrase ('phrase-not-in-body'
-// otherwise); a role located in Colombia, LATAM or Spain keeps its lane — it qualifies on its own.
+// operations title may carry that, so it only has to clear the negative list. The loose title is allowed only
+// because the body must then confirm the phrase ('phrase-not-in-body' otherwise). One exception: a role whose
+// title also passes the normal title filter and whose lane is a real one (Colombia, LATAM, Spain) keeps that lane
+// — it would have qualified through any other source. Long-shot lanes always need the phrase.
 const WORLDWIDE = new Set(['linkedin:worldwide']);
 const PHRASE_LANES = new Set(['us-remote-unstated', 'remote-other-intl']);
 const LOOSE_SC = /(supply|planning|planeaci|planific|inventor|s&op|\bibp\b|operations|operaciones|logistic|log[ií]stica|procurement|sourcing|abastec|fulfil)/i;
@@ -348,7 +349,7 @@ for (const j of survivors) {
     else if (g.country === 'LATAM' && g.countryLevel) verdict = { lane: 'latam-remote', drop_reason: null };
     else verdict = { lane: null, drop_reason: j.detail_error?.startsWith('skipped') ? 'detail-skipped' : 'detail-failed' };
   }
-  if (verdict.lane && WORLDWIDE.has(j.source) && !fields.intl_ok && PHRASE_LANES.has(verdict.lane)) verdict = { lane: null, drop_reason: 'phrase-not-in-body' };
+  if (verdict.lane && WORLDWIDE.has(j.source) && !fields.intl_ok && (PHRASE_LANES.has(verdict.lane) || !passes(tff, j.title))) verdict = { lane: null, drop_reason: 'phrase-not-in-body' };
   if (!verdict.lane) {
     const why = verdict.drop_reason === 'us-only' ? `us-only: ${fields.us_only_signals.join(' | ')}`.slice(0, 160)
       : /^detail-/.test(verdict.drop_reason) ? j.detail_error

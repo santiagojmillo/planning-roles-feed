@@ -25,5 +25,7 @@ It runs in its own workflow step, the only one that receives the secret:
 Before searching, a budget guard reads the account's live usage and spreads what is left over the days remaining in
 the billing cycle, keeping $0.30 (`RADAR_APIFY_RESERVE_USD`, set in the workflow step if you want another value)
 untouched for the 7 am routine; when the credit is low it runs fewer searches or none and says so in
-`sources.google`. A second run on the same UTC day reuses `state/google-cache.json` instead of paying again.
-Without the secret the "google" source reports `skipped: not set up` and nothing else changes.
+`sources.google` (only a `low_credit` flag is published — no balances; the repo and its logs are public). A night
+where every search failed is reported in `skipped`, never as "0 posts". After a fully successful night the results
+are kept in the GitHub Actions cache for that UTC day, so a re-run or forced run the same day reuses them instead of
+paying again. Without the secret the "google" source reports `skipped: not set up` and nothing else changes.
