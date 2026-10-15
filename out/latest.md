@@ -1,155 +1,164 @@
-# Job radar — 2026-10-14
+# Job radar — 2026-10-15
 
-New live roles (≤3 days): **1**
+New live roles (≤3 days): **11**
 
 | Age | Lane | Remote | Company | Title | Location | Salary | Flags | Source |
 |---|---|---|---|---|---|---|---|---|
-| 0d | colombia-bogota | no | COSOSTENIBLE SAS / Energía Solar | [Líder de Compras y planeación de la demanda](https://www.linkedin.com/jobs/view/4479248640) | Bogotá D.C. Metropolitan Area |  | — | linkedin:colombia |
+| 1d | colombia-medellin | no | ACIERTA HEADHUNTER | [COORDINADOR/A DE PLANEACIÓN E INVENTARIOS / LOGÍSTICA MULTISEDE / MEDELLÍN](https://www.linkedin.com/jobs/view/4478498537) | Medellín, Antioquia, Colombia |  | fixed-term | linkedin:colombia |
+| 0d | colombia-bogota | no | smithnephew | [AWM Supply Planner](https://smithnephew.wd5.myworkdayjobs.com/external/job/COL---Bogota-Oficinas/AWM-Supply-Planner_R92715) | COL - Bogota-Oficinas |  | intl | ats |
+| 1d | colombia-bogota | ? | Zimmer Biomet | [Materials Planning Manager](https://www.linkedin.com/jobs/view/4460971935) | Bogota, D.C., Capital District, Colombia |  | — | linkedin:colombia |
+| 1d | latam-remote | yes | capco | [ENGENHEIRO DE PLANEJAMENTO- REMOTO - Rio de Janeiro](https://job-boards.greenhouse.io/capco/jobs/8281336) | Brazil - Rio de Janeiro |  | — | ats |
+| 1d | spain-madrid | no | ADEO | [Head of Supply Chain & CX Marketplace](https://www.linkedin.com/jobs/view/4479294294) | Greater Madrid Metropolitan Area |  | — | linkedin:madrid |
+| 1d | spain-madrid | ? | Boston Consulting Group (BCG) | [Director - BCG Vantage, Operations; Supply Chain](https://www.linkedin.com/jobs/view/4451472363) | Madrid, Community of Madrid, Spain | $174,100.00 | us-only:1 | linkedin:madrid |
+| 1d | spain-madrid | no | ScentAir España | [Supply planner](https://www.linkedin.com/jobs/view/4479545639) | Madrid, Community of Madrid, Spain |  | — | linkedin:madrid |
+| 1d | spain-madrid | ? | Straumann Group | [E2ESupply Chain Planner (MTO & MTS)](https://www.linkedin.com/jobs/view/4477002028) | Madrid, Community of Madrid, Spain |  | — | linkedin:madrid |
+| 1d | remote-intl | yes | New Balance | [Senior Manager, Apparel Global Supply Planning](https://www.linkedin.com/jobs/view/4459596433) | Lawrence, MA | $141,200.00 - $182,200.00 | us-only:1 · intl · temporal · part-time | linkedin:us-remote |
+| 1d | us-remote-unstated | yes | bedrock-robotics | [Head of Operations Planning and Special Projects](https://jobs.ashbyhq.com/bedrock-robotics/ef4ed0a0-a27a-48e0-8c85-418e26c1faff) | San Francisco, CA · San Francisco · United States |  | — | ats |
+| 1d | us-remote-unstated | ? | roquette | [NORAM Senior Supply Planner](https://roquette.wd3.myworkdayjobs.com/external/job/Keokuk/NORAM-Senior-Supply-Planner_R0027343) | Keokuk · Geneva (USA) | $ 100,000 – $130,000 | — | ats |
 
 ```
 {
  "counts": {
-  "candidates": 1130,
+  "candidates": 1311,
   "undated": 0,
-  "too_old": 56,
-  "title": 976,
-  "dup_in_run": 12,
-  "already_seen": 47,
-  "detail_fetched": 34,
+  "too_old": 120,
+  "title": 1027,
+  "dup_in_run": 9,
+  "already_seen": 49,
+  "detail_fetched": 103,
   "detail_skipped": 0,
-  "detail_failed": 3,
+  "detail_failed": 0,
   "not_eligible": {
-   "aggregator": 2,
-   "latam-onsite": 7,
-   "us-only": 3,
-   "es-other-city-onsite": 1,
-   "us-onsite": 20,
-   "detail-failed": 3,
-   "other-country": 2
+   "aggregator": 3,
+   "latam-onsite": 22,
+   "es-other-city-onsite": 6,
+   "us-only": 8,
+   "us-onsite": 35,
+   "other-country": 21
   },
-  "new": 1,
-  "feed_posts": 10,
+  "new": 11,
+  "feed_posts": 1,
   "feed_dropped": {
    "undated": 0,
    "too_old": 0,
-   "already_seen": 0
+   "already_seen": 1
   }
  },
  "sources": {
   "ats": {
-   "candidates": 12
+   "candidates": 44
   },
   "linkedin": {
    "lanes": "<12 items>",
    "window": "r259200",
    "total_queries": 58,
-   "pages": 215,
-   "cards": 2074,
-   "unique": 1055,
-   "blocked": 6,
-   "rate_limited": 125,
-   "retries": 119,
-   "elapsed_s": 4765,
+   "pages": 236,
+   "cards": 2318,
+   "unique": 1124,
+   "blocked": 0,
+   "rate_limited": 37,
+   "retries": 37,
+   "elapsed_s": 1421,
    "by_lane": {
     "colombia": {
      "queries": 15,
-     "pages": 57,
-     "cards": 521,
-     "unique": 267,
+     "pages": 63,
+     "cards": 597,
+     "unique": 271,
      "failed": 0
     },
     "us-remote": {
      "queries": 7,
-     "pages": 27,
-     "cards": 270,
-     "unique": 171,
-     "failed": 3
+     "pages": 35,
+     "cards": 350,
+     "unique": 208,
+     "failed": 0
     },
     "madrid": {
      "queries": 4,
-     "pages": 19,
-     "cards": 186,
-     "unique": 127,
-     "failed": 1
+     "pages": 20,
+     "cards": 200,
+     "unique": 134,
+     "failed": 0
     },
     "spain": {
      "queries": 5,
      "pages": 25,
      "cards": 250,
-     "unique": 95,
+     "unique": 99,
      "failed": 0
     },
     "latam-remote": {
      "queries": 5,
      "pages": 25,
      "cards": 250,
-     "unique": 114,
+     "unique": 105,
      "failed": 0
     },
     "mexico": {
      "queries": 2,
-     "pages": 9,
-     "cards": 90,
-     "unique": 18,
-     "failed": 1
+     "pages": 10,
+     "cards": 100,
+     "unique": 24,
+     "failed": 0
     },
     "argentina": {
      "queries": 2,
-     "pages": 7,
-     "cards": 53,
-     "unique": 41,
+     "pages": 8,
+     "cards": 74,
+     "unique": 52,
      "failed": 0
     },
     "chile": {
      "queries": 2,
-     "pages": 8,
-     "cards": 78,
-     "unique": 50,
+     "pages": 10,
+     "cards": 100,
+     "unique": 58,
      "failed": 0
     },
     "peru": {
      "queries": 2,
-     "pages": 9,
-     "cards": 86,
-     "unique": 47,
+     "pages": 10,
+     "cards": 97,
+     "unique": 53,
      "failed": 0
     },
     "brazil": {
      "queries": 3,
      "pages": 15,
      "cards": 150,
-     "unique": 71,
+     "unique": 68,
      "failed": 0
     },
     "worldwide": {
      "queries": 9,
-     "pages": 8,
-     "cards": 80,
-     "unique": 12,
-     "failed": 1
+     "pages": 9,
+     "cards": 90,
+     "unique": 15,
+     "failed": 0
     },
     "dtc": {
      "queries": 2,
      "pages": 6,
      "cards": 60,
-     "unique": 42,
+     "unique": 37,
      "failed": 0
     }
    },
-   "failed_queries": "<6 items>",
+   "failed_queries": [],
    "queries": "<58 items>"
   },
   "boards": {
    "magneto": {
-    "sitemap": 29686,
+    "sitemap": 29678,
     "candidates": 4,
     "fetched": 4
    },
    "getonbrd": {
-    "error": "SyntaxError: Unexpected token 'F', \"Forbidden\" is not valid JSON"
+    "items": 83
    },
    "remotive": {
-    "items": 48
+    "items": 45
    },
    "sgestion:sg_chazey": {
     "items": 11
@@ -160,32 +169,33 @@ New live roles (≤3 days): **1**
    "queries_planned": 4,
    "queries_skipped": 3,
    "queries": 4,
-   "pages_charged": 3,
+   "queries_failed": 0,
+   "pages_charged": 2,
    "usd_total": 0.009,
-   "results": 14,
+   "results": 4,
    "other_urls": 0,
-   "duplicates": 1,
-   "posts_found": 13,
+   "duplicates": 0,
+   "posts_found": 4,
    "posts_old": 2,
-   "posts_offtopic": 1,
-   "post_fetches": 11,
+   "posts_offtopic": 0,
+   "post_fetches": 2,
    "errors": [],
    "by_query": {
-    "co-buscamos-planeacion": {
-     "results": 1,
-     "posts": 1
-    },
     "co-vacante-planeacion": {
-     "results": 2,
-     "posts": 1
+     "results": 3,
+     "posts": 3
+    },
+    "co-buscamos-planeacion": {
+     "results": 0,
+     "posts": 0
     },
     "co-vacante-supply-chain": {
      "results": 1,
      "posts": 1
     },
     "en-demand-planning": {
-     "results": 10,
-     "posts": 10
+     "results": 0,
+     "posts": 0
     }
    },
    "runs": [
@@ -193,9 +203,9 @@ New live roles (≤3 days): **1**
      "country": "co",
      "queries": 3,
      "status": "SUCCEEDED",
-     "pages": 3,
+     "pages": 2,
      "usd": 0.009049999999999999,
-     "secs": 441,
+     "secs": 81,
      "error": null
     },
     {
@@ -204,39 +214,61 @@ New live roles (≤3 days): **1**
      "status": "SUCCEEDED",
      "pages": 0,
      "usd": 0.00005,
-     "secs": 39,
+     "secs": 71,
      "error": null
     }
    ],
    "budget": {
-    "days_left": 13,
-    "reserve_usd": 0.3,
-    "per_night_usd": 0.0203,
-    "pages_allowed": 4,
     "low_credit": true
    },
-   "posts_kept": 10
+   "posts_kept": 2
   },
   "detail": {
-   "fetched": 34,
-   "failed": 3,
+   "fetched": 103,
+   "failed": 0,
    "skipped": 0,
    "max": 150,
-   "requests": 49,
-   "retries": 12,
+   "requests": 114,
+   "retries": 11,
    "by_host": {
-    "abbott.wd5.myworkdayjobs.com": 1,
-    "linkedin": 38,
-    "unilever.wd3.myworkdayjobs.com": 1,
-    "shi.wd12.myworkdayjobs.com": 1,
-    "nutraceutical.wd501.myworkdayjobs.com": 1,
-    "medline.wd5.myworkdayjobs.com": 1,
-    "ingrammicro.wd5.myworkdayjobs.com": 1,
-    "gilead.wd1.myworkdayjobs.com": 1,
+    "levistraussandco.wd5.myworkdayjobs.com": 1,
+    "flextronics.wd1.myworkdayjobs.com": 2,
+    "ag.wd3.myworkdayjobs.com": 1,
+    "linkedin": 71,
     "boards-api.greenhouse.io": 1,
-    "westlake.wd1.myworkdayjobs.com": 1,
-    "kbr.wd5.myworkdayjobs.com": 1,
-    "begacheese.wd3.myworkdayjobs.com": 1
+    "gehc.wd5.myworkdayjobs.com": 1,
+    "roquette.wd3.myworkdayjobs.com": 1,
+    "smithnephew.wd5.myworkdayjobs.com": 2,
+    "vst.wd5.myworkdayjobs.com": 1,
+    "saputo.wd5.myworkdayjobs.com": 1,
+    "mckesson.wd3.myworkdayjobs.com": 1,
+    "jj.wd5.myworkdayjobs.com": 1,
+    "iqvia.wd1.myworkdayjobs.com": 1,
+    "generalmotors.wd5.myworkdayjobs.com": 1,
+    "coke.wd1.myworkdayjobs.com": 1,
+    "amgen.wd1.myworkdayjobs.com": 2,
+    "abbott.wd5.myworkdayjobs.com": 3,
+    "api.ashbyhq.com": 2,
+    "qvc.wd5.myworkdayjobs.com": 1,
+    "careers-dartmouth-hitchcock.icims.com": 1,
+    "careers-wrenchgroup.icims.com": 1,
+    "uscareers-fujifilm.icims.com": 1,
+    "careers-ymmc.icims.com": 1,
+    "visa.wd5.myworkdayjobs.com": 1,
+    "silabs.wd1.myworkdayjobs.com": 1,
+    "sbdinc.wd1.myworkdayjobs.com": 1,
+    "philips.wd3.myworkdayjobs.com": 1,
+    "my7elevenhr.wd12.myworkdayjobs.com": 1,
+    "micron.wd1.myworkdayjobs.com": 1,
+    "idexcorp.wd5.myworkdayjobs.com": 1,
+    "hitachi.wd1.myworkdayjobs.com": 1,
+    "gea.wd3.myworkdayjobs.com": 1,
+    "exclusivenetworks.wd103.myworkdayjobs.com": 1,
+    "bpinternational.wd3.myworkdayjobs.com": 1,
+    "bmo.wd3.myworkdayjobs.com": 1,
+    "barclays.wd3.myworkdayjobs.com": 1,
+    "slrconsulting.wd103.myworkdayjobs.com": 1,
+    "recrute1-carrefour.icims.com": 1
    },
    "circuit_open": [],
    "mode": "live"
@@ -247,44 +279,41 @@ New live roles (≤3 days): **1**
 
 ## Feed posts (LinkedIn posts found via Google, ≤ window)
 
-- 2d · IZA CONSULTORES — [📦🚚 ¡ESTAMOS CONTRATANDO! 🚚📦 💼 VACANTE: JEFE DE ALMACÉN ¿Tienes experiencia en almacenes, manejo de person…](https://www.linkedin.com/posts/iza-consultores_estamos-contratando-vacante-activity-7515483783802929152-htEF)
-- 3d · Juan Carlos Beltran — [🇻🇪 𝗩𝗘𝗡𝗘𝗭𝗨𝗘𝗟𝗔'𝗦 𝗢𝗜𝗟 𝗥𝗘𝗖𝗢𝗩𝗘𝗥𝗬 𝗛𝗔𝗦 𝗔 𝗪𝗢𝗥𝗞𝗙𝗢𝗥𝗖𝗘 𝗤𝗨𝗘𝗦𝗧𝗜𝗢𝗡 📌 𝗘𝗫𝗘𝗖𝗨…](https://www.linkedin.com/posts/juan-carlos-beltran_venezuela-oilandgas-workforce-activity-7515114767783661569-bf5k)
-- 2d · SCOPE Recruiting - Supply Chain Recruiters — [Should supply chain jobs require a bachelor's degree? Compare degree-based and skills-based hiring to build jo…](https://www.linkedin.com/posts/scope-recruiting_read-the-full-article-activity-7515433897925660672-I6Tj)
-- 1d · Dhvani Gor — [🚨 Urgent Hiring / Supply Chain Analyst / Supply Chain Implementation Specialist A fast-growing AI-driven Star…](https://www.linkedin.com/posts/e-qube-digital-services_hiring-supplychain-supplychainanalytics-activity-7515735740597669888-wQ8t)
-- 2d · Mohammed Suhail M — [🌟Hiring / Supply Chain & Planning / Saudi Arabia Saudi Logistics Services Company (SLSC) is pleased to announ…](https://www.linkedin.com/posts/mohammed-suhail-m-3a0368140_hiring-supply-chain-planning-saudi-activity-7515329853559169024-tlSU)
-- 3d · Shahrukh Khan (MBA) — [📢 We Are Hiring / Saudi Logistics Services Company (SLSC) The Saudi Logistics Services Company (SLSC) is plea…](https://www.linkedin.com/posts/fahaddaldossary_%D8%A7%D9%84%D8%B1%D8%A6%D9%8A%D8%B3%D9%8A%D8%A9-slsc-activity-7514948694052417536-icld)
-- 1d · Kiel H. — [I am hiring for an experienced Instock Manager to help with our inventory planning and operations. If you or a…](https://www.linkedin.com/posts/khammjp_instock-manager-physical-music-merch-activity-7515590238728294400-Rajb)
-- 2d · VRINDA INTERNATIONAL — [🚨 WE ARE HIRING / Oracle SCM Planning Functional Specialist 📍 Location: Bangalore (On-Site) 💼 Experience: 8…](https://www.linkedin.com/posts/vrindainternational_vrinda-international-oracle-scm-planning-activity-7515306508889395200-SR4V)
-- 1d · Join Talent — [Expanding into a new market doesn't always need to start with establishing a new entity. Sometimes, you need t…](https://www.linkedin.com/posts/jointalentuk_employerofrecord-globalhiring-internationalexpansion-activity-7515697913898061824-oVIX)
-- 2d · Ridwan Nugraha Permana — [✨ WE ARE #HIRING – Operations Business Analytics & Reporting Analyst 🏢 Industry: Insurance 📍 Placement: Sout…](https://www.linkedin.com/posts/muhammadrafi21_hiring-wearehiring-hiring-activity-7515228808057163776-jwO5)
+- 3d · Grupo Porres® — [#LunesDeTalento 🚀 Tu próxima oportunidad profesional podría estar aquí. Tenemos vacantes para ti: 🍃Gerente d…](https://www.linkedin.com/posts/grupo-porres%C2%AE_lunesdetalento-lunesdetalento-talentogrupoporres-activity-7515458059402493952-RE9c)
 
 ## Dropped (samples)
 
-- **us-onsite** (20)
-  - [Associate Director, US Condiments Channel Strategy Planning & Operations](https://unilever.wd3.myworkdayjobs.com/unilever_experienced_professionals/job/Hoboken-US-HQ/Associate-Director--US-Condiments-Channel-Strategy-Planning---Operations_R-1188075) — unilever — Hoboken US HQ → remote=false: diments CS&P Location: Hoboken NJ (hybrid) Terms & Conditions: International
-  - [Operations Demand Planner - IDCS](https://shi.wd12.myworkdayjobs.com/shicareers/job/Piscataway-NJ-USA/Operations-Demand-Planner---IDCS_JR3868-1) — shi — Piscataway, NJ USA → remote=null (no evidence)
-  - [Supply Chain Planning Manager](https://nutraceutical.wd501.myworkdayjobs.com/betterbeingexternalcareersite/job/Ogden-Utah/Supply-Chain-Planning-Manager_JR100877) — nutraceutical — Ogden, Utah → remote=null (no evidence)
-  - [Executive Director, NA Supply & Demand Planning](https://ingrammicro.wd5.myworkdayjobs.com/ingrammicro/job/Irvine-CA-United-States-of-America/Executive-Director--Partner-Planning_R-116189) — ingrammicro — Irvine, CA, United States of America → remote=false: nited States of America Workplace: Hybrid Time type: Full time Accelerate yo
-  - [Associate Director, Supply Chain](https://gilead.wd1.myworkdayjobs.com/kitepharmacareers/job/United-States---California---El-Segundo/Associate-Director--Supply-Chain_R0055588-2) — gilead — United States - California - El Segundo → remote=false: California - El Segundo Workplace: Onsite - Hybrid Eligible Time type: Full
-- **latam-onsite** (7)
-  - [Gerente de Planeación](https://abbott.wd5.myworkdayjobs.com/abbottcareers/job/Mexico---Cuidad-de-Mexico---Cuidad-de-Mexico/Gerente-de-Planeacin_31164421) — abbott — Mexico - Cuidad de Mexico - Cuidad de Mexico → remote=null (no evidence)
-  - [Gerente de Planejamento](https://www.linkedin.com/jobs/view/4479261031) — Jobbol — Limeira, São Paulo, Brazil → remote=false: es Adicionais • Contrato: Efetivo. Presencial. Candidatos de Cordeirópolis, Irac
-  - [Coordenador(a) de Planejamento e Controle de Produção (PCP)](https://www.linkedin.com/jobs/view/4478184804) — Brainfarma — Itapecerica da Serra, São Paulo, Brazil → remote=null (no evidence)
-  - [Gerente de planejamento financeiro](https://www.linkedin.com/jobs/view/4476439486) — Empresa de resíduos — São João de Meriti, Rio de Janeiro, Brazil → remote=null (no evidence)
-  - [Senior Supply Planner,](https://www.linkedin.com/jobs/view/4479085567) — Baxter International Inc. — Monterrey, Nuevo León, Mexico → remote=null (no evidence)
-- **us-only** (3)
-  - [Supply Planner](https://www.linkedin.com/jobs/view/4478185817) — Neogen Corporation — United States → us-only: 401(k) / authorization to work in the United States and oth
-  - [Replenishment Manager – Walmart](https://medline.wd5.myworkdayjobs.com/medline/job/REMOTE--Arkansas/Replenishment-Analyst---Walmart-Sam-s-Club_R2614881) — medline — REMOTE- Arkansas → us-only: 401(k)
-  - [Demand and Supply Management Team Leader (REMOTE)](https://www.linkedin.com/jobs/view/4476623622) — Thermo Fisher Scientific — United, PA → us-only: US Remote area, or East Coast US Remote / US Remote area and support the Clinical
-- **detail-failed** (3)
-  - [Planning Manager](https://www.linkedin.com/jobs/view/4479240491) — MCP LLC — Somerville, TN → HTTP 429
-  - [Supply Chain Planning Manager](https://www.linkedin.com/jobs/view/4478184094) — Better Being Co. — Ogden, UT → HTTP 429
-  - [Planning Manager](https://www.linkedin.com/jobs/view/4478576068) — Danone — West Jordan, UT → HTTP 429
-- **aggregator** (2)
+- **us-onsite** (35)
+  - [Emergency Planning Manager - Davis-Besse](https://vst.wd5.myworkdayjobs.com/vistra_careers/job/Oak-Harbor-Ohio/Emergency-Planning-Manager---Davis-Besse_40016740-1) — vst — Oak Harbor, Ohio → remote=null (no evidence)
+  - [Supply Planner](https://saputo.wd5.myworkdayjobs.com/saputo_external_careers/job/Milwaukee-WI/Supply-Planner_JR67754) — saputo — Milwaukee, WI → remote=false: Location: Milwaukee, WI Workplace: Hybrid Time type: Full time At Saputo, we
+  - [Director, Customer Facing Demand Planning](https://mckesson.wd3.myworkdayjobs.com/external_careers/job/USA-TX-Irving/Director--Customer-Facing-Demand-Planning_JR0153449-1) — mckesson — USA, TX, Irving → remote=false: cation: USA, TX, Irving Workplace: Hybrid Time type: Full time McKesson is a
+  - [Sr. Director, Supply Chain Digitization](https://jj.wd5.myworkdayjobs.com/displacedemployees/job/New-Brunswick-New-Jersey-United-States-of-America/Sr-Director--Supply-Chain-Digitization_R-103726) — jj — New Brunswick, New Jersey, United States of America → remote=false: nited States of America Workplace: Hybrid Work Time type: Full time At Johns
+  - [Associate Director, Real World Evidence Strategy (Integrated Evidence Planning) (FSP Sponsor Dedicated)](https://iqvia.wd1.myworkdayjobs.com/iqvia/job/Durham-North-Carolina-United-States-of-America/Associate-Director--Real-World-Evidence-Strategy--Integrated-Evidence-Planning---FSP-Sponsor-Dedicated-_R1574298) — iqvia — Durham, North Carolina, United States of America → remote=null (no evidence)
+- **latam-onsite** (22)
+  - [Senior Manager, Sourcing & Supply Planning Analytics](https://levistraussandco.wd5.myworkdayjobs.com/external/job/Office-Mexico-DF-Mexico/Senior-Manager--Sourcing---Supply-Planning-Analytics_R-0158178) — levistraussandco — Office Mexico DF Mexico → remote=null (no evidence)
+  - [Materials Planning Manager](https://flextronics.wd1.myworkdayjobs.com/careers/job/Mexico-Guadalajara/Materials-Planning-Manager_WD231665) — flextronics — Mexico, Guadalajara → remote=null (no evidence)
+  - [Materials Planning Manager](https://www.linkedin.com/jobs/view/4478843714) — Flex — Guadalajara, Jalisco, Mexico → remote=null (no evidence)
+  - [Gerente Abastecimiento / Capex](https://www.linkedin.com/jobs/view/4479742276) — Grupo México — Mexico City Metropolitan Area → remote=null (no evidence)
+  - [S&OP Leader - LATAM](https://gehc.wd5.myworkdayjobs.com/gehc_externalsite/job/Sao-Paulo/S-OP-Leader---LATAM_R4046746-1) — gehc — Sao Paulo · MEX03-01-Mexico City-SAMARA · COL01-01-Bogota-Av Cra. 72 No 80-94 → remote=false: aboration and support. #LI-AG1 #LI-Hybrid Additional Information Relocation
+- **other-country** (21)
+  - [Director - Client Success and Business Planning](https://visa.wd5.myworkdayjobs.com/visa/job/SA---Riyadh-Saudi-Arabia/Director---Client-Success-and-Business-Planning_REF089301W) — visa — SA - Riyadh, Saudi Arabia → remote=false: ion. Visa requires at least 3 days in office, expectations of these days will b
+  - [Supply Chain Director, ASEAN](https://smithnephew.wd5.myworkdayjobs.com/external/job/SGP---Singapore/Supply-Chain-Director--ASEAN_R91997) — smithnephew — SGP - Singapore → remote=false: ance and much more. • Flexibility: Hybrid Working Model (For most profession
+  - [Senior Supply Chain Planner, Wafer & Backend](https://silabs.wd1.myworkdayjobs.com/experiencedjobs/job/Singapore/Senior-Supply-Chain-Planner--Wafer---Backend_20933) — silabs — Singapore → remote=false: is above Tai Seng MRT station #LI-Hybrid #LI-DK1 Silicon Labs is an equal o
+  - [Supply Planner](https://sbdinc.wd1.myworkdayjobs.com/stanley_black_decker_career_site/job/Tokyo-Japan/Supply-Planner_REQ-1000049032) — sbdinc — Tokyo, Japan → remote=false: me Supply Planner – Tokyo, Japan – On-site Come make the world and accelerate
+  - [Audit Director Integrated Supply Chain](https://philips.wd3.myworkdayjobs.com/jobs-and-careers/job/Gurgaon/Audit-Director-Integrated-Supply-Chain_593578) — philips — Gurgaon → remote=false: n-person at least 3 days per week. Onsite roles require full-time presence i
+- **us-only** (8)
+  - [Associate Director, Merchandise Planning](https://www.linkedin.com/jobs/view/4478464553) — Brilliant Earth — United States → us-only: 401k / states: CA, California, Colorado, PA, Massachusetts, Marylan
+  - [Global Process Owner - Sales and Operations Planning](https://www.linkedin.com/jobs/view/4414499915) — Ciena — United States → us-only: 401(K)
+  - [Director, Growth Performance & Planning](https://www.linkedin.com/jobs/view/4478496648) — AnewHealth — United States → us-only: 401(k)
+  - [Supply Chain Director 1](https://www.linkedin.com/jobs/view/4478842386) — Celestica — Richardson, TX → us-only: states: TX, Massachusetts, Pennsylvania, Minnesota, Texas, A
+  - [Regional Marketing Planning Manager](https://careers-wrenchgroup.icims.com/jobs/13671/regional-marketing-planning-manager/job) — careers-wrenchgroup — Atlanta, GA, United States → us-only: 401K / eligible to work in the United States. However, we
+- **es-other-city-onsite** (6)
+  - [MRO Materiel Demand Planner](https://ag.wd3.myworkdayjobs.com/airbus/job/Sevilla---Tablada/MRO-Materiel-Demand-Planner_JR10442422-1) — ag — Sevilla - Tablada → remote=false: sets of data with an advance level in office package (Excel and Access). • SAP
+  - [Senior Demand Planner.](https://www.linkedin.com/jobs/view/4479794038) — Zennio — Toledo, Castile-La Mancha, Spain → remote=false: variable. 📄Contrato indefinido 🏡 Presencial en nuestras oficinas de Toledo. 🏖
+  - [MRO Materiel Demand Planner](https://www.linkedin.com/jobs/view/4477045804) — Airbus Defence and Space — Seville, Andalusia, Spain → remote=false: sets of data with an advance level in office package (Excel and Access). • SAP
+  - [Supply chain Planning Manager & BPO Raw Materials](https://www.linkedin.com/jobs/view/4470409517) — Ontex — Segovia, Castilla and Leon, Spain → remote=false: ly. • Life and health insurance. • Hybrid working model (2 days working from
+  - [Coordinador/a de planificación de la demanda](https://www.linkedin.com/jobs/view/4478438392) — SKLUM — Valencia, Valencian Community, Spain → remote=null (no evidence)
+- **aggregator** (3)
+  - [Director of Supply Chain & Global Logistics](https://jobs.lever.co/jobgether/918d01e7-1596-4472-8675-1ca05309d5dd) — jobgether — US
   - [Senior Manager, Global E2E Product Supply Planning & RCCP](https://www.linkedin.com/jobs/view/4477960835) — Jobgether — United States
   - [Sr. Demand Planner](https://www.linkedin.com/jobs/view/4477962870) — Jobgether — United States
-- **other-country** (2)
-  - [Senior Planning Manager](https://kbr.wd5.myworkdayjobs.com/kbr_careers/job/Riyadh-Riyadh-Saudi-Arabia/Senior-Planning-Manager_R2131034) — kbr — Riyadh, Riyadh, Saudi Arabia → remote=null (no evidence)
-  - [Demand Planner](https://begacheese.wd3.myworkdayjobs.com/bega_careers/job/Docklands-VIC/Demand-Planner_JR-7869) — begacheese — Docklands (VIC) → remote=false: hey need to be. This position is a hybrid opportunity working from the offic
-- **es-other-city-onsite** (1)
-  - [DIGITAL PLANNING MANAGER AMERICAS](https://www.linkedin.com/jobs/view/4479241922) — Meliá Hotels International — Palma, Balearic Islands, Spain → remote=null (no evidence)
