@@ -62,9 +62,12 @@ const passes = (tf, t) => tf.positive.some((k) => kwTest(k, t)) && !tf.negative.
 const WORLDWIDE = new Set(['linkedin:worldwide']);
 const PHRASE_LANES = new Set(['us-remote-unstated', 'remote-other-intl']);
 const LOOSE_SC = /(supply|planning|planeaci|planific|inventor|s&op|\bibp\b|operations|operaciones|logistic|log[ií]stica|procurement|sourcing|abastec|fulfil)/i;
+// Startup boards (collect-startups.mjs: YC, HN) use the main filter too: startup titles such as "Head of Operations" or
+// "Supply Chain Manager" are the owner's DTC archetype but fail the stricter reverse-sweep net.
+const MAIN_FILTER_SOURCES = new Set(['ats', 'yc', 'hn']);
 const titleOk = (t, source) => (WORLDWIDE.has(source)
   ? LOOSE_SC.test(t) && !tff.negative.some((k) => kwTest(k, t))
-  : passes(source === 'ats' ? tfMain : tff, t));
+  : passes(MAIN_FILTER_SOURCES.has(source) ? tfMain : tff, t));
 
 // ── Aggregator drop list (config/portals.yml: aggregator_companies) ──
 const AGGREGATORS = (Array.isArray(portals.aggregator_companies) ? portals.aggregator_companies : ['jobgether', 'ladders', 'jobicy', 'remotestack', 'remote rocketship'])
@@ -90,7 +93,7 @@ for (const line of pipe.split('\n')) {
   nPipe++;
 }
 sources.ats = { candidates: nPipe };
-for (const f of ['linkedin', 'boards']) {
+for (const f of ['linkedin', 'boards', 'startups']) {
   const d = readJson(path.join(ROOT, `tmp/${f}.json`), null);
   if (!d) { sources[f] = { error: 'no output' }; continue; }
   sources[f] = d.stats;

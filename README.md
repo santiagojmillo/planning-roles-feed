@@ -2,7 +2,8 @@
 
 Daily collector of live (≤3 days old) demand & supply planning / S&OP roles from free public sources:
 career-ops tracked boards and its reverse sweep over public Greenhouse, Lever, Ashby, Workday and iCIMS boards,
-the LinkedIn public jobs listing, Magneto, GetOnBoard and Remotive.
+the LinkedIn public jobs listing, Magneto, GetOnBoard and Remotive, and startup boards: YC Work at a Startup (every
+company YC marks as hiring) and the monthly Hacker News "Who is hiring?" thread (`radar/collect-startups.mjs`).
 
 Runs in GitHub Actions at 03:00 Bogotá. Output: `out/latest.json` and `out/latest.md` (only roles not reported before).
 Built on [career-ops](https://github.com/career-ops-hq/career-ops) (MIT).
