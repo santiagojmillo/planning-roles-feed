@@ -67,7 +67,7 @@ const LOOSE_SC = /(supply|planning|planeaci|planific|inventor|s&op|\bibp\b|opera
 const MAIN_FILTER_SOURCES = new Set(['ats', 'yc', 'hn']);
 const titleOk = (t, source) => (WORLDWIDE.has(source)
   ? LOOSE_SC.test(t) && !tff.negative.some((k) => kwTest(k, t))
-  : passes(MAIN_FILTER_SOURCES.has(source) ? tfMain : tff, t));
+  : passes(MAIN_FILTER_SOURCES.has(source) || String(source).startsWith('employer:') ? tfMain : tff, t));
 
 // ── Aggregator drop list (config/portals.yml: aggregator_companies) ──
 const AGGREGATORS = (Array.isArray(portals.aggregator_companies) ? portals.aggregator_companies : ['jobgether', 'ladders', 'jobicy', 'remotestack', 'remote rocketship'])
@@ -93,7 +93,7 @@ for (const line of pipe.split('\n')) {
   nPipe++;
 }
 sources.ats = { candidates: nPipe };
-for (const f of ['linkedin', 'boards', 'startups']) {
+for (const f of ['linkedin', 'boards', 'startups', 'employers']) {
   const d = readJson(path.join(ROOT, `tmp/${f}.json`), null);
   if (!d) { sources[f] = { error: 'no output' }; continue; }
   sources[f] = d.stats;

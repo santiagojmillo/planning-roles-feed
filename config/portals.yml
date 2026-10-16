@@ -337,3 +337,39 @@ tracked_companies:
       country: us
       urlPrefix: us/en
     enabled: true
+
+  # -- LATAM startups (VC portfolio board) and Colombian / LATAM employers on readable ATSes (added 2026-10-16) --
+
+  - name: KASZEK (portfolio)
+    provider: consider
+    consider_board: kaszek
+    consider_size: 1200
+    careers_url: https://jobs.kaszek.com/jobs
+    enabled: true
+
+  - name: Quala
+    careers_url: https://qualacompany.teamtailor.com/jobs
+    enabled: true
+
+  - name: Colombina
+    provider: teamtailor
+    careers_url: https://colombina.na.teamtailor.com/jobs
+    api: https://colombina.na.teamtailor.com/jobs.rss
+    enabled: true
+
+  - name: O-I Glass (O-I Peldar)
+    careers_url: https://careers.smartrecruiters.com/O-I
+    enabled: true
+
+  - name: Bosch Group
+    careers_url: https://careers.smartrecruiters.com/BoschGroup
+    enabled: true
+
+# Board-wide remote feeds (scan.mjs applies title_filter to every row).
+job_boards:
+  - name: Remote OK
+    provider: remoteok
+    enabled: true
+  - name: Working Nomads
+    provider: workingnomads
+    enabled: true

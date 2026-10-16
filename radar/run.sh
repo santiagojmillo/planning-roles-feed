@@ -29,6 +29,7 @@ cp "$CO/data/scan-history.tsv" "$ROOT/state/scan-history.tsv" 2>/dev/null
 echo "== linkedin"; node "$ROOT/radar/collect-linkedin.mjs" > "$ROOT/tmp/linkedin.json" 2> "$ROOT/logs/linkedin.log"; cat "$ROOT/logs/linkedin.log"
 echo "== boards"; node "$ROOT/radar/collect-boards.mjs" > "$ROOT/tmp/boards.json" 2> "$ROOT/logs/boards.log"; cat "$ROOT/logs/boards.log"
 echo "== startups (YC Work at a Startup + HN Who is hiring)"; node "$ROOT/radar/collect-startups.mjs" > "$ROOT/tmp/startups.json" 2> "$ROOT/logs/startups.log"; cat "$ROOT/logs/startups.log"
+echo "== employers (Workday, Colombia/LATAM postings only)"; node "$ROOT/radar/collect-employers.mjs" > "$ROOT/tmp/employers.json" 2> "$ROOT/logs/employers.log"; cat "$ROOT/logs/employers.log"
 if [ "${RADAR_GOOGLE_PRECOLLECTED:-}" = "1" ]; then
   # The workflow runs the collector in its own step (the only one with the token); never re-run it here without one.
   echo "== google (collected in its own workflow step)"; cat "$ROOT/logs/google.log" 2>/dev/null

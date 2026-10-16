@@ -2,7 +2,9 @@
 
 Daily collector of live (≤3 days old) demand & supply planning / S&OP roles from free public sources:
 career-ops tracked boards and its reverse sweep over public Greenhouse, Lever, Ashby, Workday and iCIMS boards,
-the LinkedIn public jobs listing, Magneto, GetOnBoard and Remotive, and startup boards: YC Work at a Startup (every
+the LinkedIn public jobs listing, Magneto, elempleo, GetOnBoard, Remotive, Remote OK and Working Nomads; Colombian and
+LATAM employers (Quala and Colombina on Teamtailor, O-I and Bosch on SmartRecruiters, and the Colombia/LATAM postings of
+20 multinationals on Workday, `radar/collect-employers.mjs`); the KASZEK portfolio board; and startup boards: YC Work at a Startup (every
 company YC marks as hiring) and the monthly Hacker News "Who is hiring?" thread (`radar/collect-startups.mjs`).
 
 Runs in GitHub Actions at 03:00 Bogotá. Output: `out/latest.json` and `out/latest.md` (only roles not reported before).
