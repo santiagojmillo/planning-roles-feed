@@ -8,7 +8,7 @@
 //       RADAR_LI_TPR=r259200                  time window (LinkedIn f_TPR value)
 //       RADAR_LI_MAX_CONSECUTIVE_FAILS=8      skip the rest after N consecutive queries with no page (0 = never)
 //       RADAR_LI_MAX_MINUTES=150              skip the rest once the run exceeds this budget (0 = never);
-//                                             the full matrix is 58 queries (Boolean lanes); ~43 s/query under
+//                                             the full matrix is 64 queries (Boolean lanes); ~43 s/query under
 //                                             a 20% 429 rate, i.e. ~40 min
 // Output (stdout): {stats, jobs:[{source:'linkedin:<lane>', url, title, company, location, posted}]}
 //   stats.queries[]        {lane, loc, kw, status, pages, cards[, error]} — one per (location, keyword) query
@@ -48,6 +48,13 @@ const WORLDWIDE = [
   '("LATAM" OR "Latin America" OR Colombia) AND ("demand planning" OR "supply planning" OR "S&OP" OR "inventory planning" OR "supply chain manager") AND (remote OR contractor)',
 ];
 
+// Operations leadership at companies hiring remotely in LATAM (owner, 2026-10-17: Space Inch "Director of Operations –
+// LATAM", an American company's LinkedIn posting, reached a video interview but no planning query could find it).
+// The 'United States' location needs a LATAM word in the query, or US on-site ops roles flood the results.
+const OPS_LATAM = '("director of operations" OR "head of operations" OR "operations director" OR "VP of operations" OR "business operations" OR "senior operations manager") AND (LATAM OR "Latin America" OR Colombia OR "South America")';
+const OPS_REMOTE = '("director of operations" OR "head of operations" OR "operations director" OR "head of business operations" OR "business operations director") AND (remote OR remoto)';
+const OPS_ES = '("director de operaciones" OR "gerente de operaciones" OR "director of operations" OR "head of operations") NOT (planta OR producción OR bodega OR CEDI OR tienda OR restaurante OR practicante)';
+
 const LANES = {
   colombia: { locs: ['Medellín, Antioquia, Colombia', 'Bogotá, D.C., Capital District, Colombia', 'Colombia'], kws: [C2, C1, 'planeación', 'S&OP', 'abastecimiento'] },
   'us-remote': { locs: ['United States'], kws: [C_REMOTE, 'remote demand planning', 'remote S&OP', 'remote supply planning manager', 'remote inventory planning manager', 'remote head of planning', RARE] },
@@ -61,6 +68,8 @@ const LANES = {
   brazil: { locs: ['Brazil'], kws: [C1, PT, 'planejamento de demanda'] },
   worldwide: { locs: ['United States', 'Latin America', 'Colombia'], kws: WORLDWIDE, maxStart: 10 },
   dtc: { locs: ['United States', 'Latin America'], kws: [DTC], maxStart: 30 },
+  'ops-latam': { locs: ['United States', 'Latin America'], kws: [OPS_LATAM], maxStart: 30 },
+  'ops-remote': { locs: ['Latin America', 'Colombia'], kws: [OPS_REMOTE, OPS_ES], maxStart: 30 },
 };
 
 const requested = (process.env.RADAR_LI_LANES || '').split(',').map((s) => s.trim()).filter(Boolean);

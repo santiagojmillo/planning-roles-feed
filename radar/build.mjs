@@ -65,8 +65,17 @@ const LOOSE_SC = /(supply|planning|planeaci|planific|inventor|s&op|\bibp\b|opera
 // Startup boards (collect-startups.mjs: YC, HN) use the main filter too: startup titles such as "Head of Operations" or
 // "Supply Chain Manager" are the owner's DTC archetype but fail the stricter reverse-sweep net.
 const MAIN_FILTER_SOURCES = new Set(['ats', 'yc', 'hn']);
+// Operations-leadership lanes (collect-linkedin.mjs 'ops-*', added 2026-10-17 after the Space Inch miss): a senior
+// operations / business-operations title passes; ops families outside his record (plant, warehouse, store, support,
+// IT, revenue/sales/marketing/people…) are dropped here, and the 7am rulebook judges the rest by the body.
+const OPS_LANE = (source) => String(source).startsWith('linkedin:ops');
+const OPS_TITLE = /(operations|operaciones)/i;
+const OPS_LEVEL = /(director|head|\bvp\b|vice president|chief|senior manager|sr\.? manager|gerente|\blead\b|l[ií]der|manager)/i;
+const OPS_NEG = /(revenue|sales|marketing|people|\bhr\b|human|legal|security|\bit\b|devops|cloud|network|data center|clinical|medical|dental|nursing|clinic|hospital|restaurant|store|retail|warehouse|plant|manufacturing|production|producci[oó]n|field|branch|customer|support|contact cent|call cent|fleet|transport|logistic|facilit|hotel|hospitality|construction|payment|fraud|trust|\bad\b|campaign|content|studio|clinical|lab\b|planta|bodega|tienda|log[ií]stica)/i;
+const opsTitleOk = (t) => OPS_TITLE.test(t) && OPS_LEVEL.test(t) && !OPS_NEG.test(t) && !tff.negative.some((k) => kwTest(k, t));
 const titleOk = (t, source) => (WORLDWIDE.has(source)
   ? LOOSE_SC.test(t) && !tff.negative.some((k) => kwTest(k, t))
+  : OPS_LANE(source) ? passes(tff, t) || opsTitleOk(t)
   : passes(MAIN_FILTER_SOURCES.has(source) || String(source).startsWith('employer:') ? tfMain : tff, t));
 
 // ── Aggregator drop list (config/portals.yml: aggregator_companies) ──
@@ -303,6 +312,9 @@ async function fetchDetail(j) {
 const priority = (j) => {
   if (WORLDWIDE.has(j.source)) return 4; // phrase-search padding: fetch last, never starve the real lanes
   const g = geo(j.location);
+  // Operations-lane roles never starve planning roles: country-level postings (how LinkedIn lists remote roles, e.g.
+  // Space Inch) go after the planning lanes, ops roles in specific cities near the end.
+  if (OPS_LANE(j.source) && !passes(tff, j.title)) return g.countryLevel && ['CO', 'LATAM', 'US', 'ES'].includes(g.country) ? 2.5 : 3.5;
   if (g.country === 'CO') return g.metro || g.countryLevel ? 1 : 0;
   if (g.country === 'ES') return g.metro ? 1 : 0;
   if (g.country === 'LATAM') return 0;
