@@ -8,7 +8,7 @@ SWEEP_ATS="${RADAR_SWEEP_ATS:-greenhouse lever ashby workday icims}"
 SWEEP_MIN="${RADAR_SWEEP_MINUTES:-20}"   # default cap per ATS (matches are only written when a pass finishes)
 SLOW_MIN="${RADAR_SLOW_MINUTES:-90}"     # Workday / iCIMS directories are large
 export RADAR_DAYS="${RADAR_DAYS:-3}"               # freshness window: scanners (--since) + collectors/build (env)
-export RADAR_MAX_DETAIL="${RADAR_MAX_DETAIL:-150}" # cap on per-posting detail fetches, passed through to child processes
+export RADAR_MAX_DETAIL="${RADAR_MAX_DETAIL:-200}" # cap on per-posting detail fetches, passed through to child processes
 mkdir -p "$ROOT/logs" "$ROOT/tmp" "$ROOT/state" "$ROOT/out"
 
 cp "$ROOT/config/portals.yml" "$CO/portals.yml"

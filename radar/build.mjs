@@ -7,7 +7,7 @@
 // Usage: node radar/build.mjs <career-ops dir> [--dry-run]
 //   --dry-run             write to out/dry-run/ instead of out/; never touch state/seen.json
 //   RADAR_DAYS=3          age window (days)
-//   RADAR_MAX_DETAIL=150  cap on detail fetches per run (Colombia / Spain / LATAM / US-country first)
+//   RADAR_MAX_DETAIL=200  cap on detail fetches per run (Colombia / Spain / LATAM / US-country first)
 //   RADAR_SKIP_DETAIL=1   no network: lane from location + title only (tests)
 //   RADAR_IGNORE_SEEN=1   start from an empty seen-set (tests; combine with --dry-run)
 
@@ -22,7 +22,7 @@ const DRY = args.includes('--dry-run');
 const CO = path.resolve(args.find((a) => !a.startsWith('--')) || 'career-ops');
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const DAYS = Number(process.env.RADAR_DAYS || 3);
-const MAX_DETAIL = process.env.RADAR_MAX_DETAIL === undefined || process.env.RADAR_MAX_DETAIL === '' ? 150 : Number(process.env.RADAR_MAX_DETAIL);
+const MAX_DETAIL = process.env.RADAR_MAX_DETAIL === undefined || process.env.RADAR_MAX_DETAIL === '' ? 200 : Number(process.env.RADAR_MAX_DETAIL);
 const SKIP_DETAIL = process.env.RADAR_SKIP_DETAIL === '1';
 const OUT = path.join(ROOT, DRY ? 'out/dry-run' : 'out');
 const UA = 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36';
