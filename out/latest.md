@@ -1,137 +1,141 @@
-# Job radar — 2026-10-23
+# Job radar — 2026-10-24
 
-New live roles (≤3 days): **13**
+New live roles (≤3 days): **17**
 
 | Age | Lane | Remote | Company | Title | Location | Salary | Flags | Source |
 |---|---|---|---|---|---|---|---|---|
-| 1d | colombia-bogota | no | Acomedios Publicidad y Mercadeo S.A.S | [PLANNER DE MEDIOS INTEGRAL](https://www.linkedin.com/jobs/view/4482733517) | Bogota, D.C., Capital District, Colombia |  | — | linkedin:colombia |
-| 1d | colombia-bogota | ? | IntouchCX | [Resource Planner](https://www.linkedin.com/jobs/view/4481613448) | Bogota, D.C., Capital District, Colombia |  | — | linkedin:colombia |
-| 1d | colombia-bogota | no | Publicis Media Colombia | [REGIONAL MEDIA OPERATIONS LEAD](https://www.linkedin.com/jobs/view/4481381190) | Bogota, D.C., Capital District, Colombia |  | — | linkedin:ops-remote |
-| 1d | colombia-bogota | ? | Si18 S.A.S | [Planeador de Mantenimiento](https://www.linkedin.com/jobs/view/4482478341) | Bogota, D.C., Capital District, Colombia | $ 6.079.400 | — | linkedin:colombia |
-| 1d | colombia-bogota | ? | SkyDrill Power Systems, LLC | [Planeador de procesos logisticos](https://www.linkedin.com/jobs/view/4482472490) | Bogota, D.C., Capital District, Colombia | $2.716.000 | — | linkedin:colombia |
-| 1d | colombia-remote | ? | Amazon | [LMIR Operations Manager I [A], SDS Last Mile Incident Response Team](https://www.linkedin.com/jobs/view/4482741281) | Colombia |  | temporal | linkedin:ops-remote |
-| 1d | colombia-remote | yes | NeoWork | [Operations Manager](https://www.linkedin.com/jobs/view/4482701848) | Colombia |  | intl | linkedin:ops-remote |
-| 1d | latam-remote | yes | Mondelēz International | [Planning Sr. Director, Mex BU](https://www.linkedin.com/jobs/view/4473914007) | Mexico City, Mexico |  | — | linkedin:latam-remote |
-| 0d | spain-madrid | no | equinix | [Planning Manager](https://equinix.wd1.myworkdayjobs.com/external/job/Madrid/Construction-Project-Manager_JR-164155-1) | Madrid |  | — | ats |
-| 3d | spain-madrid | no | Arup | [Senior Airport Planner](https://www.linkedin.com/jobs/view/4472751611) | Madrid, Community of Madrid, Spain |  | — | linkedin:madrid |
-| 1d | us-remote-unstated | yes | Athena Executive Search | [Director of Supply Chain](https://www.linkedin.com/jobs/view/4482707469) | United States |  | — | linkedin:us-remote |
-| 1d | us-remote-unstated | yes | TalentHop | [Supply Planning Manager (Coterie)](https://www.linkedin.com/jobs/view/4480090334) | United States |  | — | linkedin:us-remote |
-| 1d | us-remote-unstated | ? | Zimmer Biomet | [Global Planning Platforms Assoc Director](https://www.linkedin.com/jobs/view/4463874880) | United States | $145,000 - $182,000 | — | linkedin:us-remote |
+| 0d | colombia-bogota | no | Makro Colombia | [Planeador/a de Demanda](https://www.linkedin.com/jobs/view/4483166832) | Bogota, D.C., Capital District, Colombia |  | — | linkedin:colombia |
+| 1d | colombia-bogota | ? | Seguridad Central LTDA. | [Director de Operaciones / Gerente Operativo / Seguridad Privada](https://www.linkedin.com/jobs/view/4482854812) | Bogota, D.C., Capital District, Colombia |  | fixed-term | linkedin:ops-remote |
+| 1d | spain-madrid | ? | Campofrio Food Group | [Demand Planning Manager](https://www.linkedin.com/jobs/view/4480638928) | San Sebastián de los Reyes, Community of Madrid, Spain |  | — | linkedin:madrid |
+| 1d | spain-madrid | ? | ISPROX | [Supply Planner con Inglés Alto -Zona Corredor del Henares](https://www.linkedin.com/jobs/view/4480641559) | Alcalá de Henares, Community of Madrid, Spain |  | — | linkedin:madrid |
+| 1d | spain-madrid | no | Tenth Revolution Group | [Sales Planner / Cliente Final / Madrid](https://www.linkedin.com/jobs/view/4480651610) | Community of Madrid, Spain | 40.000€ | — | linkedin:madrid |
+| 1d | spain-madrid | yes | Tenth Revolution Group | [Sales Planner](https://www.linkedin.com/jobs/view/4480663190) | Madrid, Community of Madrid, Spain |  | — | linkedin:madrid |
+| 1d | spain-madrid | ? | Tenth Revolution Group | [Sales Planner / Client Final / Madrid](https://www.linkedin.com/jobs/view/4480653650) | Community of Madrid, Spain |  | — | linkedin:spain |
+| 1d | spain-remote | yes | Coty | [EXO Planner](https://www.linkedin.com/jobs/view/4472556830) | Greater Barcelona Metropolitan Area |  | — | linkedin:spain |
+| 1d | remote-intl | no | red6 | [Program Planner](https://jobs.ashbyhq.com/red6/0994c9ec-c49d-4c08-abcb-2e2b2b26c768) | Denver · Louisville · United States | $60K – $85K | us-only:3 · intl | ats |
+| 0d | us-remote-unstated | ? | cw | [RME Planner](https://cw.wd1.myworkdayjobs.com/external/job/Client-Site---USA---PA---New-Stanton---165-Glenn-Fox-Rd/RME-Planner_R340142-1) | Client Site - USA - PA - New Stanton - 165 Glenn Fox Rd |  | — | ats |
+| 1d | us-remote-unstated | ? | Archer | [VP, Fulfillment Planning and Optimization](https://www.linkedin.com/jobs/view/4481686665) | United States | $10 | — | linkedin:us-remote |
+| 1d | us-remote-unstated | no | globalhr | [Sr. Program Planner I - Onsite](https://globalhr.wd5.myworkdayjobs.com/rec_rtx_ext_gateway/job/US-MA-TEWKSBURY-TB3--50-Apple-Hill-Dr--CONCORD-BLDG-Tewksbury-Tb3-300-Concord/Sr-Program-Planner-I---Onsite_01884521) | US-MA-TEWKSBURY-TB3 ~ 50 Apple Hill Dr ~ CONCORD BLDG, Tewksbury Tb3 300 Concord · US-MA-WOBURN-WB1 ~ 235 Presidential Way ~ SPENCER BLDG · US-RI-PORTSMOUTH-PS5 ~ 1847 W Main Rd ~ PROVIDENCE BLDG · US-MA-ANDOVER-AN1 ~ 350 Lowell St ~ AN1 ESSEX BLDG |  | — | ats |
+| 1d | us-remote-unstated | yes | NTT Global Data Centers | [Senior Director, Capital and Planning Analysis](https://www.linkedin.com/jobs/view/4481967399) | United States |  | — | linkedin:us-remote |
+| 1d | us-remote-unstated | yes | Spellman High Voltage Electronics Corporation | [Director, Global Planning](https://www.linkedin.com/jobs/view/4445773914) | Hauppauge, NY | $161,000 to $226,000 | — | linkedin:us-remote |
+| 1d | us-remote-unstated | yes | ZOLL Medical Corporation | [Director, Global Planning and SIOP](https://www.linkedin.com/jobs/view/4481957357) | Chelmsford, MA | $120,000.00 to $150,000.00 | — | linkedin:us-remote |
+| 2d | us-remote-unstated | ? | cw | [Director of Occupancy Planning](https://cw.wd1.myworkdayjobs.com/external/job/Client-Site---USA---VA---Mclean---7515-Colshire-Drive/Director-of-Occupancy-Planning_R341085) | Client Site - USA - VA - Mclean - 7515 Colshire Drive · Client Site - USA - MA - Boston - 125 High St |  | — | ats |
+| 2d | us-remote-unstated | yes | Khloud | [Director of Supply Chain](https://www.linkedin.com/jobs/view/4482755901) | United States |  | — | linkedin:us-remote |
 
 ```
 {
  "counts": {
-  "candidates": 1699,
+  "candidates": 1532,
   "undated": 2,
-  "too_old": 102,
-  "title": 1277,
+  "too_old": 109,
+  "title": 1093,
   "dup_in_run": 16,
-  "already_seen": 162,
-  "detail_fetched": 137,
+  "already_seen": 148,
+  "detail_fetched": 163,
   "detail_skipped": 0,
   "detail_failed": 0,
   "not_eligible": {
-   "aggregator": 5,
-   "us-only": 10,
-   "latam-onsite": 14,
+   "aggregator": 3,
+   "latam-onsite": 28,
+   "us-only": 9,
    "es-other-city-onsite": 4,
-   "us-onsite": 49,
-   "other-country": 45
+   "us-onsite": 69,
+   "other-country": 34
   },
-  "new": 13,
+  "new": 17,
   "feed_posts": 0
  },
  "sources": {
   "ats": {
-   "candidates": 86
+   "candidates": 84
   },
   "linkedin": {
    "lanes": "<16 items>",
    "window": "r259200",
    "total_queries": 70,
-   "pages": 278,
-   "cards": 2747,
-   "unique": 1321,
+   "pages": 280,
+   "cards": 2760,
+   "unique": 1306,
    "blocked": 0,
-   "rate_limited": 12,
-   "retries": 12,
-   "elapsed_s": 856,
+   "rate_limited": 58,
+   "retries": 58,
+   "elapsed_s": 2141,
    "by_lane": {
     "colombia": {
      "queries": 15,
-     "pages": 65,
-     "cards": 626,
-     "unique": 293,
+     "pages": 67,
+     "cards": 641,
+     "unique": 282,
      "failed": 0
     },
     "us-remote": {
      "queries": 7,
      "pages": 35,
      "cards": 350,
-     "unique": 211,
+     "unique": 213,
      "failed": 0
     },
     "madrid": {
      "queries": 4,
      "pages": 20,
      "cards": 200,
-     "unique": 128,
+     "unique": 125,
      "failed": 0
     },
     "spain": {
      "queries": 5,
      "pages": 25,
      "cards": 250,
-     "unique": 105,
+     "unique": 106,
      "failed": 0
     },
     "latam-remote": {
      "queries": 5,
      "pages": 25,
      "cards": 250,
-     "unique": 127,
+     "unique": 113,
      "failed": 0
     },
     "mexico": {
      "queries": 2,
      "pages": 10,
      "cards": 100,
-     "unique": 31,
+     "unique": 33,
      "failed": 0
     },
     "argentina": {
      "queries": 2,
-     "pages": 9,
-     "cards": 88,
-     "unique": 50,
+     "pages": 10,
+     "cards": 90,
+     "unique": 49,
      "failed": 0
     },
     "chile": {
      "queries": 2,
      "pages": 10,
      "cards": 100,
-     "unique": 56,
+     "unique": 54,
      "failed": 0
     },
     "peru": {
      "queries": 2,
-     "pages": 9,
-     "cards": 83,
-     "unique": 53,
+     "pages": 8,
+     "cards": 79,
+     "unique": 55,
      "failed": 0
     },
     "brazil": {
      "queries": 3,
      "pages": 15,
      "cards": 150,
-     "unique": 63,
+     "unique": 66,
      "failed": 0
     },
     "worldwide": {
      "queries": 9,
      "pages": 9,
      "cards": 90,
-     "unique": 19,
+     "unique": 18,
      "failed": 0
     },
     "dtc": {
@@ -152,21 +156,21 @@ New live roles (≤3 days): **13**
      "queries": 4,
      "pages": 12,
      "cards": 120,
-     "unique": 45,
+     "unique": 41,
      "failed": 0
     },
     "planner-co": {
      "queries": 2,
      "pages": 10,
      "cards": 100,
-     "unique": 3,
+     "unique": 5,
      "failed": 0
     },
     "planner-latam": {
      "queries": 4,
      "pages": 12,
      "cards": 120,
-     "unique": 41,
+     "unique": 50,
      "failed": 0
     }
    },
@@ -180,21 +184,21 @@ New live roles (≤3 days): **13**
     "fetched": 0
    },
    "getonbrd": {
-    "items": 85
+    "items": 86
    },
    "remotive": {
-    "items": 30
+    "items": 27
    },
    "elempleo": {
     "search_pages": 22,
-    "offers": 276,
+    "offers": 278,
     "level_titles": 40,
     "opened": 40,
-    "kept": 4,
+    "kept": 5,
     "capped": 0
    },
    "sgestion:sg_chazey": {
-    "items": 21
+    "items": 20
    }
   },
   "startups": {
@@ -203,11 +207,11 @@ New live roles (≤3 days): **13**
     "pages": 50,
     "company_pages": 1000,
     "page_errors": 0,
-    "postings": 3904,
-    "old": 3798,
+    "postings": 3913,
+    "old": 3840,
     "undated": 0,
-    "us_only_visa": 69,
-    "junior_experience": 33,
+    "us_only_visa": 48,
+    "junior_experience": 21,
     "kept": 4,
     "dropped_samples": {
      "us_only_visa": "<12 items>",
@@ -224,100 +228,100 @@ New live roles (≤3 days): **13**
   },
   "employers": {
    "tenants": 20,
-   "requests": 112,
-   "postings_seen": 468,
-   "old_or_undated": 320,
-   "kept": 148,
+   "requests": 100,
+   "postings_seen": 0,
+   "old_or_undated": 0,
+   "kept": 0,
    "by_employer": {
     "PPG": {
-     "seen": 75,
-     "kept": 16
+     "seen": 0,
+     "kept": 0
     },
     "Diageo": {
-     "seen": 19,
-     "kept": 8
+     "seen": 0,
+     "kept": 0
     },
     "Mondelez": {
-     "seen": 61,
-     "kept": 9
+     "seen": 0,
+     "kept": 0
     },
     "Johnson & Johnson": {
-     "seen": 47,
-     "kept": 22
+     "seen": 0,
+     "kept": 0
     },
     "GSK": {
-     "seen": 6,
-     "kept": 4
+     "seen": 0,
+     "kept": 0
     },
     "MSD": {
-     "seen": 8,
-     "kept": 7
+     "seen": 0,
+     "kept": 0
     },
     "Mars": {
-     "seen": 8,
-     "kept": 1
+     "seen": 0,
+     "kept": 0
     },
     "Dow": {
-     "seen": 53,
-     "kept": 14
+     "seen": 0,
+     "kept": 0
     },
     "Kimberly-Clark": {
-     "seen": 8,
-     "kept": 5
+     "seen": 0,
+     "kept": 0
     },
     "Abbott": {
-     "seen": 50,
-     "kept": 18
+     "seen": 0,
+     "kept": 0
     },
     "Medtronic": {
-     "seen": 27,
-     "kept": 14
+     "seen": 0,
+     "kept": 0
     },
     "Novartis": {
-     "seen": 6,
-     "kept": 2
+     "seen": 0,
+     "kept": 0
     },
     "Sanofi": {
-     "seen": 14,
-     "kept": 8
+     "seen": 0,
+     "kept": 0
     },
     "Kraft Heinz": {
-     "seen": 16,
-     "kept": 1
+     "seen": 0,
+     "kept": 0
     },
     "Philips": {
-     "seen": 40,
-     "kept": 15
+     "seen": 0,
+     "kept": 0
     },
     "Nike": {
-     "seen": 8,
+     "seen": 0,
      "kept": 0
     },
     "GE HealthCare": {
-     "seen": 5,
+     "seen": 0,
      "kept": 0
     },
     "Smith+Nephew": {
-     "seen": 1,
+     "seen": 0,
      "kept": 0
     },
     "Galderma": {
-     "seen": 11,
-     "kept": 1
+     "seen": 0,
+     "kept": 0
     },
     "Shell": {
-     "seen": 5,
-     "kept": 3
+     "seen": 0,
+     "kept": 0
     }
    },
-   "errors": []
+   "errors": "<20 items>"
   },
   "google": {
    "backend": "apify",
-   "queries_planned": 6,
-   "queries_skipped": 1,
+   "queries_planned": 7,
+   "queries_skipped": 0,
    "queries": 0,
-   "queries_failed": 6,
+   "queries_failed": 7,
    "pages_charged": 0,
    "usd_total": 0,
    "results": 0,
@@ -331,12 +335,12 @@ New live roles (≤3 days): **13**
     {
      "stage": "start",
      "country": "co",
-     "error": "HTTP 402: Your remaining usage of $0.415346 this billing cycle isn't enough for this run. Increase your limit by upgrading to a paid plan at https://console.apify.com/billing/subscription"
+     "error": "HTTP 402: Your remaining usage of $0.395336 this billing cycle isn't enough for this run. Increase your limit by upgrading to a paid plan at https://console.apify.com/billing/subscription"
     },
     {
      "stage": "start",
      "country": "us",
-     "error": "HTTP 402: Your remaining usage of $0.415346 this billing cycle isn't enough for this run. Increase your limit by upgrading to a paid plan at https://console.apify.com/billing/subscription"
+     "error": "HTTP 402: Your remaining usage of $0.395336 this billing cycle isn't enough for this run. Increase your limit by upgrading to a paid plan at https://console.apify.com/billing/subscription"
     }
    ],
    "by_query": {},
@@ -348,101 +352,88 @@ New live roles (≤3 days): **13**
      "pages": null,
      "usd": null,
      "secs": null,
-     "error": "HTTP 402: Your remaining usage of $0.415346 this billing cycle isn't enough for this run. Increase your limit by upgrading to a paid plan at https://console.apify.com/billing/subscription"
+     "error": "HTTP 402: Your remaining usage of $0.395336 this billing cycle isn't enough for this run. Increase your limit by upgrading to a paid plan at https://console.apify.com/billing/subscription"
     },
     {
      "country": "us",
-     "queries": 2,
+     "queries": 3,
      "status": "NOT-STARTED",
      "pages": null,
      "usd": null,
      "secs": null,
-     "error": "HTTP 402: Your remaining usage of $0.415346 this billing cycle isn't enough for this run. Increase your limit by upgrading to a paid plan at https://console.apify.com/billing/subscription"
+     "error": "HTTP 402: Your remaining usage of $0.395336 this billing cycle isn't enough for this run. Increase your limit by upgrading to a paid plan at https://console.apify.com/billing/subscription"
     }
    ],
    "budget": {
-    "low_credit": true
+    "low_credit": false
    },
-   "skipped": "searches failed tonight (HTTP 402: Your remaining usage of $0.415346 this billing cycle isn't enough for this run. Increase your limit by upgrading to a paid plan at https://console.apify.com/billing/subscription) — not a quiet night; they run again tomorrow",
+   "skipped": "searches failed tonight (HTTP 402: Your remaining usage of $0.395336 this billing cycle isn't enough for this run. Increase your limit by upgrading to a paid plan at https://console.apify.com/billing/subscription) — not a quiet night; they run again tomorrow",
    "posts_kept": 0
   },
   "detail": {
-   "fetched": 137,
+   "fetched": 163,
    "failed": 0,
    "skipped": 0,
    "max": 200,
-   "requests": 138,
-   "retries": 1,
+   "requests": 230,
+   "retries": 18,
    "by_host": {
-    "vantagedc.wd1.myworkdayjobs.com": 1,
-    "gehc.wd5.myworkdayjobs.com": 1,
-    "linkedin": 59,
-    "bakerhughes.wd5.myworkdayjobs.com": 1,
-    "equinix.wd1.myworkdayjobs.com": 1,
-    "visa.wd5.myworkdayjobs.com": 1,
-    "treehouse.wd1.myworkdayjobs.com": 1,
-    "portlandcc.wd12.myworkdayjobs.com": 1,
-    "pae.wd1.myworkdayjobs.com": 1,
-    "niagarawater.wd5.myworkdayjobs.com": 1,
-    "mksinst.wd1.myworkdayjobs.com": 1,
-    "jll.wd1.myworkdayjobs.com": 3,
-    "huhtamaki.wd103.myworkdayjobs.com": 1,
-    "hexcel.wd5.myworkdayjobs.com": 1,
-    "gsknch.wd3.myworkdayjobs.com": 1,
-    "graco.wd501.myworkdayjobs.com": 1,
-    "giorgiglobal.wd3.myworkdayjobs.com": 1,
-    "gatesfoundation.wd1.myworkdayjobs.com": 1,
-    "fnbcorp.wd501.myworkdayjobs.com": 1,
-    "cw.wd1.myworkdayjobs.com": 1,
-    "claytonhomes.wd1.myworkdayjobs.com": 1,
-    "caci.wd1.myworkdayjobs.com": 1,
-    "bdx.wd1.myworkdayjobs.com": 1,
-    "aristocrat.wd3.myworkdayjobs.com": 2,
-    "amat.wd1.myworkdayjobs.com": 3,
-    "api.lever.co": 1,
-    "cat.wd5.myworkdayjobs.com": 1,
-    "gilead.wd1.myworkdayjobs.com": 1,
-    "hp.wd5.myworkdayjobs.com": 1,
-    "hpe.wd5.myworkdayjobs.com": 1,
-    "careers-shawmut.icims.com": 1,
-    "uscareers-pepsico.icims.com": 1,
-    "kao.voyse.io": 1,
-    "zeissgroup.wd3.myworkdayjobs.com": 1,
-    "warnerbros.wd5.myworkdayjobs.com": 1,
-    "thales.wd3.myworkdayjobs.com": 2,
-    "swarovski.wd3.myworkdayjobs.com": 1,
-    "slihrms.wd3.myworkdayjobs.com": 3,
-    "seaworldentertainment.wd1.myworkdayjobs.com": 1,
-    "sanofi.wd3.myworkdayjobs.com": 1,
+    "maersk.wd3.myworkdayjobs.com": 2,
+    "jabil.wd5.myworkdayjobs.com": 2,
+    "fmc.wd12.myworkdayjobs.com": 1,
+    "cw.wd1.myworkdayjobs.com": 4,
+    "abb.wd3.myworkdayjobs.com": 4,
+    "linkedin": 104,
+    "boards-api.greenhouse.io": 13,
+    "api.ashbyhq.com": 3,
+    "globalhr.wd5.myworkdayjobs.com": 2,
+    "jobs.smartrecruiters.com": 2,
+    "tamus.wd1.myworkdayjobs.com": 2,
+    "philips.wd3.myworkdayjobs.com": 2,
+    "novanta.wd5.myworkdayjobs.com": 2,
+    "mii.wd5.myworkdayjobs.com": 2,
+    "jll.wd1.myworkdayjobs.com": 4,
+    "hp.wd5.myworkdayjobs.com": 2,
+    "flir.wd1.myworkdayjobs.com": 2,
+    "bdx.wd1.myworkdayjobs.com": 2,
+    "bacardi.wd3.myworkdayjobs.com": 2,
+    "astrazeneca.wd3.myworkdayjobs.com": 2,
+    "ameriprise.wd5.myworkdayjobs.com": 2,
+    "ummc.wd5.myworkdayjobs.com": 2,
+    "incora.wd5.myworkdayjobs.com": 2,
+    "generalmotors.wd5.myworkdayjobs.com": 2,
+    "jj.wd5.myworkdayjobs.com": 4,
+    "careers-peraton.icims.com": 2,
+    "careers-scatec.icims.com": 1,
+    "travelhrportal.wd1.myworkdayjobs.com": 2,
+    "thermofisher.wd5.myworkdayjobs.com": 2,
+    "sandoz.wd103.myworkdayjobs.com": 1,
     "rollsroyce.wd3.myworkdayjobs.com": 2,
-    "roche.wd3.myworkdayjobs.com": 1,
-    "oldmutual.wd3.myworkdayjobs.com": 1,
-    "myview.wd3.myworkdayjobs.com": 1,
-    "mastercard.wd1.myworkdayjobs.com": 1,
-    "jbhunt.wd501.myworkdayjobs.com": 1,
-    "flowserve.wd1.myworkdayjobs.com": 1,
-    "electrolux.wd3.myworkdayjobs.com": 1,
-    "ecolab.wd1.myworkdayjobs.com": 1,
-    "dyson.wd3.myworkdayjobs.com": 1,
-    "dentsuaegis.wd3.myworkdayjobs.com": 1,
-    "dallascityhall.wd5.myworkdayjobs.com": 1,
-    "cityofventura.wd5.myworkdayjobs.com": 1,
-    "brooksauto.wd1.myworkdayjobs.com": 1,
-    "astrazeneca.wd3.myworkdayjobs.com": 1,
-    "algonquincollege.wd3.myworkdayjobs.com": 1,
-    "alcon.wd5.myworkdayjobs.com": 1,
-    "careers.hellofresh.com": 2,
-    "boards-api.greenhouse.io": 1,
-    "astound.wd108.myworkdayjobs.com": 1,
-    "clarionhg.wd3.myworkdayjobs.com": 1,
-    "greif.wd5.myworkdayjobs.com": 1,
-    "nisource.wd1.myworkdayjobs.com": 1,
-    "nshe.wd1.myworkdayjobs.com": 1,
-    "slrconsulting.wd103.myworkdayjobs.com": 1,
-    "wf.wd1.myworkdayjobs.com": 1,
-    "careers-artemisgoldinc.icims.com": 1,
-    "globalcareers-pepsico.icims.com": 1,
-    "jobs.smartrecruiters.com": 2
+    "prysmiangroup.wd3.myworkdayjobs.com": 2,
+    "patagonia.wd503.myworkdayjobs.com": 1,
+    "motorolasolutions.wd5.myworkdayjobs.com": 2,
+    "medtronic.wd1.myworkdayjobs.com": 2,
+    "lyreco.wd3.myworkdayjobs.com": 2,
+    "lnw.wd5.myworkdayjobs.com": 2,
+    "lgt.wd3.myworkdayjobs.com": 2,
+    "kbr.wd5.myworkdayjobs.com": 2,
+    "hitachi.wd1.myworkdayjobs.com": 2,
+    "gapinc.wd1.myworkdayjobs.com": 2,
+    "diageo.wd3.myworkdayjobs.com": 2,
+    "dentsuaegis.wd3.myworkdayjobs.com": 2,
+    "brooksauto.wd1.myworkdayjobs.com": 2,
+    "baxter.wd1.myworkdayjobs.com": 2,
+    "bakerhughes.wd5.myworkdayjobs.com": 2,
+    "asml.wd3.myworkdayjobs.com": 4,
+    "amcor.wd5.myworkdayjobs.com": 2,
+    "aliaxis.wd3.myworkdayjobs.com": 2,
+    "aep.wd1.myworkdayjobs.com": 2,
+    "boeing.wd1.myworkdayjobs.com": 2,
+    "capitalone.wd12.myworkdayjobs.com": 1,
+    "nxp.wd3.myworkdayjobs.com": 2,
+    "slihrms.wd3.myworkdayjobs.com": 2,
+    "external-dillon.icims.com": 2,
+    "globalcareers-pepsico.icims.com": 1
    },
    "circuit_open": [],
    "mode": "live"
@@ -453,38 +444,36 @@ New live roles (≤3 days): **13**
 
 ## Dropped (samples)
 
-- **us-onsite** (49)
-  - [Sr. Business Planning Manager - Cloud FinOps](https://visa.wd5.myworkdayjobs.com/visa/job/US---Austin-TX/Sr-Business-Planning-Manager---Cloud-FinOps_REF089390W) — visa — US - Austin, TX → remote=false: ive. Visa requires at least 3 days in office, expectations of these days will b
-  - [Material Planner](https://treehouse.wd1.myworkdayjobs.com/treehousecareers/job/USA-IL-Oak-Brook/Material-Planner_R31222) — treehouse — USA-IL Oak Brook → remote=false: nt Details: • This is a full-time, hybrid role on first shift. • The anticip
-  - [Associate Space Planning Manager (Temporary to 6/2033)](https://portlandcc.wd12.myworkdayjobs.com/external/job/Portland-Community-College-Portland-OR/Associate-Space-Planning-Manager--Temporary-to-6-2033-_JR-2725-1) — portlandcc — Portland Community College, Portland, OR → remote=null (no evidence)
-  - [Planner](https://pae.wd1.myworkdayjobs.com/amentum_careers/job/US-FL-Jacksonville/Planner_R0173475) — pae — US-FL-Jacksonville → remote=false: ion: US-FL-Jacksonville Workplace: On-site Time type: Full time Amentum is a
-  - [Supply Chain Planning Manager, Demand Planning](https://niagarawater.wd5.myworkdayjobs.com/niagara/job/Corp-Main---Diamond-Bar-CA/Supply-Chain-Planning-Manager--Demand-Planning_R56862-1) — niagarawater — Corp-Main - Diamond Bar, CA → remote=null (no evidence)
-- **other-country** (45)
-  - [Demand & Supply Planner](https://kao.voyse.io/gh-job/4723940006?gh_jid=4723940006) — kao — Melbourne → remote=false: oin a collaborative, and dedicated hybrid team. You will be rewarded with a
-  - [Material Planner](https://zeissgroup.wd3.myworkdayjobs.com/external/job/CambridgeGB/Material-Planner_JR_1054018-1) — zeissgroup — Cambridge/GB → remote=false: nner ZEISS / Cambourne, Cambridge (Hybrid Working) Are you an experienced Ma
-  - [Senior/ Merchandising & Planning Manager](https://warnerbros.wd5.myworkdayjobs.com/global/job/Shanghai-Office---Jingan-District/Merchandising-Manager_R000108633) — warnerbros — Shanghai Office - Jingan District → remote=false: ffice - Jingan District Workplace: Onsite Time type: Full time Storytelling
-  - [Industrial Planner](https://thales.wd3.myworkdayjobs.com/careers/job/Bendigo/Industrial-Planner_R0339801-1) — thales — Bendigo → remote=false: anner Location: Bendigo Workplace: Hybrid Time type: Full time At Thales, we
-  - [Senior Tactical Supply Planning Jewelry](https://swarovski.wd3.myworkdayjobs.com/swarovski/job/Bienhoa-VNM/Senior-Tactical-Supply-Planning-Jewelry_R-114511-2) — swarovski — Bienhoa, VNM → remote=null (no evidence)
-- **latam-onsite** (14)
-  - [Estágio em Planejamento Financeiro – Cash flow FP&A](https://gehc.wd5.myworkdayjobs.com/gehc_externalsite/job/Sao-Paulo/Estgio-em-Planejamento-Financeiro---Cash-flow-FP-A_R4046304-1) — gehc — Sao Paulo → remote=null (no evidence)
-  - [Base de Talentos: Supply Chain/Demand Planning](https://www.linkedin.com/jobs/view/4467112673) — L'Oréal — Greater Buenos Aires → remote=null (no evidence)
-  - [Demand planner](https://www.linkedin.com/jobs/view/4480603131) — Buscando profesionales — Santiago, Santiago Metropolitan Region, Chile → remote=false: aboratorio farmacéutico, modalidad presencial en la Región Metropolitana. El foc
-  - [Demand Planner](https://www.linkedin.com/jobs/view/4481619832) — LG Electronics — Lima, Peru → remote=false: l growth opportunities within LG • On-site job (San Isidro) • Statutory benef
-  - [Supervisor de Planejamento de Compras](https://www.linkedin.com/jobs/view/4480082561) — Belmicro — Contagem, Minas Gerais, Brazil → remote=null (no evidence)
-- **us-only** (10)
-  - [Director, Procurement & Supply Chain Transformation, Global](https://vantagedc.wd1.myworkdayjobs.com/vantage/job/Remote---US/Director--Procurement-Intelligence---Predictive-Analytics--Global_R24187) — vantagedc — Remote - US → us-only: 401k
-  - [Materials Planner](https://bakerhughes.wd5.myworkdayjobs.com/bakerhughes/job/US-WY-EVANSVILLE-350-COLE-CREEK-RD/Materials-Planner_R169431) — bakerhughes — US-WY-EVANSVILLE-350 COLE CREEK RD · US-LA-BROUSSARD-200 SOUTH BERNARD ROAD · US-TX-MIDLAND-2065 MARKET STREET · US-OK-CLAREMORE-200 W STUART ROOSA DR → us-only: 401k)
-  - [Director - Spares & FRUs - Supply Chain Operations](https://www.linkedin.com/jobs/view/4462560267) — Oracle — United States → us-only: 401(k) / U.S. based or U.S. customer or client-fa
-  - [Director, Sales & Operations Planning](https://www.linkedin.com/jobs/view/4482744438) — hims & hers — United States → us-only: 401k
-  - [Material Planner](https://claytonhomes.wd1.myworkdayjobs.com/claytoncareers/job/Morristown-TN/Material-Planner_JR135549) — claytonhomes — Morristown, TN → us-only: 401K
-- **aggregator** (5)
-  - [Senior Merchandise Planner & Supply Chain Manager](https://jobs.lever.co/jobgether/261536f8-c0c6-4c97-a810-d2ad4eb40090) — jobgether — US
-  - [S&OP Demand Manager](https://www.linkedin.com/jobs/view/4480443663) — Jobgether — United States
+- **us-onsite** (69)
+  - [Executive Director, Capital Planning & Construction](https://tamus.wd1.myworkdayjobs.com/tarleton_external/job/Stephenville-TX/Executive-Director--Capital-Planning---Construction_R-098315-1) — tamus — Stephenville, TX → remote=null (no evidence)
+  - [Demand Planning Leader - North America](https://philips.wd3.myworkdayjobs.com/jobs-and-careers/job/Stamford-Connecticut-United-States/Demand-Planning-Leader---North-America_593877-1) — philips — Stamford, Connecticut, United States → remote=null (no evidence)
+  - [Planner](https://novanta.wd5.myworkdayjobs.com/novanta-careers/job/Bedford-MA/Planner_R009743) — novanta — Bedford, MA → remote=null (no evidence)
+  - [Master Planner II](https://mii.wd5.myworkdayjobs.com/mitek/job/Chesterfield-MO-USA/Master-Planner-II_R06611) — mii — Chesterfield, MO, USA → remote=null (no evidence)
+  - [Senior Occupancy Planner](https://jll.wd1.myworkdayjobs.com/jllcareers/job/Dallas-TX/Senior-Occupancy-Planner_REQ542329) — jll — Dallas, TX → remote=null (no evidence)
+- **other-country** (34)
+  - [Meeting Planner](https://travelhrportal.wd1.myworkdayjobs.com/jobs/job/Issy-les-Moulineaux-France/Meeting-Planner_J-85256-1) — travelhrportal — Issy-les-Moulineaux, France → remote=null (no evidence)
+  - [Demand & Supply Planner](https://thermofisher.wd5.myworkdayjobs.com/thermofishercareers/job/Kwai-Chung-Hong-Kong-China/Demand---Supply-Planner_R-01373043) — thermofisher — Kwai Chung, Hong Kong, China → remote=null (no evidence)
+  - [Estágio de Planejamento Financeiro - Cambé (PR)](https://sandoz.wd103.myworkdayjobs.com/sandoz_careers/job/Camb-Sandoz/Estgio-de-Planejamento-Financeiro---Camb--PR-_REQ-10032573) — sandoz — Cambé (Sandoz) → remote=null (no evidence)
+  - [Sr. Material Flow Planner](https://rollsroyce.wd3.myworkdayjobs.com/rrpowersystems/job/Mankato/Sr-Material-Flow-Planner_JR6158789) — rollsroyce — Mankato → remote=null (no evidence)
+  - [Douvrin Warehouse Planner](https://prysmiangroup.wd3.myworkdayjobs.com/careers/job/Douvrin/Douvrin-Warehouse-Planner_R-37290) — prysmiangroup — Douvrin → remote=null (no evidence)
+- **latam-onsite** (28)
+  - [Assistente de Planejamento](https://maersk.wd3.myworkdayjobs.com/maersk_manual/job/Brazil-Santa-Catarina-Navegantes-88373180/Assistente-de-Planejamento_R200807) — maersk — Brazil, Santa Catarina, Navegantes, 88373180 → remote=null (no evidence)
+  - [Becario de planeacion](https://jabil.wd5.myworkdayjobs.com/jabil_careers/job/Guadalajara/Becario-de-planeacion_J2469103) — jabil — Guadalajara → remote=null (no evidence)
+  - [Gerente de Planejamento e Performance](https://fmc.wd12.myworkdayjobs.com/fmc/job/Campinas-Brazil/Gerente-de-Planejamento-e-Performance_R-2356) — fmc — Campinas, Brazil → remote=false: ation: Campinas, Brazil Workplace: Hybrid Time type: Full time A FMC é uma e
+  - [Demand Planner](https://abb.wd3.myworkdayjobs.com/external_career_page/job/Apodaca-Nuevo-Len-Mexico/Demand-Planner_JR00051247) — abb — Apodaca, Nuevo León, Mexico → remote=null (no evidence)
+  - [Gerente Senior Regional de Planificación de la demanda](https://www.linkedin.com/jobs/view/4482336846) — SLC TRADE — Guatemala City, Guatemala, Guatemala → remote=null (no evidence)
+- **us-only** (9)
+  - [Senior Planner, Material Planning](https://www.linkedin.com/jobs/view/4483176383) — hims & hers — United States → us-only: 401k
+  - [Manager, Inventory & Demand Planning](https://job-boards.greenhouse.io/zennioptical/jobs/5462848008) — zennioptical — US → us-only: 401k / U.S. ONLY) Please Note: We are registere / states: Arizona, California, Colorado, Connecticut,
+  - [Senior Planner, Material Planning](https://jobs.ashbyhq.com/hims-and-hers/6b525fd8-f58e-43f3-9c85-bf7ddf9c1ccf) — hims-and-hers — US - Remote · United States → us-only: 401k
+  - [Supply Chain Operations– Senior Supply Demand Planner 3](https://www.linkedin.com/jobs/view/4461107690) — Oracle — United States → us-only: 401(k) / U.S. based or U.S. customer or client-fa
+  - [Senior Materials Planner](https://www.linkedin.com/jobs/view/4481996250) — Amy's Kitchen — United States → us-only: 401(k)
+- **es-other-city-onsite** (4)
+  - [Global Supply Planning](https://www.linkedin.com/jobs/view/4474722626) — Grifols — Sant Cugat del Vallès, Catalonia, Spain → remote=false: ployer. Flexibility for U Program: Hybrid Model Flexible schedule: Monday-Th
+  - [Plant Scheduler & Material Planner](https://www.linkedin.com/jobs/view/4429247751) — Refresco — Marcilla, Chartered Community of Navarre, Spain → remote=null (no evidence)
+  - [Bulk Spirit Planner](https://www.linkedin.com/jobs/view/4446372820) — Bacardi — Barcelona, Catalonia, Spain → remote=null (no evidence)
+  - [Demand Planner](https://www.linkedin.com/jobs/view/4481699296) — Grupo Planeta — Barcelona, Catalonia, Spain → remote=null (no evidence)
+- **aggregator** (3)
   - [S&OP Demand Manager - Remote Position](https://www.linkedin.com/jobs/view/4480028509) — Ladders — United States
   - [Senior Merchandise Planner & Supply Chain Manager](https://www.linkedin.com/jobs/view/4481316255) — Jobgether — United States
   - [Head of Global Custody Operations](https://www.linkedin.com/jobs/view/4480033355) — Ladders — Minneapolis, MN
-- **es-other-city-onsite** (4)
-  - [Site Supply Chain Head](https://www.linkedin.com/jobs/view/4472642183) — Novartis — Zaragoza, Aragon, Spain → remote=false: addition, we provide flexible and hybrid working options, where possible, a
-  - [Inventory Planner – EU Middle Mile Forecasting and Planning, Middle Mile Planning & E2E Forecasting](https://www.linkedin.com/jobs/view/4455796556) — Amazon — Barcelona, Catalonia, Spain → remote=null (no evidence)
-  - [Director, Global Supply Chain](https://www.linkedin.com/jobs/view/4481358386) — ICON plc — Barcelona, Catalonia, Spain → remote=null (no evidence)
-  - [Supply Chain Planning Trainee](https://www.linkedin.com/jobs/view/4474195095) — Ferrero — Barcelona, Catalonia, Spain → remote=null (no evidence)
