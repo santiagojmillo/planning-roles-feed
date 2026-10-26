@@ -1,29 +1,29 @@
 {
- "generated_at": "2026-10-25T07:08:31.163Z",
+ "generated_at": "2026-10-26T06:58:57.674Z",
  "window_days": 3,
  "counts": {
-  "candidates": 1484,
-  "undated": 0,
-  "too_old": 119,
-  "title": 1150,
-  "dup_in_run": 9,
-  "already_seen": 165,
-  "detail_fetched": 38,
+  "candidates": 1414,
+  "undated": 1,
+  "too_old": 127,
+  "title": 1114,
+  "dup_in_run": 8,
+  "already_seen": 126,
+  "detail_fetched": 39,
   "detail_skipped": 0,
   "detail_failed": 0,
   "not_eligible": {
-   "aggregator": 3,
-   "latam-onsite": 14,
-   "us-only": 4,
-   "es-other-city-onsite": 1,
-   "us-onsite": 15
+   "us-only": 2,
+   "es-other-city-onsite": 3,
+   "latam-onsite": 4,
+   "us-onsite": 20,
+   "other-country": 7
   },
-  "new": 4,
+  "new": 2,
   "feed_posts": 0
  },
  "sources": {
   "ats": {
-   "candidates": 4
+   "candidates": 8
   },
   "linkedin": {
    "lanes": [
@@ -46,124 +46,124 @@
    ],
    "window": "r259200",
    "total_queries": 70,
-   "pages": 275,
-   "cards": 2719,
-   "unique": 1264,
+   "pages": 266,
+   "cards": 2598,
+   "unique": 1191,
    "blocked": 0,
-   "rate_limited": 7,
-   "retries": 7,
-   "elapsed_s": 708,
+   "rate_limited": 0,
+   "retries": 0,
+   "elapsed_s": 505,
    "by_lane": {
     "colombia": {
      "queries": 15,
-     "pages": 63,
-     "cards": 609,
-     "unique": 279,
+     "pages": 59,
+     "cards": 553,
+     "unique": 262,
      "failed": 0
     },
     "us-remote": {
      "queries": 7,
      "pages": 35,
      "cards": 350,
-     "unique": 205,
+     "unique": 198,
      "failed": 0
     },
     "madrid": {
      "queries": 4,
-     "pages": 20,
-     "cards": 198,
-     "unique": 129,
+     "pages": 18,
+     "cards": 179,
+     "unique": 120,
      "failed": 0
     },
     "spain": {
      "queries": 5,
      "pages": 25,
      "cards": 250,
-     "unique": 97,
+     "unique": 95,
      "failed": 0
     },
     "latam-remote": {
      "queries": 5,
      "pages": 25,
      "cards": 250,
-     "unique": 112,
+     "unique": 105,
      "failed": 0
     },
     "mexico": {
      "queries": 2,
      "pages": 10,
      "cards": 100,
-     "unique": 28,
+     "unique": 25,
      "failed": 0
     },
     "argentina": {
      "queries": 2,
-     "pages": 9,
-     "cards": 85,
-     "unique": 50,
+     "pages": 8,
+     "cards": 70,
+     "unique": 45,
      "failed": 0
     },
     "chile": {
      "queries": 2,
-     "pages": 10,
-     "cards": 100,
-     "unique": 56,
+     "pages": 9,
+     "cards": 84,
+     "unique": 51,
      "failed": 0
     },
     "peru": {
      "queries": 2,
-     "pages": 8,
-     "cards": 77,
-     "unique": 52,
+     "pages": 7,
+     "cards": 65,
+     "unique": 49,
      "failed": 0
     },
     "brazil": {
      "queries": 3,
      "pages": 15,
      "cards": 150,
-     "unique": 67,
+     "unique": 71,
      "failed": 0
     },
     "worldwide": {
      "queries": 9,
      "pages": 9,
-     "cards": 90,
-     "unique": 14,
+     "cards": 87,
+     "unique": 10,
      "failed": 0
     },
     "dtc": {
      "queries": 2,
      "pages": 6,
      "cards": 60,
-     "unique": 35,
+     "unique": 36,
      "failed": 0
     },
     "ops-latam": {
      "queries": 2,
      "pages": 6,
      "cards": 60,
-     "unique": 50,
+     "unique": 46,
      "failed": 0
     },
     "ops-remote": {
      "queries": 4,
      "pages": 12,
      "cards": 120,
-     "unique": 38,
+     "unique": 36,
      "failed": 0
     },
     "planner-co": {
      "queries": 2,
      "pages": 10,
      "cards": 100,
-     "unique": 4,
+     "unique": 7,
      "failed": 0
     },
     "planner-latam": {
      "queries": 4,
      "pages": 12,
      "cards": 120,
-     "unique": 48,
+     "unique": 35,
      "failed": 0
     }
    },
@@ -174,8 +174,8 @@
      "loc": "Medellín, Antioquia, Colombia",
      "kw": "(\"planeación de la demanda\" OR \"planeacion de la demanda\" OR \"planificación de la demanda\" OR abastecimiento OR \"S&OP\" OR inventarios OR reabastecimiento) AND (gerente OR jefe OR líder OR director) NOT (practicante OR aprendiz OR auxiliar OR medios OR publicidad)",
      "status": 200,
-     "pages": 2,
-     "cards": 16
+     "pages": 1,
+     "cards": 6
     },
     {
      "lane": "colombia",
@@ -183,7 +183,7 @@
      "kw": "(\"demand planning\" OR \"supply planning\" OR \"S&OP\" OR \"IBP\" OR \"integrated business planning\" OR \"SIOP\" OR \"S&OE\" OR \"inventory planning\" OR replenishment) AND (manager OR lead OR head OR director) NOT (media OR advertising OR intern)",
      "status": 200,
      "pages": 1,
-     "cards": 6
+     "cards": 4
     },
     {
      "lane": "colombia",
@@ -199,7 +199,7 @@
      "kw": "S&OP",
      "status": 200,
      "pages": 2,
-     "cards": 15
+     "cards": 13
     },
     {
      "lane": "colombia",
@@ -215,15 +215,15 @@
      "kw": "(\"planeación de la demanda\" OR \"planeacion de la demanda\" OR \"planificación de la demanda\" OR abastecimiento OR \"S&OP\" OR inventarios OR reabastecimiento) AND (gerente OR jefe OR líder OR director) NOT (practicante OR aprendiz OR auxiliar OR medios OR publicidad)",
      "status": 200,
      "pages": 5,
-     "cards": 50
+     "cards": 42
     },
     {
      "lane": "colombia",
      "loc": "Bogotá, D.C., Capital District, Colombia",
      "kw": "(\"demand planning\" OR \"supply planning\" OR \"S&OP\" OR \"IBP\" OR \"integrated business planning\" OR \"SIOP\" OR \"S&OE\" OR \"inventory planning\" OR replenishment) AND (manager OR lead OR head OR director) NOT (media OR advertising OR intern)",
      "status": 200,
-     "pages": 3,
-     "cards": 26
+     "pages": 2,
+     "cards": 13
     },
     {
      "lane": "colombia",
@@ -262,8 +262,8 @@
      "loc": "Colombia",
      "kw": "(\"demand planning\" OR \"supply planning\" OR \"S&OP\" OR \"IBP\" OR \"integrated business planning\" OR \"SIOP\" OR \"S&OE\" OR \"inventory planning\" OR replenishment) AND (manager OR lead OR head OR director) NOT (media OR advertising OR intern)",
      "status": 200,
-     "pages": 5,
-     "cards": 46
+     "pages": 3,
+     "cards": 25
     },
     {
      "lane": "colombia",
@@ -350,8 +350,8 @@
      "loc": "Madrid, Community of Madrid, Spain",
      "kw": "(\"demand planning\" OR \"supply planning\" OR \"S&OP\" OR \"IBP\" OR \"integrated business planning\" OR \"SIOP\" OR \"S&OE\" OR \"inventory planning\" OR replenishment) AND (manager OR lead OR head OR director) NOT (media OR advertising OR intern)",
      "status": 200,
-     "pages": 5,
-     "cards": 48
+     "pages": 3,
+     "cards": 29
     },
     {
      "lane": "madrid",
@@ -478,8 +478,8 @@
      "loc": "Argentina",
      "kw": "(\"demand planning\" OR \"supply planning\" OR \"S&OP\" OR \"IBP\" OR \"integrated business planning\" OR \"SIOP\" OR \"S&OE\" OR \"inventory planning\" OR replenishment) AND (manager OR lead OR head OR director) NOT (media OR advertising OR intern)",
      "status": 200,
-     "pages": 4,
-     "cards": 35
+     "pages": 3,
+     "cards": 23
     },
     {
      "lane": "argentina",
@@ -487,15 +487,15 @@
      "kw": "(\"planeación de la demanda\" OR \"planeacion de la demanda\" OR \"planificación de la demanda\" OR abastecimiento OR \"S&OP\" OR inventarios OR reabastecimiento) AND (gerente OR jefe OR líder OR director) NOT (practicante OR aprendiz OR auxiliar OR medios OR publicidad)",
      "status": 200,
      "pages": 5,
-     "cards": 50
+     "cards": 47
     },
     {
      "lane": "chile",
      "loc": "Chile",
      "kw": "(\"demand planning\" OR \"supply planning\" OR \"S&OP\" OR \"IBP\" OR \"integrated business planning\" OR \"SIOP\" OR \"S&OE\" OR \"inventory planning\" OR replenishment) AND (manager OR lead OR head OR director) NOT (media OR advertising OR intern)",
      "status": 200,
-     "pages": 5,
-     "cards": 50
+     "pages": 4,
+     "cards": 34
     },
     {
      "lane": "chile",
@@ -510,8 +510,8 @@
      "loc": "Peru",
      "kw": "(\"demand planning\" OR \"supply planning\" OR \"S&OP\" OR \"IBP\" OR \"integrated business planning\" OR \"SIOP\" OR \"S&OE\" OR \"inventory planning\" OR replenishment) AND (manager OR lead OR head OR director) NOT (media OR advertising OR intern)",
      "status": 200,
-     "pages": 3,
-     "cards": 27
+     "pages": 2,
+     "cards": 15
     },
     {
      "lane": "peru",
@@ -615,7 +615,7 @@
      "kw": "(\"LATAM\" OR \"Latin America\" OR Colombia) AND (\"demand planning\" OR \"supply planning\" OR \"S&OP\" OR \"inventory planning\" OR \"supply chain manager\") AND (remote OR contractor)",
      "status": 200,
      "pages": 1,
-     "cards": 10
+     "cards": 7
     },
     {
      "lane": "dtc",
@@ -745,14 +745,14 @@
    },
    "elempleo": {
     "search_pages": 22,
-    "offers": 278,
-    "level_titles": 43,
-    "opened": 43,
-    "kept": 4,
+    "offers": 273,
+    "level_titles": 44,
+    "opened": 44,
+    "kept": 1,
     "capped": 0
    },
    "sgestion:sg_chazey": {
-    "items": 20
+    "items": 19
    }
   },
   "startups": {
@@ -761,40 +761,40 @@
     "pages": 50,
     "company_pages": 1000,
     "page_errors": 0,
-    "postings": 3913,
-    "old": 3858,
+    "postings": 3909,
+    "old": 3872,
     "undated": 0,
-    "us_only_visa": 38,
+    "us_only_visa": 19,
     "junior_experience": 15,
-    "kept": 2,
+    "kept": 3,
     "dropped_samples": {
      "us_only_visa": [
-      "Customer Experience Manager/Senior Team Lead, International — Whatnot — Dublin, Ireland",
-      "Account Executive / Sales Rep - AI & GTM — Gojiberry AI — US / Remote (US)",
       "Technical Recruiter — Wardstone — El Segundo, United States",
-      "AI Social Media Content Creator Intern — Flick — Remote (US)",
       "International Growth Associate — Miyagi Labs — Remote (US)",
-      "Founding Product Engineer — Harbera — New York, NY, US",
       "Design Engineer — HUD — San Francisco / Singapore / Remote (Asia) / Remote (North America)",
       "Senior Research Infrastructure Engineer — HUD — San Francisco / Singapore / Remote (Asia) / Remote (North America)",
-      "Forward Deployed Engineering Lead — Finosu — New York, NY, US",
-      "Data Scientist — Finosu — New York, NY, US",
       "Sales Development Representative — Simple AI — San Francisco",
-      "Sales Engineer — Simple AI — San Francisco"
+      "Sales Engineer — Simple AI — San Francisco",
+      "AI Agent Engineer — Simple AI — San Francisco",
+      "Senior Sales Development Representative — Simple AI — San Francisco",
+      "Enterprise Account Executive — Simple AI — San Francisco",
+      "Infrastructure Engineer — Simple AI — San Francisco",
+      "Head of Sales — Simple AI — San Francisco",
+      "SDR Manager — Simple AI — San Francisco"
      ],
      "junior_experience": [
+      "Electrical Engineer — Inflection Space Systems — Los Angeles, CA, US",
+      "Spacecraft Analyst — Inflection Space Systems — Los Angeles, CA, US",
+      "Head of Manufacturing — Inflection Space Systems — Los Angeles, CA, US",
+      "Head of Business Development — Inflection Space Systems — Los Angeles, CA, US / Remote (Washington, DC, US)",
       "Head of Marketing — Aktoria Robotics — Noida, UP, IN / Noida, Uttar Pradesh, IN",
       "Executive Assistant / Operations Coordinator — Nori — San Francisco, CA, US",
       "Mechanical Engineer, Manufacturing & Rapid Prototyping — Nori — San Francisco, CA, US",
+      "Founding Engineer — Audun — Oslo, Oslo, NO / Stockholm, Stockholm County, SE",
       "Chief of Staff — Stoa — San Francisco, CA, US",
       "Marketing — Stoa — San Francisco, CA, US / Remote",
       "Trader, Compute Markets — Stoa — San Francisco, CA, US / Remote",
-      "Member of Technical Staff — Stoa — San Francisco, CA, US / Remote",
-      "Founding Engineer — Audun — Oslo, Oslo, NO / Stockholm, Stockholm County, SE",
-      "Sales Development Representative (Spanish & Portuguese) — Altur — Mexico City, CDMX, MX / Remote",
-      "Senior BDR — Nautilus — San Francisco, CA, US",
-      "Founding GTM Lead — Novaflow — San Francisco, CA, US",
-      "AI Deployment Strategist (looking for ex-consultant) — Leaping AI — San Francisco, CA, US / Remote (US)"
+      "Member of Technical Staff — Stoa — San Francisco, CA, US / Remote"
      ]
     }
    },
@@ -808,17 +808,17 @@
   },
   "employers": {
    "tenants": 20,
-   "requests": 111,
-   "postings_seen": 468,
-   "old_or_undated": 394,
-   "kept": 74,
+   "requests": 110,
+   "postings_seen": 456,
+   "old_or_undated": 380,
+   "kept": 76,
    "by_employer": {
     "PPG": {
-     "seen": 76,
+     "seen": 70,
      "kept": 7
     },
     "Diageo": {
-     "seen": 18,
+     "seen": 17,
      "kept": 3
     },
     "Mondelez": {
@@ -826,7 +826,7 @@
      "kept": 4
     },
     "Johnson & Johnson": {
-     "seen": 42,
+     "seen": 39,
      "kept": 14
     },
     "GSK": {
@@ -846,7 +846,7 @@
      "kept": 4
     },
     "Kimberly-Clark": {
-     "seen": 8,
+     "seen": 6,
      "kept": 1
     },
     "Abbott": {
@@ -854,16 +854,16 @@
      "kept": 7
     },
     "Medtronic": {
-     "seen": 27,
+     "seen": 26,
      "kept": 7
     },
     "Novartis": {
-     "seen": 5,
-     "kept": 1
+     "seen": 4,
+     "kept": 0
     },
     "Sanofi": {
-     "seen": 14,
-     "kept": 5
+     "seen": 15,
+     "kept": 6
     },
     "Kraft Heinz": {
      "seen": 16,
@@ -874,7 +874,7 @@
      "kept": 7
     },
     "Nike": {
-     "seen": 8,
+     "seen": 7,
      "kept": 0
     },
     "GE HealthCare": {
@@ -890,8 +890,8 @@
      "kept": 0
     },
     "Shell": {
-     "seen": 6,
-     "kept": 1
+     "seen": 8,
+     "kept": 3
     }
    },
    "errors": []
@@ -951,444 +951,403 @@
    "posts_kept": 0
   },
   "detail": {
-   "fetched": 38,
+   "fetched": 39,
    "failed": 0,
    "skipped": 0,
    "max": 200,
-   "requests": 38,
+   "requests": 39,
    "retries": 0,
    "by_host": {
-    "linkedin": 35,
-    "ngc.wd1.myworkdayjobs.com": 1,
-    "moog.wd5.myworkdayjobs.com": 1,
-    "hdsupply.wd1.myworkdayjobs.com": 1
+    "linkedin": 31,
+    "acs.wd5.myworkdayjobs.com": 1,
+    "target.wd5.myworkdayjobs.com": 1,
+    "petstock.wd105.myworkdayjobs.com": 1,
+    "ncratleos.wd1.myworkdayjobs.com": 1,
+    "jotun.wd3.myworkdayjobs.com": 1,
+    "hpe.wd5.myworkdayjobs.com": 1,
+    "gsknch.wd3.myworkdayjobs.com": 1,
+    "jobs.smartrecruiters.com": 1
    },
    "circuit_open": [],
    "mode": "live"
   }
  },
  "dropped_samples": {
-  "aggregator": [
-   {
-    "title": "S&OP Demand Manager - Remote Position",
-    "company": "Ladders",
-    "location": "United States",
-    "url": "https://www.linkedin.com/jobs/view/4480028509"
-   },
-   {
-    "title": "Senior Merchandise Planner & Supply Chain Manager",
-    "company": "Jobgether",
-    "location": "United States",
-    "url": "https://www.linkedin.com/jobs/view/4481316255"
-   },
-   {
-    "title": "Head of Global Custody Operations",
-    "company": "Ladders",
-    "location": "Minneapolis, MN",
-    "url": "https://www.linkedin.com/jobs/view/4480033355"
-   }
-  ],
-  "latam-onsite": [
-   {
-    "title": "Subgerente de Logística y Abastecimiento",
-    "company": "Universidad Científica del Sur",
-    "location": "Santiago de Surco, Peru",
-    "url": "https://www.linkedin.com/jobs/view/4482687130",
-    "remote": false,
-    "intl_ok": false,
-    "why": "remote=false: sponibilidad de trabajar de manera híbrida en la sede corporativa de Santiago"
-   },
-   {
-    "title": "RESPONSABLE DE S&OP y ABASTECIMIENTO",
-    "company": "ADITMAQ Aditivos y maquinarias S.A.S",
-    "location": "Quito, Pichincha, Ecuador",
-    "url": "https://www.linkedin.com/jobs/view/4481069856",
-    "remote": null,
-    "intl_ok": false,
-    "why": "remote=null (no evidence)"
-   },
-   {
-    "title": "S&OP Manager",
-    "company": "CHANEL",
-    "location": "Miguel Hidalgo, Mexico City, Mexico",
-    "url": "https://www.linkedin.com/jobs/view/4446005254",
-    "remote": null,
-    "intl_ok": false,
-    "why": "remote=null (no evidence)"
-   },
-   {
-    "title": "Gerente Jr. de Planeación y Logística - Toluca",
-    "company": "ALPLA Group",
-    "location": "Toluca de Lerdo, México, Mexico",
-    "url": "https://www.linkedin.com/jobs/view/4483347591",
-    "remote": null,
-    "intl_ok": false,
-    "why": "remote=null (no evidence)"
-   },
-   {
-    "title": "Demand Planning Lead Supervisor",
-    "company": "Eaton",
-    "location": "Santo Domingo, Distrito Nacional, Dominican Republic",
-    "url": "https://www.linkedin.com/jobs/view/4473160101",
-    "remote": null,
-    "intl_ok": false,
-    "why": "remote=null (no evidence)"
-   },
-   {
-    "title": "Comprador abastecimientos",
-    "company": "DICKA LOGISTICS",
-    "location": "Cuautitlán Izcalli, México, Mexico",
-    "url": "https://www.linkedin.com/jobs/view/4481013315",
-    "remote": false,
-    "intl_ok": false,
-    "why": "remote=false: pras Ubicación: CDMX y Monterrey — presencial | Toluca y Querétaro — remoto ¿Qué"
-   },
-   {
-    "title": "Banco de Talentos: Planificadores (Santiago)",
-    "company": "Ecolab",
-    "location": "Santiago, Santiago Metropolitan Region, Chile",
-    "url": "https://www.linkedin.com/jobs/view/4389429461",
-    "remote": null,
-    "intl_ok": false,
-    "why": "remote=null (no evidence)"
-   },
-   {
-    "title": "Encargado de Click and Collect y Abastecimiento/ Apurimac Abancay",
-    "company": "Saga Falabella",
-    "location": "Abancay, Apurímac, Peru",
-    "url": "https://www.linkedin.com/jobs/view/4456466893",
-    "remote": false,
-    "intl_ok": false,
-    "why": "remote=false: és de Aira) para seguir a la etapa presencial."
-   },
-   {
-    "title": "Assistente de Planejamento de Vendas (Dados)",
-    "company": "Lojas Quero-Quero S.A.",
-    "location": "Cachoeirinha, Rio Grande do Sul, Brazil",
-    "url": "https://www.linkedin.com/jobs/view/4483192717",
-    "remote": null,
-    "intl_ok": false,
-    "why": "remote=null (no evidence)"
-   },
-   {
-    "title": "Material & Work Planner",
-    "company": "Bombardier",
-    "location": "Colón, Querétaro, Mexico",
-    "url": "https://www.linkedin.com/jobs/view/4474567213",
-    "remote": false,
-    "intl_ok": false,
-    "why": "remote=false: , Bombardier promotes flexible and hybrid work policies. Why join us? At Bom"
-   },
-   {
-    "title": "Assistente de Planejamento",
-    "company": "A.P. Moller - Maersk",
-    "location": "Navegantes, Santa Catarina, Brazil",
-    "url": "https://www.linkedin.com/jobs/view/4483170077",
-    "remote": false,
-    "intl_ok": false,
-    "why": "remote=false: o de trabalho: Contrato CLT – 100% Presencial (Turno 2) Localização : Navegantes"
-   },
-   {
-    "title": "Director, LATAM Operations Strategy & Chief of Staff",
-    "company": "Merck Group",
-    "location": "Costa Rica",
-    "url": "https://www.linkedin.com/jobs/view/4473920889",
-    "remote": null,
-    "intl_ok": true,
-    "why": "remote=null (no evidence)"
-   },
-   {
-    "title": "Director Operations Clusters Analandia",
-    "company": "Sibelco Group",
-    "location": "Analândia, São Paulo, Brazil",
-    "url": "https://www.linkedin.com/jobs/view/4465100763",
-    "remote": null,
-    "intl_ok": false,
-    "why": "remote=null (no evidence)"
-   },
-   {
-    "title": "Gerente de operaciones",
-    "company": "Omkara México",
-    "location": "Guadalajara, Jalisco, Mexico",
-    "url": "https://www.linkedin.com/jobs/view/4481011324",
-    "remote": false,
-    "intl_ok": false,
-    "why": "remote=false: icadores del negocio. Trabajo 100% presencial (L-V de 8:00 a.m. a 6:00 p.m.). Un"
-   }
-  ],
   "us-only": [
    {
-    "title": "Manager- Demand Planning",
-    "company": "RealTruck, Inc.",
+    "title": "Supply Chain Planning Advisor",
+    "company": "Cardinal Health",
     "location": "United States",
-    "url": "https://www.linkedin.com/jobs/view/4466330662",
-    "remote": null,
+    "url": "https://www.linkedin.com/jobs/view/4464218984",
+    "remote": false,
     "intl_ok": false,
-    "why": "us-only: 401(k)"
+    "why": "us-only: 401k"
    },
    {
-    "title": "Associate Planner",
-    "company": "Stitch Fix",
-    "location": "United States",
-    "url": "https://www.linkedin.com/jobs/view/4475037675",
-    "remote": null,
-    "intl_ok": false,
-    "why": "us-only: US-based employees hired into this role"
-   },
-   {
-    "title": "Demand Planner, Sr Manager - Ortho and Foot & Ankle",
-    "company": "CONMED Corporation",
-    "location": "Largo, FL",
-    "url": "https://www.linkedin.com/jobs/view/4445756552",
+    "title": "Planner/Allocator - Dallas/Ft Worth",
+    "company": "Lori's Gifts",
+    "location": "Plano, TX",
+    "url": "https://www.linkedin.com/jobs/view/4483358080",
     "remote": true,
     "intl_ok": false,
-    "why": "us-only: 401K)"
-   },
-   {
-    "title": "Global Planning Director",
-    "company": "FormFactor Inc.",
-    "location": "Farmers Branch, TX",
-    "url": "https://www.linkedin.com/jobs/view/4429350050",
-    "remote": true,
-    "intl_ok": false,
-    "why": "us-only: 401(k) | states: TX, AL, AK, AR, DE, GA, HI, IL, IA, KY, LA, ME, MD, "
+    "why": "us-only: 401K"
    }
   ],
   "es-other-city-onsite": [
    {
-    "title": "Supply Planner, EMEA",
+    "title": "Responsable de Planificación y Custumer Service",
+    "company": "brotherHUB",
+    "location": "Toledo, Castile-La Mancha, Spain",
+    "url": "https://www.linkedin.com/jobs/view/4481080757",
+    "remote": null,
+    "intl_ok": false,
+    "why": "remote=null (no evidence)"
+   },
+   {
+    "title": "Director Supply Chain Western Europe",
+    "company": "Sibelco Group",
+    "location": "Greater Bilbao Metropolitan Area",
+    "url": "https://www.linkedin.com/jobs/view/4464885877",
+    "remote": null,
+    "intl_ok": false,
+    "why": "remote=null (no evidence)"
+   },
+   {
+    "title": "Demand Planner, EMEA",
     "company": "Navico Group",
     "location": "Alicante, Valencian Community, Spain",
-    "url": "https://www.linkedin.com/jobs/view/4465819161",
+    "url": "https://www.linkedin.com/jobs/view/4466325024",
     "remote": false,
     "intl_ok": false,
-    "why": "remote=false: licante, Spain Workplace Category: Hybrid Travel Required: Limited Direct Re"
+    "why": "remote=false: licante, Spain Workplace Category: Hybrid Travel Required: Moderate Regional"
+   }
+  ],
+  "latam-onsite": [
+   {
+    "title": "COORDENADOR(A) DE PLANEJAMENTO_6498",
+    "company": "Arcadis",
+    "location": "São Francisco do Conde, Bahia, Brazil",
+    "url": "https://www.linkedin.com/jobs/view/4481039740",
+    "remote": null,
+    "intl_ok": false,
+    "why": "remote=null (no evidence)"
+   },
+   {
+    "title": "Coordenador(a) de Planejamento e Performance",
+    "company": "Arco Educação",
+    "location": "Agudos, São Paulo, Brazil",
+    "url": "https://www.linkedin.com/jobs/view/4430186507",
+    "remote": false,
+    "intl_ok": false,
+    "why": "remote=false: ransporte para vagas presenciais e híbridas • Licença maternidade e paternidad"
+   },
+   {
+    "title": "Planeador de Materiales",
+    "company": "Confidential Careers",
+    "location": "Saltillo, Coahuila, Mexico",
+    "url": "https://www.linkedin.com/jobs/view/4483133513",
+    "remote": null,
+    "intl_ok": false,
+    "why": "remote=null (no evidence)"
+   },
+   {
+    "title": "International Operations Manager",
+    "company": "AIT Worldwide Logistics",
+    "location": "San Pedro Garza García, Nuevo León, Mexico",
+    "url": "https://www.linkedin.com/jobs/view/4483122896",
+    "remote": null,
+    "intl_ok": false,
+    "why": "remote=null (no evidence)"
    }
   ],
   "us-onsite": [
    {
-    "title": "Principal/Sr. Principal Test Conductor – Mission Planner Instructor",
-    "company": "ngc",
-    "location": "United States-California-Beale AFB",
-    "url": "https://ngc.wd1.myworkdayjobs.com/northrop_grumman_external_site/job/United-States-California-Beale-AFB/Principal-Sr-Principal-Test-Conductor---Mission-Planner-Instructor_R10257535",
-    "remote": false,
+    "title": "China S&OP Lead",
+    "company": "Haleon",
+    "location": "Shanghai, VA",
+    "url": "https://www.linkedin.com/jobs/view/4414729508",
+    "remote": null,
     "intl_ok": false,
-    "why": "remote=false: ill be required to work full-time, on-site at our facility. There is no remot"
+    "why": "remote=null (no evidence)"
+   },
+   {
+    "title": "Material Planner (61651)",
+    "company": "Core Health & Fitness",
+    "location": "Vancouver, WA",
+    "url": "https://www.linkedin.com/jobs/view/4482674928",
+    "remote": null,
+    "intl_ok": false,
+    "why": "remote=null (no evidence)"
    },
    {
     "title": "Materials & IBP Manager",
-    "company": "moog",
+    "company": "Moog Inc.",
     "location": "Torrance, CA",
-    "url": "https://moog.wd5.myworkdayjobs.com/moog_external_career_site/job/Torrance-CA/Materials---IBP-Manager_R-26-20875",
+    "url": "https://www.linkedin.com/jobs/view/4483386475",
     "remote": false,
     "intl_ok": false,
-    "why": "remote=false: Location: Torrance, CA Workplace: Onsite Time type: Full time Moog is a per"
+    "why": "remote=false: uality Sys & Process Work Schedule Onsite – Torrance, CA Moog's Military Air"
    },
    {
-    "title": "Senior Demand Planner",
-    "company": "hdsupply",
-    "location": "Atlanta-GA-US",
-    "url": "https://hdsupply.wd1.myworkdayjobs.com/external/job/Atlanta-GA-US/Senior-Demand-Planner_R26005796",
+    "title": "Planning Manager",
+    "company": "Karman Space & Defense",
+    "location": "Mukilteo, WA",
+    "url": "https://www.linkedin.com/jobs/view/4463774663",
     "remote": null,
     "intl_ok": false,
     "why": "remote=null (no evidence)"
    },
    {
-    "title": "Manager, Integrated Business Planning & OFCI Demand Planning - Data Center Supply Chain",
-    "company": "SB Energy",
-    "location": "Austin, Texas Metropolitan Area",
-    "url": "https://www.linkedin.com/jobs/view/4473809345",
-    "remote": false,
-    "intl_ok": true,
-    "why": "remote=false: o plans, project phasing, required-on-site dates, and approved configurations"
-   },
-   {
-    "title": "Senior Director, Global Supply Chain Network Planning & Risk Management",
-    "company": "Syndax Pharmaceuticals",
-    "location": "New York, NY",
-    "url": "https://www.linkedin.com/jobs/view/4465100635",
+    "title": "Principal PM Manager, Commercial Cloud Demand Planning",
+    "company": "Microsoft",
+    "location": "Redmond, WA",
+    "url": "https://www.linkedin.com/jobs/view/4475308806",
     "remote": null,
     "intl_ok": false,
     "why": "remote=null (no evidence)"
    },
    {
-    "title": "Senior Planner– Amazon",
-    "company": "SBH Fashion",
-    "location": "New York, NY",
-    "url": "https://www.linkedin.com/jobs/view/4437845287",
-    "remote": null,
-    "intl_ok": false,
-    "why": "remote=null (no evidence)"
-   },
-   {
-    "title": "Finished Goods Planner",
-    "company": "PPG",
-    "location": "Gainesville, TX",
-    "url": "https://www.linkedin.com/jobs/view/4475003515",
-    "remote": null,
-    "intl_ok": false,
-    "why": "remote=null (no evidence)"
-   },
-   {
-    "title": "Leader, Demand & Supply Chain Planning",
-    "company": "BD",
-    "location": "Tempe, AZ",
-    "url": "https://www.linkedin.com/jobs/view/4483104922",
+    "title": "Senior Manager, Demand Planning",
+    "company": "TileBar",
+    "location": "New York, United States",
+    "url": "https://www.linkedin.com/jobs/view/4444166747",
     "remote": false,
     "intl_ok": false,
-    "why": "remote=false: ableau, etc.) At BD, we prioritize on-site collaboration because we believe i"
+    "why": "remote=false: ew York, NY (Flatiron HQ) – 3 days onsite, 2 days remote About The Job TileB"
    },
    {
-    "title": "S&OP Manager",
-    "company": "Perfetti Van Melle",
-    "location": "Cincinnati Metropolitan Area",
-    "url": "https://www.linkedin.com/jobs/view/4483157518",
-    "remote": null,
-    "intl_ok": true,
-    "why": "remote=null (no evidence)"
-   },
-   {
-    "title": "Director of Operations, East",
-    "company": "Scan.com",
-    "location": "Atlanta Metropolitan Area",
-    "url": "https://www.linkedin.com/jobs/view/4465886092",
+    "title": "Sr. Director, Supply Chain Center of Excellence",
+    "company": "West Pharmaceutical Services",
+    "location": "Exton, PA",
+    "url": "https://www.linkedin.com/jobs/view/4456387060",
     "remote": false,
     "intl_ok": false,
-    "why": "remote=false: 00 - $180,000 • Flexible remote or hybrid work options • Dedicated personal"
+    "why": "remote=false: the time. What We Offer This is a hybrid position requiring the team member"
    },
    {
-    "title": "Director, Franchise Operations - Southwest",
-    "company": "Wingstop Restaurants Inc.",
-    "location": "Dallas, TX",
-    "url": "https://www.linkedin.com/jobs/view/4473184697",
-    "remote": false,
-    "intl_ok": false,
-    "why": "remote=false: rovided every Tuesday and Thursday in office • Discount on Wingstop gift cards"
-   },
-   {
-    "title": "Director, Country Operations Management",
-    "company": "Alexion Pharmaceuticals, Inc.",
-    "location": "Boston, MA",
-    "url": "https://www.linkedin.com/jobs/view/4417771724",
-    "remote": false,
-    "intl_ok": false,
-    "why": "remote=false: Research Location: Boston, Seaport Hybrid: 60% onsite The Director Country O"
-   },
-   {
-    "title": "Director of Operations - Global",
-    "company": "Nordson Corporation",
-    "location": "East Providence, RI",
-    "url": "https://www.linkedin.com/jobs/view/4428067649",
-    "remote": null,
-    "intl_ok": false,
-    "why": "remote=null (no evidence)"
-   },
-   {
-    "title": "Director,Operations & Site Leader",
-    "company": "Sensaria",
-    "location": "Morrisville, NC",
-    "url": "https://www.linkedin.com/jobs/view/4457503976",
-    "remote": false,
-    "intl_ok": false,
-    "why": "remote=false: nuous improvement. You'll be based onsite at our Morrisville, NC HQ and prod"
-   },
-   {
-    "title": "Director of Operations",
-    "company": "Florida Merchant Service",
+    "title": "Master Planner",
+    "company": "Mitsubishi Power Americas",
     "location": "Orlando, FL",
-    "url": "https://www.linkedin.com/jobs/view/4483334847",
+    "url": "https://www.linkedin.com/jobs/view/4450713231",
     "remote": null,
     "intl_ok": false,
     "why": "remote=null (no evidence)"
+   },
+   {
+    "title": "Senior Supply Chain Manager, S&OP, R2L Supply Chain",
+    "company": "Amazon",
+    "location": "New York, United States",
+    "url": "https://www.linkedin.com/jobs/view/4455934309",
+    "remote": null,
+    "intl_ok": false,
+    "why": "remote=null (no evidence)"
+   },
+   {
+    "title": "Supply Planning Manager, AWS Supply Chain - IPS",
+    "company": "Amazon Web Services (AWS)",
+    "location": "Herndon, VA",
+    "url": "https://www.linkedin.com/jobs/view/4455906307",
+    "remote": null,
+    "intl_ok": false,
+    "why": "remote=null (no evidence)"
+   },
+   {
+    "title": "Director of Operations - P&S and Options",
+    "company": "Broadridge",
+    "location": "Newark, NJ",
+    "url": "https://www.linkedin.com/jobs/view/4446926672",
+    "remote": null,
+    "intl_ok": false,
+    "why": "remote=null (no evidence)"
+   },
+   {
+    "title": "Director Homeport Operations - SDCA",
+    "company": "Austal USA",
+    "location": "San Diego, CA",
+    "url": "https://www.linkedin.com/jobs/view/4457380127",
+    "remote": null,
+    "intl_ok": false,
+    "why": "remote=null (no evidence)"
+   },
+   {
+    "title": "Head of Business Operations and Analytics",
+    "company": "Ode with Anthropic",
+    "location": "San Francisco, CA",
+    "url": "https://www.linkedin.com/jobs/view/4457544919",
+    "remote": null,
+    "intl_ok": false,
+    "why": "remote=null (no evidence)"
+   },
+   {
+    "title": "Vice President Operations",
+    "company": "Nikkiso Clean Energy & Industrial Gases",
+    "location": "Houston, TX",
+    "url": "https://www.linkedin.com/jobs/view/4475033108",
+    "remote": null,
+    "intl_ok": true,
+    "why": "remote=null (no evidence)"
+   },
+   {
+    "title": "Head of Business Line Operations - Tactical Effects",
+    "company": "Anduril Industries",
+    "location": "Costa Mesa, CA",
+    "url": "https://www.linkedin.com/jobs/view/4474342058",
+    "remote": null,
+    "intl_ok": false,
+    "why": "remote=null (no evidence)"
+   },
+   {
+    "title": "Regional Director of Specialty Operations",
+    "company": "Alliance Animal Health",
+    "location": "Kansas City, MO",
+    "url": "https://www.linkedin.com/jobs/view/4480680734",
+    "remote": null,
+    "intl_ok": false,
+    "why": "remote=null (no evidence)"
+   },
+   {
+    "title": "Director of Supply Chain",
+    "company": "CHAOS Industries",
+    "location": "El Segundo, CA",
+    "url": "https://www.linkedin.com/jobs/view/4428731890",
+    "remote": null,
+    "intl_ok": false,
+    "why": "remote=null (no evidence)"
+   },
+   {
+    "title": "Inventory Planner [AQ-23891]",
+    "company": "Aquent",
+    "location": "Beaverton, OR",
+    "url": "https://www.linkedin.com/jobs/view/4481090831",
+    "remote": null,
+    "intl_ok": false,
+    "why": "remote=null (no evidence)"
+   },
+   {
+    "title": "Supply Chain Planner External Supply",
+    "company": "Source One Technical Solutions",
+    "location": "Titusville, NJ",
+    "url": "https://www.linkedin.com/jobs/view/4482885411",
+    "remote": false,
+    "intl_ok": false,
+    "why": "remote=false: al Company 📍 Titusville, NJ (100% Onsite) 💲 $33.57/hour W2 📅 12-Month Con"
+   },
+   {
+    "title": "Inventory Planner 3 [AQ-23612]",
+    "company": "Aquent",
+    "location": "Beaverton, OR",
+    "url": "https://www.linkedin.com/jobs/view/4480698871",
+    "remote": null,
+    "intl_ok": false,
+    "why": "remote=null (no evidence)"
+   }
+  ],
+  "other-country": [
+   {
+    "title": "Associate Planner PIM",
+    "company": "target",
+    "location": "Bangalore,India",
+    "url": "https://target.wd5.myworkdayjobs.com/targetcareers/job/BangaloreIndia/Associate-Planner-PIM_R0000444272",
+    "remote": null,
+    "intl_ok": false,
+    "why": "remote=null (no evidence)"
+   },
+   {
+    "title": "Macro Space Planner",
+    "company": "petstock",
+    "location": "Melbourne Support Office",
+    "url": "https://petstock.wd105.myworkdayjobs.com/petstock/job/Melbourne-Support-Office/Macro-Space-Planner_JR108304",
+    "remote": null,
+    "intl_ok": false,
+    "why": "remote=null (no evidence)"
+   },
+   {
+    "title": "Service Planner - Gulf",
+    "company": "ncratleos",
+    "location": "GIZA, EGY",
+    "url": "https://ncratleos.wd1.myworkdayjobs.com/ext_non_usalteos/job/GIZA-EGY/Service-Planer---Gulf_R1155204",
+    "remote": null,
+    "intl_ok": false,
+    "why": "remote=null (no evidence)"
+   },
+   {
+    "title": "Dispatch Planner",
+    "company": "jotun",
+    "location": "Riyadh",
+    "url": "https://jotun.wd3.myworkdayjobs.com/jotun_careers/job/Riyadh/Dispatch-Planner_R10525",
+    "remote": null,
+    "intl_ok": false,
+    "why": "remote=null (no evidence)"
+   },
+   {
+    "title": "DOF Planner",
+    "company": "hpe",
+    "location": "Hanoi City, Hà Nội, Vietnam",
+    "url": "https://hpe.wd5.myworkdayjobs.com/jobsathpe/job/Hanoi-City-H-Ni-Vietnam/DOF-Planner_1201156-2",
+    "remote": false,
+    "intl_ok": false,
+    "why": "remote=false: obal Order Scheduling • Lead Daily On-site Production meetings, driving actio"
+   },
+   {
+    "title": "Vendor Replenishment Planner",
+    "company": "gsknch",
+    "location": "Australia - NSW - Sydney Metro",
+    "url": "https://gsknch.wd3.myworkdayjobs.com/gskcareers/job/Australia---NSW---Sydney-Metro/Vendor-Replenishment-Planner_546965",
+    "remote": false,
+    "intl_ok": false,
+    "why": "remote=false: ys per year • Career development • Hybrid working & parking provided • Yearl"
+   },
+   {
+    "title": "Material Planner",
+    "company": "Trane Technologies",
+    "location": "Arecibo, Puerto Rico",
+    "url": "https://www.linkedin.com/jobs/view/4464166592",
+    "remote": false,
+    "intl_ok": false,
+    "why": "remote=false: e. We boldly go. Where Is The Work On-Site (5 days) What's In It For You Resp"
    }
   ]
  },
  "new": [
   {
-   "source": "linkedin:colombia",
-   "url": "https://www.linkedin.com/jobs/view/4474789324",
-   "title": "Planner/Scheduler II- Primavera P6 (Talent Pool)",
-   "company": "Worley",
-   "location": "Capital District, Colombia",
-   "posted": "2026-10-24",
-   "age_days": 1,
-   "lane": "colombia-bogota",
-   "remote": null,
-   "intl_ok": false,
-   "us_only_signals": [],
-   "salary": null,
-   "years_required": 5,
-   "contract_flags": [],
-   "body_excerpt": "Construyendo sobre nuestro pasado. Listos para el futuro Worley es una firma global de servicios profesionales compuesta por expertos en energía, productos químicos y recursos. Nos asociamos con clientes para entregar proyectos y crear valor durante la vida útil de sus activos. Estamos uniendo dos mundos, avanzando hacia fuentes de energía más sostenibles y al mismo tiempo ayudamos a proporcionar la energía, los productos químicos y los recursos que se necesitan ahora. Objetivo Del Cargo Preparar cronogramas complejos de ingeniería y construcción para propuestas y proyectos en ejecución; mantiene cronogramas complejos de manera frecuente; preparar informes para la gerencia con relación al…",
-   "detail_fetched": true,
-   "detail_error": null,
-   "evidence": {
-    "remote": null,
-    "intl": null
-   }
-  },
-  {
-   "source": "linkedin:ops-remote",
-   "url": "https://www.linkedin.com/jobs/view/4483151833",
-   "title": "Gerente de Operaciones de Servicios TI",
-   "company": "Empresa Confidencial",
-   "location": "Colombia",
-   "posted": "2026-10-23",
-   "age_days": 2,
-   "lane": "colombia-remote",
+   "source": "ats",
+   "url": "https://acs.wd5.myworkdayjobs.com/acscareers/job/Chicago-Illinois/Director-Estate-and-Gift-Planning---Homebased-in-Chicago_JR3891",
+   "title": "Director Estate and Gift Planning - Remote in Chicago",
+   "company": "acs",
+   "location": "Chicago, Illinois",
+   "posted": "2026-10-26",
+   "age_days": 0,
+   "lane": "us-remote-unstated",
    "remote": true,
    "intl_ok": false,
    "us_only_signals": [],
-   "salary": null,
-   "years_required": null,
+   "salary": "$110,000 to $120,000",
+   "years_required": 3,
    "contract_flags": [],
-   "body_excerpt": "Buscamos un/a Gerente de Operaciones de Servicios TI con experiencia liderando operaciones tecnológicas, equipos multidisciplinarios y modelos de entrega de servicios orientados al cumplimiento, la eficiencia y la experiencia del cliente. Esta posición tendrá un rol clave en el gobierno de la operación, asegurando la calidad y continuidad de los servicios, el cumplimiento de los niveles de servicio acordados y una gestión efectiva de incidentes, problemas, cambios y escalaciones. Buscamos una persona con una visión integral: operación + procesos + personas + cliente , capaz de transformar indicadores en acciones concretas de mejora. Principales responsabilidades • Liderar la operación…",
+   "body_excerpt": "At the American Cancer Society, we're working to end cancer as we know it, for everyone. Our employees and 1.3 million volunteers are raising the bar every single day. We are a culture comprised of diverse backgrounds and experience, to better serve our communities. The people who work at the American Cancer Society focus their diverse talents on our lifesaving mission. It is a calling. And the people who answer it are fulfilled. A Planned Giving Director is responsible for developing, managing, and implementing a comprehensive program of work to secure deferred gifts such as bequests, trusts, and annuities. This strategic role involves extensive donor relationship management,…",
    "detail_fetched": true,
    "detail_error": null,
    "evidence": {
-    "remote": "a del cliente. • Coordinar equipos remotos y multiculturales, promoviendo col",
+    "remote": "irector Estate and Gift Planning - Remote in Chicago Location: Chicago, Illi",
     "intl": null
-   }
-  },
-  {
-   "source": "linkedin:ops-remote",
-   "url": "https://www.linkedin.com/jobs/view/4464664109",
-   "title": "CX Operations Sr. Manager",
-   "company": "DiDi",
-   "location": "Greater Buenos Aires",
-   "posted": "2026-10-22",
-   "age_days": 3,
-   "lane": "latam-remote",
-   "remote": true,
-   "intl_ok": true,
-   "us_only_signals": [],
-   "salary": null,
-   "years_required": 8,
-   "contract_flags": [],
-   "body_excerpt": "About The Company DiDi Global Inc. is the world’s leading mobility technology platform. It offers a wide range of app-based services across markets including Asia-Pacific, Latin America and Africa, including ride hailing, taxi hailing, chauffeur, hitch and other forms of shared mobility as well as auto solutions, food delivery, intra-city freight, and financial services. DiDi provides car owners, drivers, and delivery partners with flexible work and income opportunities. It is committed to collaborating with policymakers, the taxi industry, the automobile industry and the communities to solve the world’s transportation, environmental and employment challenges through the use of AI…",
-   "detail_fetched": true,
-   "detail_error": null,
-   "evidence": {
-    "remote": "Adaptability: Ability to work with remote teams across different time zones",
-    "intl": "ss markets including Asia-Pacific, Latin America and Africa, including ride hailing"
    }
   },
   {
    "source": "linkedin:us-remote",
-   "url": "https://www.linkedin.com/jobs/view/4438538721",
-   "title": "Value Creation: Supply Chain - Managing Director",
-   "company": "CFGI",
+   "url": "https://www.linkedin.com/jobs/view/4438664183",
+   "title": "Director, Supply Chain",
+   "company": "AMETEK",
    "location": "United States",
-   "posted": "2026-10-24",
+   "posted": "2026-10-25",
    "age_days": 1,
    "lane": "us-remote-unstated",
    "remote": null,
    "intl_ok": false,
    "us_only_signals": [],
-   "salary": null,
+   "salary": "145,000",
    "years_required": 10,
    "contract_flags": [],
-   "body_excerpt": "Role Summary: Owns end-to-end supply chain transformation engagements — S&OP, network design, strategic sourcing, and inventory/working capital optimization — for PE sponsors and portfolio companies. This role anchors CFGI's supply chain pillar and requires someone who has run large, cross-functional transformation programs, not just delivered point diagnostics. Key Responsibilities: • Lead S&OP redesign engagements: demand planning, supply planning, integrated business planning cadence. • Drive strategic sourcing initiatives: should-cost modeling, supplier consolidation, category strategy, tariff mitigation and onshoring economics. • Design supply chain network optimization: footprint…",
+   "body_excerpt": "The Director, Supply Chain is responsible for leading the development and execution of supply chain strategies in partnership with the VP of Supply Chain to drive competitive advantage through cost, service, and operational performance. This role provides leadership to the commodity management organization and ensures alignment with plant materials management teams to support business objectives. The position focuses on delivering material cost savings, improving supplier performance, optimizing working capital, and reducing lead times, while ensuring strong integration across sourcing, planning, and logistics functions. This role collaborates cross-functionally to ensure supply chain…",
    "detail_fetched": true,
    "detail_error": null,
    "evidence": {
