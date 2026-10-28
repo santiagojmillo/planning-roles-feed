@@ -1,5 +1,5 @@
-sweep greenhouse: exit 0 in 91s
-sweep lever: exit 0 in 263s
+sweep greenhouse: exit 0 in 60s
+sweep lever: exit 0 in 669s
 sweep ashby: exit 0 in 21s
-sweep workday: exit 0 in 3405s
-sweep icims: exit 0 in 2265s
+sweep workday: exit 0 in 3140s
+sweep icims: exit 0 in 2266s
