@@ -77,6 +77,15 @@ const FULLY_REMOTE_RE = /\b(fully remote|100 ?% ?remot\w*|completamente remot[oa
 const ONSITE_RE = /\b(hybrid(?!\s+(?:cloud|planning|app|application|architecture|approach|algorithm|vehicle|method|model (?:of|for)|forecasting))|hibrid[oa]s?|(?<!\boccasional |\bperiodic |\bsome |\bfree )on[- ]?site(?!\s+(?:visit|audit|inspection|presence at|travel|support to|trip|facilit|gym|parking|cafeteria|canteen|amenit|childcare|daycare|restaurant|dining|fitness|laundry|clinic|medical|nurse|massage|perks|meals?|lunch|breakfast))|presencial(?:es|idad)?|in[- ]office|days? (?:per|a) week in|dias? (?:a la|por) semana en)\b/g;
 
 const INTL_RE = /\b(latam|latin ?america|latinoamerica|america latina|international candidates|candidates (?:outside|in any country)|anywhere in the world|worldwide|work from anywhere|global remote|independent contractor|contractors?|contrato por prestacion|colombia)\b/g;
+
+// A role that says it is BASED in LATAM (owner, 2026-11-16: WAI Global 'Senior Analyst, Global Supply Chain Planning
+// (LATAM Based)', listed in Hollywood, FL, was dropped as US on-site): the work happens from Latin America whatever city
+// the employer lists, so it goes to latam-remote. Read on location + title + body (deaccented, lowercase).
+const LATAM_W = '(?:latam|latin america|latinoamerica|america latina|south america|sudamerica|suramerica)';
+export const LATAM_BASED_RE = new RegExp(
+  `\\b${LATAM_W}[\\s-]*based\\b|\\bbased (?:in|out of|anywhere in|from) ${LATAM_W}\\b`
+  + `|\\b(?:remote|remoto)\\s*[-\u2013\u2014,:(]?\\s*(?:from |in |within |desde |en )?${LATAM_W}\\b|\\b${LATAM_W}\\s*[-\u2013\u2014,:(]?\\s*(?:remote|remoto)\\b`
+  + `|\\b(?:work|working|hire|hiring|located|living|reside) (?:from |in |anywhere in )${LATAM_W}\\b`);
 const INTL_NEG = /(\bnot\b|\bno\b|\bnon\b|\bisn'?t\b|\bcannot\b|\bcan'?t\b|\bunable\b|\bexcept\b|\bexcluding\b|\bunfortunately\b|\bsin\b)[^.;:\n!?]*$/;
 
 const US_STATES = ['alabama', 'alaska', 'arizona', 'arkansas', 'california', 'colorado', 'connecticut', 'delaware', 'florida', 'georgia', 'hawaii', 'idaho',
@@ -199,7 +208,7 @@ const CONTRACT_FLAGS = [
 ];
 
 // ───────────────────────────── extractFields ─────────────────────────────
-// { title, location, text } → { remote, intl_ok, us_only_signals, salary, years_required, contract_flags }
+// { title, location, text } → { remote, intl_ok, latam_based, us_only_signals, salary, years_required, contract_flags }
 export function extractFields({ title = '', location = '', text = '' } = {}) {
   const orig = `${location || ''}\n${title || ''}\n${text || ''}`;
   const norm = deaccent(orig).toLowerCase();
@@ -241,11 +250,13 @@ export function extractFields({ title = '', location = '', text = '' } = {}) {
     intl_ok = true; intlEvidence = ctx(m.index, m[0].length); break;
   }
 
+  const latam_based = LATAM_BASED_RE.test(norm);
+  if (latam_based && !intl_ok) { intl_ok = true; const lm = norm.match(LATAM_BASED_RE); intlEvidence = ctx(lm.index, lm[0].length); }
   const us_only_signals = usOnlySignals(orig, norm);
   const salary = firstSalary(orig.slice(bodyStart)) || firstSalary(orig);
   const years_required = yearsRequired(norm.slice(bodyStart));
   const contract_flags = CONTRACT_FLAGS.filter(([, re]) => re.test(norm)).map(([k]) => k);
-  return { remote, intl_ok, us_only_signals, salary, years_required, contract_flags, evidence: { remote: remoteEvidence, intl: intlEvidence } };
+  return { remote, intl_ok, latam_based, us_only_signals, salary, years_required, contract_flags, evidence: { remote: remoteEvidence, intl: intlEvidence } };
 }
 
 // ───────────────────────────── geography ─────────────────────────────
@@ -336,12 +347,15 @@ export function locationQualifiesAlone(location) {
 
 // ───────────────────────────── assignLane ─────────────────────────────
 // Owner's eligibility rules, verbatim. → { lane, drop_reason }
-export function assignLane({ location, title, remote, intl_ok, us_only_signals } = {}) {
+export function assignLane({ location, title, remote, intl_ok, latam_based, us_only_signals } = {}) {
   const g = geo(location);
   const usOnly = Array.isArray(us_only_signals) && us_only_signals.length > 0;
   const keep = (lane) => ({ lane, drop_reason: null });
   const drop = (reason) => ({ lane: null, drop_reason: reason });
   void title; // title evidence already feeds `remote` via extractFields
+  // Stated LATAM base (title or body) beats the employer's city: the job is done from Latin America. Colombia and Spain
+  // keep their own city rules.
+  if (latam_based && g.country !== 'CO' && g.country !== 'ES') return keep('latam-remote');
   switch (g.country) {
     case 'CO':
       if (g.metro === 'medellin') return keep('colombia-medellin');
@@ -481,6 +495,17 @@ if (process.argv[1] && process.argv[1].endsWith('classify.mjs') && process.argv.
   // 23. HireLatam-style Colombia country-level: WFH + contractor → colombia-remote, intl_ok, salary
   r = run('Colombia', 'Remote Operations & Supply Chain Manager', 'Independent contractor roles in US companies. (100% Work From Home) Location: Remote from Latin America. Salary : $2,000 USD/month ($13.00 USD/hour).');
   check('23 HireLatam', [r.f.remote, r.f.intl_ok, r.l.lane, r.f.salary], [true, true, 'colombia-remote', '$2,000 USD/month']);
+  // 23b. LATAM-based role listed in a US city (WAI Global, 2026-11-16) → latam-remote; a LATAM-scope title alone is not a base
+  r = run('Hollywood, FL', 'Senior Analyst, Global Supply Chain Planning (LATAM Based)', 'Develop models and decision tools for our global network.');
+  check('23b WAI LATAM based', [r.f.latam_based, r.f.intl_ok, r.l.lane], [true, true, 'latam-remote']);
+  r = run('Miami, FL', 'Director of Supply Chain, LATAM', 'Lead supply chain for our Latin America region from our Miami office.');
+  check('23c LATAM scope Miami on-site', [r.f.latam_based, r.l.drop_reason], [false, 'us-onsite']);
+  r = run('United States', 'Demand Planning Manager', 'This is a remote role based in Latin America, working US Eastern hours.');
+  check('23d body based in Latin America', [r.f.latam_based, r.l.lane], [true, 'latam-remote']);
+  r = run('New York, NY', 'Supply Planner', 'Remote - LATAM. Contractor engagement.');
+  check('23e Remote - LATAM', [r.f.latam_based, r.l.lane], [true, 'latam-remote']);
+  r = run('Bogotá, D.C., Colombia', 'Demand Planning Manager', 'LATAM-based team, hybrid in Bogotá.');
+  check('23f Colombia keeps city rule', r.l.lane, 'colombia-bogota');
   // 24. parseRelativeDate
   const NOW = '2026-10-13T15:00:00Z';
   check('24a days ago', parseRelativeDate('3 days ago', NOW), '2026-10-10');

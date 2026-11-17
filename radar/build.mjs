@@ -15,7 +15,7 @@ import { readFileSync, writeFileSync, existsSync, mkdirSync } from 'node:fs';
 import { createRequire } from 'node:module';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
-import { cleanText, extractFields, assignLane, parseRelativeDate, excerpt, geo, locationQualifiesAlone } from './classify.mjs';
+import { cleanText, extractFields, assignLane, parseRelativeDate, excerpt, geo, locationQualifiesAlone, LATAM_BASED_RE, deaccent } from './classify.mjs';
 
 const args = process.argv.slice(2);
 const DRY = args.includes('--dry-run');
@@ -73,10 +73,17 @@ const OPS_TITLE = /(operations|operaciones)/i;
 const OPS_LEVEL = /(director|head|\bvp\b|vice president|chief|senior manager|sr\.? manager|gerente|\blead\b|l[ií]der|manager)/i;
 const OPS_NEG = /(revenue|sales|marketing|people|\bhr\b|human|legal|security|\bit\b|devops|cloud|network|data center|clinical|medical|dental|nursing|clinic|hospital|restaurant|store|retail|warehouse|plant|manufacturing|production|producci[oó]n|field|branch|customer|support|contact cent|call cent|fleet|transport|logistic|facilit|hotel|hospitality|construction|payment|fraud|trust|\bad\b|campaign|content|studio|clinical|lab\b|planta|bodega|tienda|log[ií]stica)/i;
 const opsTitleOk = (t) => OPS_TITLE.test(t) && OPS_LEVEL.test(t) && !OPS_NEG.test(t) && !tff.negative.some((k) => kwTest(k, t));
+// LATAM-based analyst / specialist roles (owner, 2026-11-16: WAI Global 'Senior Analyst, Global Supply Chain Planning (LATAM
+// Based)' never reached him because the strict net drops every 'Analyst'): a planning title that also names LATAM may be an
+// Analyst or Specialist; every other negative still applies, and the 7am rulebook judges level and pay.
+const LATAM_TITLE = /\b(latam|latin america|latinoam[eé]rica|am[eé]rica latina|south america)\b/i;
+const LATAM_IC_OK = new Set(['Analyst', 'Specialist']);
+const latamIcTitleOk = (t) => LATAM_TITLE.test(t) && tff.positive.some((k) => kwTest(k, t))
+  && !tff.negative.some((k) => !LATAM_IC_OK.has(k) && kwTest(k, t));
 const titleOk = (t, source) => (WORLDWIDE.has(source)
   ? LOOSE_SC.test(t) && !tff.negative.some((k) => kwTest(k, t))
   : OPS_LANE(source) ? passes(tff, t) || opsTitleOk(t)
-  : passes(MAIN_FILTER_SOURCES.has(source) || String(source).startsWith('employer:') ? tfMain : tff, t));
+  : passes(MAIN_FILTER_SOURCES.has(source) || String(source).startsWith('employer:') ? tfMain : tff, t) || latamIcTitleOk(t));
 
 // ── Aggregator drop list (config/portals.yml: aggregator_companies) ──
 const AGGREGATORS = (Array.isArray(portals.aggregator_companies) ? portals.aggregator_companies : ['jobgether', 'ladders', 'jobicy', 'remotestack', 'remote rocketship'])
@@ -315,6 +322,7 @@ const priority = (j) => {
   // Operations-lane roles never starve planning roles: country-level postings (how LinkedIn lists remote roles, e.g.
   // Space Inch) go after the planning lanes, ops roles in specific cities near the end.
   if (OPS_LANE(j.source) && !passes(tff, j.title)) return g.countryLevel && ['CO', 'LATAM', 'US', 'ES'].includes(g.country) ? 2.5 : 3.5;
+  if (LATAM_BASED_RE.test(deaccent(`${j.title} ${j.location}`).toLowerCase())) return 0; // stated LATAM base: body decides, fetch first
   if (g.country === 'CO') return g.metro || g.countryLevel ? 1 : 0;
   if (g.country === 'ES') return g.metro ? 1 : 0;
   if (g.country === 'LATAM') return 0;
@@ -361,6 +369,7 @@ for (const j of survivors) {
     // city-level or elsewhere needs the body to qualify and is dropped with the fetch error as the reason.
     const g = geo(j.location);
     if (g.country === 'US' && g.countryLevel && !(fields.us_only_signals.length && !fields.intl_ok)) verdict = { lane: fields.intl_ok ? 'remote-intl' : 'us-remote-unstated', drop_reason: null };
+    else if (fields.latam_based && g.country !== 'CO' && g.country !== 'ES') verdict = { lane: 'latam-remote', drop_reason: null };
     else if (g.country === 'LATAM' && g.countryLevel) verdict = { lane: 'latam-remote', drop_reason: null };
     else verdict = { lane: null, drop_reason: j.detail_error?.startsWith('skipped') ? 'detail-skipped' : 'detail-failed' };
   }
