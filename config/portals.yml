@@ -54,6 +54,14 @@ title_filter:
     - "Solution Principal"
     - "Presales + Planning"
     - "Pre-Sales + Planning"
+    # -- Spanish consulting titles (owner, 2026-11-23: Analyticalways "Consultor de Retail (Colombia)", a retail-planning
+    #    SaaS consultant role, failed every title list). "Consultor" also matches Consultora / Consultoría. --
+    - "Consultor + Supply Chain"
+    - "Consultor + Cadena de"
+    - "Consultor + Inventario"
+    - "Consultor + Retail"
+    - "Consultor + Demanda"
+    - "Retail Planning + Consultant"
     # -- Spanish / Portuguese --
     - "Planeación"
     - "Planeacion"
@@ -67,6 +75,10 @@ title_filter:
     - "Supply Chain"
 
   negative:
+    - "Sales Consultant"
+    - "Consultor + Ventas"
+    - "Consultor Comercial"
+    - "Consultor + Tienda"
     - "word:Intern"
     - "word:Interns"
     - "Internship"
@@ -177,7 +189,19 @@ title_filter_full:
     - "Planificacion"
     - "Planejamento"
     - "Abastecimiento"
+    # -- Consulting titles (2026-11-23, Analyticalways miss): LinkedIn uses this list, which had none --
+    - "Supply Chain + Consultant"
+    - "Planning + Consultant"
+    - "Consultor + Supply Chain"
+    - "Consultor + Cadena de"
+    - "Consultor + Inventario"
+    - "Consultor + Retail"
+    - "Consultor + Demanda"
   negative:
+    - "Sales Consultant"
+    - "Consultor + Ventas"
+    - "Consultor Comercial"
+    - "Consultor + Tienda"
     - "word:Intern"
     - "Internship"
     - "Junior"

@@ -133,19 +133,34 @@ const noteDrop = (reason, j, extra = {}) => {
   if (dropped[reason].length < 25) dropped[reason].push({ title: j.title, company: j.company, location: j.location, url: j.url, ...extra });
 };
 const survivors = []; const runKeys = new Set();
+// Placeholder titles (owner, 2026-11-23: Analyticalways posted "Consultor de Retail (Colombia)" on LinkedIn under the
+// title "Presentación Analyticalways", so the title filter dropped it although the Spanish planner query found it).
+// A LinkedIn title with no job word at all is held back; after the main detail stage its posting is fetched and the
+// job title written at the top of the description replaces it (see "Placeholder-title rescue" below).
+const JOB_WORD = /(manager|director|head|lead|chief|\bvp\b|vice president|president|officer|analyst|planner|specialist|coordinator|consultant|engineer|associate|executive|supervisor|assistant|intern|representative|agent|developer|designer|scientist|architect|administrator|advisor|buyer|clerk|technician|operator|owner|partner|controller|jefe|gerente|analista|coordinador|consultor|especialista|lider|planeador|planificador|asistente|auxiliar|ejecutiv|profesional|practicante|aprendiz|tecnico|ingenier|asesor|comprador|operario|vendedor|cajer|gestor|responsable|encargad|diretor|coordenador|planejador|estagi)/;
+const MAX_RESCUE = Number(process.env.RADAR_MAX_RESCUE ?? 15);
+const isPlaceholderTitle = (j) => String(j.source).startsWith('linkedin:') && !JOB_WORD.test(deaccent(j.title).toLowerCase());
+const placeholders = [];
+function admit(j) {
+  if (isAggregator(j)) { noteDrop('aggregator', j); return; }
+  const ku = normUrl(j.url); const kr = normRole(j);
+  if (runKeys.has(ku) || (kr && runKeys.has(kr))) { counts.dup_in_run++; return; }
+  runKeys.add(ku); if (kr) runKeys.add(kr);
+  if (seen[ku] || (kr && seen[kr])) { counts.already_seen++; return; }
+  survivors.push(j);
+}
 for (const j of cands) {
   j.title = j.title || ''; j.company = j.company || ''; j.location = j.location || '';
   if (j.posted && !Number.isNaN(Date.parse(j.posted))) {
     j.age_days = ageDays(j.posted);
     if (j.age_days > DAYS) { counts.too_old++; continue; }
   } else { j.posted = ''; j.age_days = null; } // undated: a detail page may still date it; dropped later if not
-  if (!titleOk(j.title, j.source)) { counts.title++; continue; }
-  if (isAggregator(j)) { noteDrop('aggregator', j); continue; }
-  const ku = normUrl(j.url); const kr = normRole(j);
-  if (runKeys.has(ku) || (kr && runKeys.has(kr))) { counts.dup_in_run++; continue; }
-  runKeys.add(ku); if (kr) runKeys.add(kr);
-  if (seen[ku] || (kr && seen[kr])) { counts.already_seen++; continue; }
-  survivors.push(j);
+  if (!titleOk(j.title, j.source)) {
+    if (isPlaceholderTitle(j) && !seen[normUrl(j.url)] && !placeholders.some((p) => normUrl(p.url) === normUrl(j.url))) placeholders.push(j);
+    else counts.title++;
+    continue;
+  }
+  admit(j);
 }
 
 // ── Detail fetch (one request at a time; ≥1.2 s between LinkedIn requests; 429/999/5xx retried after 5 s, 15 s) ──
@@ -351,6 +366,38 @@ for (const j of survivors) {
   log(`detail ${fetched}/${Math.min(survivors.length, MAX_DETAIL)} ok ${String(j._text.length).padStart(5)} chars — ${j.title} @ ${j.location}`);
 }
 
+// ── Placeholder-title rescue (after the main detail stage, so it never starves real roles of LinkedIn requests) ──
+// The real title is the first short line near the top of the description that has a job word and passes the same
+// title filter as the card would have; questions and long sentences are skipped. No match → dropped as before.
+const prettyTitle = (s) => (s === s.toUpperCase()
+  ? s.toLowerCase().replace(/(^|[\s(/-])(\p{L})/gu, (m, a, b) => a + b.toUpperCase()).replace(/\b(De|Del|La|Las|Los|Y|En|E|Of|And|The|For)\b/g, (w) => w.toLowerCase()).replace(/^./, (c) => c.toUpperCase())
+  : s);
+function titleFromBody(text, source) {
+  const segs = String(text || '').split(/\n|•|\s{3,}/).map((s) => s.replace(/\s+/g, ' ').trim()).filter(Boolean).slice(0, 10);
+  for (const s of segs) {
+    if (s.length < 6 || s.length > 90 || /[?¿:]/.test(s)) continue;
+    if (JOB_WORD.test(deaccent(s).toLowerCase()) && titleOk(s, source)) return prettyTitle(s);
+  }
+  return null;
+}
+counts.title_rescued = 0;
+if (placeholders.length > MAX_RESCUE) { counts.title += placeholders.length - MAX_RESCUE; log(`rescue: ${placeholders.length} placeholder titles, only the first ${MAX_RESCUE} checked`); }
+for (const j of SKIP_DETAIL ? [] : placeholders.slice(0, MAX_RESCUE)) {
+  const d = await fetchDetail(j);
+  const real = d.error ? null : titleFromBody(d.text, j.source);
+  if (!real) { counts.title++; log(`rescue: no job title found in "${j.title}" (${d.error || 'body checked'}) — ${j.url}`); continue; }
+  log(`rescue: "${j.title}" → "${real}" — ${j.url}`);
+  j.title_original = j.title; j.title = real;
+  counts.title_rescued++; counts.detail_fetched++;
+  j.detail_fetched = true; j.detail_error = null;
+  j._desc = d.text || ''; j._text = [d.meta, d.text].filter(Boolean).join('\n');
+  if (!j.posted && d.posted && !Number.isNaN(Date.parse(d.posted))) { j.posted = d.posted; j.age_days = ageDays(d.posted); }
+  if (!j.company && d.company) j.company = d.company;
+  if (!j.location && d.location) j.location = d.location;
+  admit(j);
+}
+if (SKIP_DETAIL) counts.title += Math.min(placeholders.length, MAX_RESCUE);
+
 // ── Classify → lane / drop ──
 const LANE_ORDER = ['colombia-medellin', 'colombia-bogota', 'colombia-remote', 'latam-remote', 'spain-madrid', 'spain-remote', 'remote-intl', 'us-remote-unstated', 'remote-other-intl'];
 const fresh = [];
@@ -383,7 +430,7 @@ for (const j of survivors) {
     continue;
   }
   fresh.push({
-    source: j.source, url: j.url, title: j.title, company: j.company, location: j.location, posted: j.posted, age_days: j.age_days,
+    source: j.source, url: j.url, title: j.title, ...(j.title_original ? { title_on_posting: j.title_original } : {}), company: j.company, location: j.location, posted: j.posted, age_days: j.age_days,
     lane: verdict.lane, remote: fields.remote, intl_ok: fields.intl_ok, us_only_signals: fields.us_only_signals, salary: fields.salary,
     years_required: fields.years_required, contract_flags: fields.contract_flags, body_excerpt: excerpt(j._desc, 700),
     detail_fetched: j.detail_fetched, detail_error: j.detail_error, evidence: fields.evidence,
