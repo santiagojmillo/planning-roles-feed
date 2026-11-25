@@ -1,169 +1,169 @@
-# Job radar — 2026-11-24
+# Job radar — 2026-11-25
 
-New live roles (≤3 days): **15**
+New live roles (≤3 days): **16**
 
 | Age | Lane | Remote | Company | Title | Location | Salary | Flags | Source |
 |---|---|---|---|---|---|---|---|---|
-| 1d | colombia-medellin | no | Roca Alliances | [Operations / Service Delivery Manager](https://www.linkedin.com/jobs/view/4493907289) | Medellín, Antioquia, Colombia |  | — | linkedin:ops-remote |
-| 1d | colombia-remote | ? | SoftServe | [Lead SaaS Operations Manager](https://www.linkedin.com/jobs/view/4494002806) | Colombia |  | — | linkedin:ops-remote |
-| 1d | latam-remote | yes | Celestica | [07 - Planner](https://www.linkedin.com/jobs/view/4494075658) | Monterrey, Nuevo León, Mexico |  | — | linkedin:latam-remote |
-| 1d | latam-remote | yes | Listo Global | [Demand Planner](https://www.linkedin.com/jobs/view/4494060556) | Latin America |  | intl | linkedin:latam-remote |
-| 1d | spain-madrid | ? | dsm-firmenich Animal Nutrition & Health | [Manager Supply Chain Planning IT Solutions](https://www.linkedin.com/jobs/view/4494016175) | Madrid, Community of Madrid, Spain |  | — | linkedin:madrid |
-| 1d | spain-madrid | yes | Genea Biomedx | [Global Supply Chain Director](https://www.linkedin.com/jobs/view/4493922288) | Madrid, Community of Madrid, Spain |  | — | linkedin:madrid |
-| 1d | spain-madrid | ? | Jungheinrich Digital Solutions Spain | [Sap Business Intelligence Consultant (SAC Planning)](https://www.linkedin.com/jobs/view/4494017342) | Madrid, Community of Madrid, Spain |  | — | linkedin:madrid |
-| 1d | spain-madrid | ? | Nextracker Inc. | [Sr. Supply Planner - Inverters (Madrid or Valencia)](https://www.linkedin.com/jobs/view/4493655492) | Madrid, Community of Madrid, Spain |  | — | linkedin:madrid |
-| 1d | spain-madrid | no | PROEDUCA | [Controller de Planificación Comercial](https://www.linkedin.com/jobs/view/4493671972) | Pozuelo de Alarcón, Community of Madrid, Spain |  | — | linkedin:madrid |
-| 1d | spain-madrid | ? | Wyser | [Production & Supply Chain Director](https://www.linkedin.com/jobs/view/4492639028) | Greater Madrid Metropolitan Area |  | — | linkedin:madrid |
-| 0d | spain-remote | yes | Henkel | [Supply Planner - Temporary](https://www.linkedin.com/jobs/view/4494105241) | Barcelona, Catalonia, Spain |  | intl · temporal | linkedin:spain |
-| 0d | us-remote-unstated | yes | Aggreko | [Master Planner](https://www.linkedin.com/jobs/view/4493994055) | Texas, United States |  | — | linkedin:us-remote |
-| 0d | us-remote-unstated | yes | BioSpace | [Associate Director, Demand Planning](https://www.linkedin.com/jobs/view/4494101134) | Home, KS |  | — | linkedin:us-remote |
-| 0d | us-remote-unstated | ? | TalentHop | [Manufacturing Planner - E2](https://www.linkedin.com/jobs/view/4492693243) | United States |  | no-detail | linkedin:us-remote |
-| 1d | us-remote-unstated | ? | RYZE | [Director of Demand Planning](https://www.linkedin.com/jobs/view/4493934010) | United States |  | — | linkedin:us-remote |
+| 0d | colombia-bogota | ? | AOS International | [Gerente de Operaciones y Servicios](https://www.linkedin.com/jobs/view/4493056696) | Bogota, D.C., Capital District, Colombia |  | no-detail | linkedin:ops-latam |
+| 0d | colombia-bogota | ? | Área Cuadrada | [Profesional de Planeacion](https://www.linkedin.com/jobs/view/4494602090) | Bogota, D.C., Capital District, Colombia |  | — | linkedin:colombia |
+| 0d | colombia-bogota | ? | Seguridad Central LTDA. | [Director de Operaciones / Sector Seguridad Privada](https://www.linkedin.com/jobs/view/4494486772) | Bogota, D.C., Capital District, Colombia |  | fixed-term | linkedin:ops-remote |
+| 1d | colombia-bogota | ? | GraceMark Solutions | [Representante de Abastecimiento de Chatarra en Campo (Colombia)](https://www.linkedin.com/jobs/view/4494140965) | Bogota, D.C., Capital District, Colombia |  | no-detail | linkedin:colombia |
+| 1d | colombia-bogota | no | Publicis Media Colombia | [Digital Operations Lead](https://www.linkedin.com/jobs/view/4494387811) | Bogota, D.C., Capital District, Colombia |  | — | linkedin:ops-remote |
+| 0d | latam-remote | yes | InBetta | [Supervisor de S&OP / Curto Prazo](https://www.linkedin.com/jobs/view/4493053896) | Esteio, Rio Grande do Sul, Brazil |  | — | linkedin:latam-remote |
+| 0d | latam-remote | ? | Tidal | [Supply & Innovation Planner](https://www.linkedin.com/jobs/view/4494474905) | Mexico |  | no-detail | linkedin:latam-remote |
+| 0d | latam-remote | yes | Tidal | [Product Development & Sourcing Manager](https://www.linkedin.com/jobs/view/4494471610) | Mexico | $3,500-$4,000/month | us-only:1 · intl | linkedin:worldwide |
+| 1d | latam-remote | yes | Blacksmith Agency | [Head of Finance and Operations (Remote, Ciudad Juarez)](https://www.linkedin.com/jobs/view/4494195386) | Mexico |  | no-detail | linkedin:ops-remote |
+| 2d | latam-remote | yes | Blacksmith Agency | [Director of Finance and Operations (Remote, San Jose)](https://www.linkedin.com/jobs/view/4493903231) | Hojancha, Guanacaste, Costa Rica |  | us-only:1 · intl | linkedin:ops-remote |
+| 0d | spain-madrid | ? | Betancourt Executive Search & HR Advisory | [Merchandise Planner, Retail & Moda](https://www.linkedin.com/jobs/view/4494497548) | Madrid, Community of Madrid, Spain |  | — | linkedin:madrid |
+| 1d | spain-madrid | ? | Flowserve Corporation | [Material Planner / Operations Associate](https://www.linkedin.com/jobs/view/4494337452) | Coslada, Community of Madrid, Spain |  | — | linkedin:madrid |
+| 1d | spain-madrid | ? | ROBERT BOSCH ESPAÑA FABRICA MADRID SA | [Planificador/a de Clientes y Proveedores (contrato temporal)](https://www.linkedin.com/jobs/view/4494147920) | Madrid, Community of Madrid, Spain |  | fixed-term · temporal | linkedin:madrid |
+| 0d | us-remote-unstated | yes | TalentHop | [Supply Planner](https://www.linkedin.com/jobs/view/4493096550) | United States | $230,112/year | — | linkedin:us-remote |
+| 1d | us-remote-unstated | no | heron-power | [Head of Supply Chain](https://jobs.ashbyhq.com/heron-power/872bbdef-305a-44fc-9870-806781d059ad) | Scotts Valley · United States | $250,000 to $300,000 per year | — | ats |
+| 2d | us-remote-unstated | yes | ag1 | [Manager, Demand Planning](https://job-boards.greenhouse.io/ag1/jobs/5480697008) | Remote - US | $91,000.00 - $116,000.00 | — | ats |
 
 ```
 {
  "counts": {
-  "candidates": 1263,
-  "undated": 1,
-  "too_old": 69,
-  "title": 973,
-  "dup_in_run": 18,
-  "already_seen": 102,
-  "detail_fetched": 88,
+  "candidates": 1359,
+  "undated": 0,
+  "too_old": 68,
+  "title": 1058,
+  "dup_in_run": 21,
+  "already_seen": 122,
+  "detail_fetched": 70,
   "detail_skipped": 0,
-  "detail_failed": 7,
+  "detail_failed": 11,
   "not_eligible": {
-   "aggregator": 6,
-   "co-other-city-onsite": 2,
-   "us-only": 1,
-   "es-other-city-onsite": 8,
-   "latam-onsite": 13,
-   "us-onsite": 36,
-   "detail-failed": 5,
-   "other-country": 12,
-   "phrase-not-in-body": 2
+   "aggregator": 9,
+   "es-other-city-onsite": 1,
+   "latam-onsite": 10,
+   "us-only": 2,
+   "detail-failed": 7,
+   "us-onsite": 33,
+   "other-country": 11,
+   "co-other-city-onsite": 1
   },
-  "new": 15,
+  "new": 16,
   "title_rescued": 0,
-  "feed_posts": 8,
+  "feed_posts": 12,
   "feed_dropped": {
    "undated": 0,
    "too_old": 0,
-   "already_seen": 5
+   "already_seen": 2
   }
  },
  "sources": {
   "ats": {
-   "candidates": 30
+   "candidates": 39
   },
   "linkedin": {
    "lanes": "<16 items>",
    "window": "r259200",
    "total_queries": 70,
-   "pages": 268,
-   "cards": 2617,
-   "unique": 1145,
-   "blocked": 0,
-   "rate_limited": 112,
-   "retries": 112,
-   "elapsed_s": 4157,
+   "pages": 272,
+   "cards": 2684,
+   "unique": 1208,
+   "blocked": 1,
+   "rate_limited": 87,
+   "retries": 86,
+   "elapsed_s": 3256,
    "by_lane": {
     "colombia": {
      "queries": 15,
-     "pages": 60,
-     "cards": 562,
-     "unique": 277,
-     "failed": 0
+     "pages": 61,
+     "cards": 596,
+     "unique": 278,
+     "failed": 1
     },
     "us-remote": {
      "queries": 7,
      "pages": 35,
      "cards": 350,
-     "unique": 186,
+     "unique": 194,
      "failed": 0
     },
     "madrid": {
      "queries": 4,
-     "pages": 19,
-     "cards": 188,
-     "unique": 120,
+     "pages": 20,
+     "cards": 200,
+     "unique": 124,
      "failed": 0
     },
     "spain": {
      "queries": 5,
      "pages": 25,
      "cards": 250,
-     "unique": 86,
+     "unique": 88,
      "failed": 0
     },
     "latam-remote": {
      "queries": 5,
      "pages": 25,
      "cards": 250,
-     "unique": 104,
+     "unique": 106,
      "failed": 0
     },
     "mexico": {
      "queries": 2,
      "pages": 10,
      "cards": 100,
-     "unique": 30,
+     "unique": 25,
      "failed": 0
     },
     "argentina": {
      "queries": 2,
-     "pages": 6,
-     "cards": 50,
-     "unique": 24,
+     "pages": 8,
+     "cards": 66,
+     "unique": 38,
      "failed": 0
     },
     "chile": {
      "queries": 2,
      "pages": 10,
-     "cards": 94,
-     "unique": 45,
+     "cards": 96,
+     "unique": 50,
      "failed": 0
     },
     "peru": {
      "queries": 2,
      "pages": 8,
-     "cards": 74,
-     "unique": 48,
+     "cards": 76,
+     "unique": 51,
      "failed": 0
     },
     "brazil": {
      "queries": 3,
      "pages": 15,
      "cards": 150,
-     "unique": 69,
+     "unique": 75,
      "failed": 0
     },
     "worldwide": {
      "queries": 9,
      "pages": 9,
-     "cards": 89,
-     "unique": 16,
+     "cards": 90,
+     "unique": 21,
      "failed": 0
     },
     "dtc": {
      "queries": 2,
      "pages": 6,
      "cards": 60,
-     "unique": 31,
+     "unique": 34,
      "failed": 0
     },
     "ops-latam": {
      "queries": 2,
      "pages": 6,
      "cards": 60,
-     "unique": 46,
+     "unique": 48,
      "failed": 0
     },
     "ops-remote": {
      "queries": 4,
      "pages": 12,
      "cards": 120,
-     "unique": 29,
+     "unique": 37,
      "failed": 0
     },
     "planner-co": {
@@ -177,11 +177,18 @@ New live roles (≤3 days): **15**
      "queries": 4,
      "pages": 12,
      "cards": 120,
-     "unique": 31,
+     "unique": 36,
      "failed": 0
     }
    },
-   "failed_queries": [],
+   "failed_queries": [
+    {
+     "lane": "colombia",
+     "loc": "Bogotá, D.C., Capital District, Colombia",
+     "kw": "S&OP",
+     "status": 429
+    }
+   ],
    "queries": "<70 items>"
   },
   "boards": {
@@ -191,7 +198,7 @@ New live roles (≤3 days): **15**
     "fetched": 0
    },
    "getonbrd": {
-    "items": 6
+    "items": 5
    },
    "remotive": {
     "items": 45
@@ -199,40 +206,41 @@ New live roles (≤3 days): **15**
    "elempleo": {
     "search_pages": 22,
     "offers": 277,
-    "level_titles": 46,
-    "opened": 46,
+    "level_titles": 42,
+    "opened": 42,
     "kept": 1,
     "capped": 0
    },
    "sgestion:sg_chazey": {
-    "items": 18
+    "items": 19
    }
   },
   "startups": {
    "yc": {
     "hiring_companies": 1000,
     "pages": 50,
-    "company_pages": 425,
-    "page_errors": 575,
-    "postings": 1771,
-    "old": 1750,
+    "company_pages": 418,
+    "page_errors": 582,
+    "postings": 1600,
+    "old": 1582,
     "undated": 0,
-    "us_only_visa": 4,
-    "junior_experience": 13,
+    "us_only_visa": 5,
+    "junior_experience": 9,
     "kept": 4,
     "dropped_samples": {
      "us_only_visa": [
-      "(Founding) Forward Deployed Engineer — horizontal. — Munich, Germany",
-      "(Founding) Core Engineer — horizontal. — Munich, Germany",
-      "Founding Recruiter — Healia — Columbus, OH, US",
-      "Forward Deployment Architect – AEC — Pirros — Los Angeles Office"
+      "Workforce Management - Real Time Analyst — Clipboard — Remote (US)",
+      "Chief Engineer (Optical Comms) — Apolink — Palo Alto",
+      "Founding Customer Success Manager — CollectWise — New York, NY, US",
+      "Strategy and Operations Lead, EMEA — FirstWork — Remote (US)",
+      "Product Designer (Contract)  — Hazel — US / Remote (US)"
      ],
-     "junior_experience": "<12 items>"
+     "junior_experience": "<9 items>"
     }
    },
    "hn": {
     "thread": "Ask HN: Who is hiring? (November 2026)",
-    "comments_in_window": 2,
+    "comments_in_window": 1,
     "top_level": 0,
     "on_topic": 0,
     "kept": 0
@@ -241,9 +249,9 @@ New live roles (≤3 days): **15**
   "employers": {
    "tenants": 20,
    "requests": 102,
-   "postings_seen": 142,
-   "old_or_undated": 128,
-   "kept": 14,
+   "postings_seen": 141,
+   "old_or_undated": 103,
+   "kept": 38,
    "by_employer": {
     "PPG": {
      "seen": 0,
@@ -258,36 +266,36 @@ New live roles (≤3 days): **15**
      "kept": 0
     },
     "Johnson & Johnson": {
-     "seen": 0,
-     "kept": 0
+     "seen": 40,
+     "kept": 16
     },
     "GSK": {
      "seen": 0,
      "kept": 0
     },
     "MSD": {
-     "seen": 4,
+     "seen": 3,
      "kept": 1
     },
     "Mars": {
-     "seen": 5,
+     "seen": 0,
      "kept": 0
     },
     "Dow": {
-     "seen": 61,
-     "kept": 5
+     "seen": 21,
+     "kept": 3
     },
     "Kimberly-Clark": {
-     "seen": 0,
-     "kept": 0
+     "seen": 12,
+     "kept": 4
     },
     "Abbott": {
      "seen": 22,
      "kept": 0
     },
     "Medtronic": {
-     "seen": 16,
-     "kept": 7
+     "seen": 19,
+     "kept": 11
     },
     "Novartis": {
      "seen": 0,
@@ -307,14 +315,14 @@ New live roles (≤3 days): **15**
     },
     "Nike": {
      "seen": 5,
-     "kept": 0
+     "kept": 1
     },
     "GE HealthCare": {
-     "seen": 3,
-     "kept": 0
+     "seen": 1,
+     "kept": 1
     },
     "Smith+Nephew": {
-     "seen": 2,
+     "seen": 0,
      "kept": 0
     },
     "Galderma": {
@@ -322,11 +330,11 @@ New live roles (≤3 days): **15**
      "kept": 0
     },
     "Shell": {
-     "seen": 6,
+     "seen": 0,
      "kept": 0
     }
    },
-   "errors": "<7 items>"
+   "errors": "<10 items>"
   },
   "google": {
    "backend": "apify",
@@ -336,20 +344,20 @@ New live roles (≤3 days): **15**
    "queries_failed": 0,
    "pages_charged": 6,
    "usd_total": 0.0226,
-   "results": 32,
+   "results": 16,
    "other_urls": 0,
-   "duplicates": 4,
-   "posts_found": 28,
-   "posts_old": 13,
-   "posts_offtopic": 2,
+   "duplicates": 0,
+   "posts_found": 16,
+   "posts_old": 1,
+   "posts_offtopic": 1,
    "post_fetches": 15,
    "errors": [],
    "by_query": {
-    "co-vacante-supply-chain": {
-     "results": 0,
-     "posts": 0
-    },
     "co-buscamos-planeacion": {
+     "results": 1,
+     "posts": 1
+    },
+    "co-vacante-supply-chain": {
      "results": 1,
      "posts": 1
     },
@@ -361,17 +369,17 @@ New live roles (≤3 days): **15**
      "results": 3,
      "posts": 3
     },
-    "en-supply-planning": {
-     "results": 8,
-     "posts": 8
-    },
     "en-demand-planning": {
+     "results": 0,
+     "posts": 0
+    },
+    "en-supply-planning": {
      "results": 10,
-     "posts": 9
+     "posts": 10
     },
     "en-sop": {
-     "results": 9,
-     "posts": 6
+     "results": 0,
+     "posts": 0
     }
    },
    "runs": [
@@ -379,55 +387,59 @@ New live roles (≤3 days): **15**
      "country": "co",
      "queries": 4,
      "status": "SUCCEEDED",
-     "pages": 4,
+     "pages": 3,
      "usd": 0.013549999999999998,
-     "secs": 94,
+     "secs": 61,
      "error": null
     },
     {
      "country": "us",
      "queries": 3,
      "status": "SUCCEEDED",
-     "pages": 2,
+     "pages": 3,
      "usd": 0.009049999999999999,
-     "secs": 160,
+     "secs": 220,
      "error": null
     }
    ],
    "budget": {
     "low_credit": false
    },
-   "posts_kept": 13
+   "posts_kept": 14
   },
   "detail": {
-   "fetched": 88,
-   "failed": 7,
+   "fetched": 70,
+   "failed": 11,
    "skipped": 0,
    "max": 200,
-   "requests": 141,
-   "retries": 31,
+   "requests": 149,
+   "retries": 48,
    "by_host": {
-    "linkedin": 114,
-    "graco.wd501.myworkdayjobs.com": 3,
-    "careers-shv-kiwa.icims.com": 1,
-    "careers-nl-kiwa.icims.com": 1,
-    "careers-dewberry.icims.com": 1,
+    "linkedin": 91,
+    "api.ashbyhq.com": 4,
+    "careers-sargentlundy.icims.com": 1,
+    "boards-api.greenhouse.io": 1,
+    "lambweston.wd1.myworkdayjobs.com": 1,
+    "abb.wd3.myworkdayjobs.com": 6,
+    "marmon.wd501.myworkdayjobs.com": 1,
+    "careers-centrastate.icims.com": 1,
     "careers-emcorgroup.icims.com": 1,
-    "careers-novelis.icims.com": 1,
-    "careers-peraton.icims.com": 1,
-    "careers-piedmont.icims.com": 1,
-    "careers-wcpss.icims.com": 1,
-    "careers2-quanta.icims.com": 1,
-    "careers-kehe.icims.com": 1,
-    "schreiberfoods.wd115.myworkdayjobs.com": 1,
-    "gilead.wd1.myworkdayjobs.com": 2,
-    "api.lever.co": 1,
-    "api.ashbyhq.com": 1,
-    "verdantas.wd108.myworkdayjobs.com": 1,
-    "careers-avisonyounguk.icims.com": 3,
-    "early-careers-avisonyounguk.icims.com": 3,
-    "littelfuse.wd1.myworkdayjobs.com": 1,
-    "jobs.smartrecruiters.com": 1
+    "careers-heliohealth.icims.com": 1,
+    "careers-nyfoundling.icims.com": 2,
+    "careers-quanta.icims.com": 1,
+    "careers-celldex.icims.com": 1,
+    "trumpf.wd3.myworkdayjobs.com": 6,
+    "bluecrux.recruitee.com": 1,
+    "o9solutions.wd5.myworkdayjobs.com": 3,
+    "lowes.wd5.myworkdayjobs.com": 1,
+    "galderma.wd3.myworkdayjobs.com": 6,
+    "charleskeith.wd3.myworkdayjobs.com": 6,
+    "brambles.wd5.myworkdayjobs.com": 7,
+    "airproducts.wd5.myworkdayjobs.com": 3,
+    "saputo.wd5.myworkdayjobs.com": 1,
+    "bakertilly.wd5.myworkdayjobs.com": 1,
+    "careers-treeoflife-kehe.icims.com": 1,
+    "globalcareers-pepsico.icims.com": 1
    },
    "circuit_open": [],
    "mode": "live"
@@ -438,58 +450,55 @@ New live roles (≤3 days): **15**
 
 ## Feed posts (LinkedIn posts found via Google, ≤ window)
 
-- 1d · Aradhana Pandey — [Scrabble is hiring a 𝐋𝐞𝐚𝐝 – 𝐒𝐮𝐩𝐩𝐥𝐲 𝐏𝐥𝐚𝐧𝐧𝐢𝐧𝐠 & 𝐖𝐚𝐫𝐞𝐡𝐨𝐮𝐬𝐢𝐧𝐠 for a fast-growing Beau…](https://www.linkedin.com/posts/aradhana-pandey-2172b41b6_hiring-supplychain-supplyplanning-activity-7530512135685066752-yKWR)
-- 1d · Manpower Vietnam — [💥 #Hiring Customer Service Officer (Chinese Speaking) 📢 Are you ready to bring your experience in production…](https://www.linkedin.com/posts/manpowervn_hiring-hiring-customerserviceofficer-activity-7530545782471491584-BlWd)
-- 3d · Balaji Noothalapati — [🚀 OPEN TO INTERNSHIP OPPORTUNITIES / SUPPLY CHAIN MANAGEMENT & ANALYTICS I'm currently pursuing my Master's i…](https://www.linkedin.com/posts/balaji-noothalapati-282937365_opentowork-supplychainmanagement-supplychainanalytics-activity-7529804319865352192-cXR_)
-- 3d · Philipp Schröder — [Wir bauen unsere Supply-Chain-Planung bei 1KOMMA5° aus – und ich suche gleich doppelte Verstärkung für mein Te…](https://www.linkedin.com/posts/markus-nowc-240bbb48_1komma5-supplychain-sop-activity-7529880991004315648-sxWp)
-- 1d · VishnuPriya K — [📢 We’re Hiring / Kinaxis RapidResponse – Demand Planning We are looking for experienced Kinaxis RapidResponse…](https://www.linkedin.com/posts/kvishnupriya_hiring-kinaxis-rapidresponse-activity-7530514919662931968-5vMY)
-- 3d · Nooreen Shaikh — [WE'RE HIRING / Manager – Demand Planning & Sales Reporting We are hiring a Manager, Demand Planning & Sales Re…](https://www.linkedin.com/posts/kbhovi_hiring-dubaijobs-demandplanning-activity-7529793208835260416-DSn9)
-- 1d · Ahmed Salah — [🚀 We're Hiring: Planning Manager / Senai, Johor, Malaysia Are you a strategic thinker who excels in productio…](https://www.linkedin.com/posts/foo-keng-hor-5a7779228_hiring-planningmanager-supplychain-activity-7530491867621421056-zsM3)
-- 2d · Yana Metyana — [Great brands don't just keep up with change. They lead it. 🚀 At Bata Indonesia, we're on an exciting journey…](https://www.linkedin.com/posts/regina-ayuningrum-8aa822102_bataindonesia-hiring-marketingdirector-activity-7530170846804430848-cdYq)
+- 3d · La Riviera S.A.S. — [🚀 ¿Has construido un Ecommerce desde cero? Tenemos un nuevo reto para ti. En La Riviera estamos dando un paso…](https://www.linkedin.com/posts/psricardonarvaez_lariviera-gerenteecommerce-ecommercemanager-activity-7530265083139002369-ebNN)
+- 2d · ENTER.CO — [GFT abre cerca de 200 vacantes en Colombia para ingenieros de sistemas, desarrolladores y expertos en DevOps •…](https://www.linkedin.com/posts/enter-co_gft-abre-cerca-de-200-vacantes-en-colombia-activity-7530499014966923264--AxV)
+- 2d · Leslie Pinedo Guzmán — [Director Financiero para empresa mexicana. Tlanepantla, Estado de México. Requisitos mandatorios, no se consid…](https://www.linkedin.com/posts/alanvilchis_director-financiero-para-empresa-mexicana-activity-7530743116337676288-DFWb)
+- 2d · Juan Carlos Moreno Luna — [¡Nuestra casa sigue creciendo! 🚀 Cuando una empresa de 120 años se mantiene en constante evolución, los equip…](https://www.linkedin.com/posts/casa-luker_nuestra-casa-sigue-creciendo-cuando-activity-7530619125937651713-c8Xw)
+- 2d · Amol Cholkar — [🚀 We're Hiring / Head – Supply Planning / DGM / GM Level We are looking for an accomplished Head – Supply Pla…](https://www.linkedin.com/posts/amol-cholkar-477552118_hiring-pharmajobs-supplyplanning-activity-7530643130988072960-saGA)
+- 2d · Cara Micic (Kennedy) — [🚀 We're Hiring: Senior Global Supply Planning Manager Are you the person who gets called when the supply chai…](https://www.linkedin.com/posts/cara-micic-kennedy-49676259_sr-manager-global-supply-planning-activity-7530715190569578496-_uVm)
+- 2d · Hayden Stokes — [I’m hiring a Supply Planning Transformation Lead to join my team in Blackmores Group Operations (based in eith…](https://www.linkedin.com/posts/daniel-hansen-48476bb3_supplychain-supplyplanning-transformation-activity-7530464101983100928-cG2P)
+- 1d · Lakshmanasamy Velliyangiri — [We’re Hiring / SAP IBP Consultant Kanmalai Tech is looking for an experienced SAP IBP Consultant with strong e…](https://www.linkedin.com/posts/lakshmanasamy-velliyangiri-8471a2204_hiring-sapibp-sapjobs-activity-7530929770705047554-eT76)
+- 2d · Dilshad Pathan — [🚀 We’re Hiring: Supply Chain Planner / Leeuwarden Are you passionate about supply chain planning, optimising…](https://www.linkedin.com/posts/activity-7530637280265506816-FKgm)
+- 1d · Syed Muhammad Furqan Mumtaz, PMP® — [Come work with me! I’m hiring a Senior Supply Planning Specialist to join my team at Nature’s Bounty / Nestle…](https://www.linkedin.com/posts/caitlin-fitzgerald-711737a2_senior-supply-planning-specialist-remote-activity-7530788704823717888-yhCN)
+- 1d · ACSE — [#ACSE Hiring / #Oracle #ASCP #Consultant ACSE DIGI-TECH INDIA PVT. LTD. is looking for talented professionals…](https://www.linkedin.com/posts/acse-solutions-llc_acse-oracle-ascp-activity-7530976314892234753-9iYk)
+- 1d · Md. Aminul Islam — [WE'RE HIRING / Assistant Supply Chain Manager Company: FM Agro Foods Limited (SHUKRAN) Location: Dhaka & Biram…](https://www.linkedin.com/posts/shamrat-jakaria_hiring-supplychain-scm-activity-7530881440486592512-TZX4)
 
 ## Dropped (samples)
 
-- **us-onsite** (36)
-  - [Senior Inventory Control Planner](https://graco.wd501.myworkdayjobs.com/graco_careers/job/Rogers-Minnesota-USA-David-Koch-Center/Senior-Inventory-Control-Planner_R0024192) — graco — Rogers, Minnesota, USA (David Koch Center) → remote=null (no evidence)
-  - [Interim Planner](https://careers-shv-kiwa.icims.com/jobs/9799/interim-planner/job) — careers-shv-kiwa — Nieuwegein, UT, NL → remote=null (no evidence)
-  - [Director of Global Planning, Transfusion](https://www.linkedin.com/jobs/view/4493979795) — Werfen — Norcross, GA → remote=null (no evidence)
-  - [Manager / Sr.Manager - Supply Planner](https://www.linkedin.com/jobs/view/4493974279) — Dr. Reddy's Laboratories — Princeton, NJ → remote=false: ll be based in Princeton (NJ) with hybrid work schedule (4days in office) an
-  - [Senior Manager, Supply Planning](https://www.linkedin.com/jobs/view/4493911642) — Acumed — Hillsboro, OR → remote=null (no evidence)
-- **latam-onsite** (13)
-  - [Sr Planner](https://www.linkedin.com/jobs/view/4494038771) — Molex — Nogales, Sonora, Mexico → remote=null (no evidence)
-  - [Head of Supply Chain LATAM](https://www.linkedin.com/jobs/view/4492653228) — Etex — Provincia de Santiago, Santiago Metropolitan Region, Chile → remote=null (no evidence)
-  - [Coordenador de Planejamento Logístico - Network Design](https://www.linkedin.com/jobs/view/4492635866) — Total Express — Barueri, São Paulo, Brazil → remote=null (no evidence)
-  - [Pessoa Supervisora de Planejamento (FLOW) - Guarulhos/SP](https://www.linkedin.com/jobs/view/4494059069) — Shopee — São Paulo, São Paulo, Brazil → remote=false: dotamos um modelo de trabalho 100% presencial , o que permite que as pessoas man
-  - [Material Planner](https://www.linkedin.com/jobs/view/4492646705) — Rich Products Corporation — Ocoyoacac, México, Mexico → remote=null (no evidence)
-- **other-country** (12)
-  - [Supply Chain Planning Associate](https://schreiberfoods.wd115.myworkdayjobs.com/schreiber_careers/job/Baramati-India/Supply-Chain-Planning-Associate_R0038694-1) — schreiberfoods — Baramati, India → remote=null (no evidence)
-  - [Manager, End-to-End Commercial Supply Planner](https://gilead.wd1.myworkdayjobs.com/gileadcareers/job/United-States---California---Foster-City/Manager--End-to-End-Commercial-Supply-Planner_R0055993) — gilead — 2 Locations → remote=false: - California - La Verne Workplace: Onsite - Hybrid Eligible Time type: Full
-  - [UK Qualified Paraplanner - Dubai](https://jobs.lever.co/titanwh/7dbcb98b-8914-4cfd-821d-1941329a4717) — titanwh — Dubai → remote=false: - Dubai Location: Dubai Workplace: onsite Commitment: Perm, Full Time Titan
-  - [Sr. Portfolio Manager- CEQA Planner](https://verdantas.wd108.myworkdayjobs.com/verdantas/job/San-Ramon-CA/Planner-III---CEQA-Specialist_R-101221-1) — verdantas — 10 Locations → remote=false: a CA; San Diego CA-West Workplace: Hybrid Time type: Full time Welcome to Ve
-  - [Graduate Planner - Birmingham 2027](https://careers-avisonyounguk.icims.com/jobs/2163/graduate-planner---birmingham-2027/job) — avisonyounguk — Birmingham, UK → remote=true: position.Some of our roles may be remote and some roles may be specific to
-- **es-other-city-onsite** (8)
-  - [Responsable de Planificación y Logísitca - Tudela](https://www.linkedin.com/jobs/view/4492612699) — Michael Page — Chartered Community of Navarre, Spain → remote=null (no evidence)
-  - [PLANNER - TEEN](https://www.linkedin.com/jobs/view/4493678734) — MANGO — Palau-solità i Plegamans, Catalonia, Spain → remote=false: a de un horario flexible y trabajo híbrido que se adapta a tus necesidades. E
-  - [Supply & Inventory Planner](https://www.linkedin.com/jobs/view/4493784415) — DECOWOOD® — la Roca del Vallès, Catalonia, Spain → remote=false: · La Roca del Vallès (Barcelona) · Presencial Contrato indefinido · Hasta 35.000
-  - [Consultor Supply Chain/PMO](https://www.linkedin.com/jobs/view/4493699115) — Capgemini — Seville, Andalusia, Spain → remote=false: candidaturas y ofrecemos formación presencial, online y certificaciones. Aunque
-  - [Consultor Supply Chain/PMO](https://www.linkedin.com/jobs/view/4492638550) — Capgemini Engineering — Seville, Andalusia, Spain → remote=false: candidaturas y ofrecemos formación presencial, online y certificaciones. Aunque
-- **aggregator** (6)
-  - [Demand Planner](https://jobs.lever.co/jobgether/4a34511a-69fc-4db5-94bf-1c7d099f8e10) — jobgether — US
-  - [Director Supply Chain](https://jobs.lever.co/jobgether/c9546624-7c0c-43f2-a5ea-9df79d2a2577) — jobgether — US
+- **us-onsite** (33)
+  - [S&OE Supply Planner](https://www.linkedin.com/jobs/view/4494447291) — Electrolux Group — Charlotte, NC → remote=null (no evidence)
+  - [Staff Data Center Planner - Space, Power & Cooling](https://jobs.ashbyhq.com/Crusoe/91b00ca9-7ad4-4b0b-b84e-4775379242d5) — crusoe — Bellevue, WA - US · Seattle · Sunnyvale, CA - US · Sunnyvale · United States · New York, NY - US · New York · San Francisco, CA - US · San Francisco · USA → remote=false: San Francisco, CA - US Workplace: OnSite Employment type: Full-time Crusoe
+  - [Senior Manager, Supply Planning](https://marmon.wd501.myworkdayjobs.com/marmon_careers/job/Hillsboro-OR/Senior-Manager--Supply-Planning_JR0000047081) — marmon — Hillsboro, OR → remote=null (no evidence)
+  - [Nurse Educator (Education Planner)](https://careers-centrastate.icims.com/jobs/17506/nurse-educator-%28education-planner%29/job) — careers-centrastate — Freehold, NJ, United States → remote=false: itiatives • Continuing Education / Onsite Training • A warm, welcoming compa
+  - [Planner/Estimator (EPA - Research Triangle Park)](https://careers-emcorgroup.icims.com/jobs/56470/planner-estimator-%28epa---research-triangle-park%29/job) — careers-emcorgroup — Research Triangle Park, NC, United States → remote=null (no evidence)
+- **other-country** (11)
+  - [Sr. Functional Consultant](https://o9solutions.wd5.myworkdayjobs.com/o9SolutionsExternal/job/Canada-Office/Sr-Functional-Consultant_JR103034) — o9 Solutions — Canada Office → remote=true: s you work best. • Flexible Work – Work from home two days a week—less commuting, mo
+  - [Senior Solution Consultant](https://o9solutions.wd5.myworkdayjobs.com/o9SolutionsExternal/job/Bangalore-Karnataka-India/Senior-Solution-Consultant_JR103036) — o9 Solutions — Bangalore, Karnataka, India → remote=null (no evidence)
+  - [Planner-Visual Space](https://lowes.wd5.myworkdayjobs.com/lws_external_cs/job/Mooresville-NC-SSC-1999/Planner-Visual-Space_JR-02711815) — lowes — Mooresville, NC (SSC) 1999 → remote=false: resville, NC (SSC) 1999 Workplace: In-Office Time type: Full time Do your Best
+  - [Senior Planner](https://airproducts.wd5.myworkdayjobs.com/ap0001/job/Duba-Saudi-Arabia/Senior-Planner_JR-2026-23440) — airproducts — Duba, Saudi Arabia → remote=null (no evidence)
+  - [Director, Supply Chain / Directeur(trice), chaîne d'approvisionnement](https://jobs.ashbyhq.com/nomic/9ea2d960-ef3f-4e98-9e03-49f2fc722cb5) — nomic — Montreal · Canada → remote=false: GLANCE - Location: Montréal, QC. Hybrid, with about half your time on-site
+- **latam-onsite** (10)
+  - [Coordenador(a) de Planejamento e Estoque](https://www.linkedin.com/jobs/view/4493058626) — LOFTY STYLE — São Paulo, São Paulo, Brazil → remote=false: lPass; • Convênio SESC; • Trabalho presencial em nossa matriz. 🤎
+  - [Supply Planner](https://www.linkedin.com/jobs/view/4494452265) — Campari Group — Mexico City Metropolitan Area → remote=false: h & English) Work Model & Travel • Hybrid (Mexico City) with periodic travel
+  - [Assistente de PCP - (Planejamento e Controle da Produção)](https://www.linkedin.com/jobs/view/4493073445) — DB Diagnósticos — Aparecida de Goiânia, Goiás, Brazil → remote=null (no evidence)
+  - [Gerente Planejamento S&OP - São Paulo SP](https://www.linkedin.com/jobs/view/4494169343) — MBRF — São Paulo, São Paulo, Brazil → remote=null (no evidence)
+  - [JEFE DE PLANEACION DE INVENTARIOS](https://www.linkedin.com/jobs/view/4494454147) — PiSA Farmacéutica — Tlajomulco de Zúñiga, Jalisco, Mexico → remote=null (no evidence)
+- **aggregator** (9)
+  - [Executive Director, Supply Chain](https://jobs.lever.co/jobgether/f766ff5b-74f4-4415-a1ef-9d3cfaae8271) — jobgether — US
   - [Senior Manager, Supply Planning](https://www.linkedin.com/jobs/view/4492604352) — Ladders — United States
+  - [Executive Director, Supply Chain - Remote (San Francisco Bay Area)](https://www.linkedin.com/jobs/view/4494784748) — Jobgether — San Francisco Bay Area
+  - [Executive Director, Supply Chain - Remote (New York)](https://www.linkedin.com/jobs/view/4494788647) — Jobgether — New York, NY
   - [Demand Planner](https://www.linkedin.com/jobs/view/4493730596) — Jobgether — United States
-  - [Supply Planner](https://www.linkedin.com/jobs/view/4492397760) — Ladders — United States
-- **detail-failed** (5)
-  - [Planning Director](https://www.linkedin.com/jobs/view/4494069566) — TrendUp Group — New York, NY → HTTP 429
-  - [Global Planning Manager](https://www.linkedin.com/jobs/view/4493662331) — TechnipFMC — Houston, TX → HTTP 429
-  - [Director, Operations & Supply Chain Transformation](https://www.linkedin.com/jobs/view/4477186668) — FreshDirect — Bronx, NY → HTTP 429
-  - [Demand Planning Senior Lead](https://jobs.ashbyhq.com/M-KOPA/05fc2e65-e0ef-4ddd-b87e-94862ec3a164) — m-kopa — Kenya · Nairobi → posting not on board (closed?)
-  - [Sr Operations Manager - Sao Paulo, Brazil](https://www.linkedin.com/jobs/view/4493924678) — Accommodations Plus International — São Paulo, São Paulo, Brazil → HTTP 429
-- **co-other-city-onsite** (2)
-  - [Responsable de planificación de la cadena de suministro](https://www.linkedin.com/jobs/view/4493665229) — Smurfit Westrock — Yumbo, Valle del Cauca, Colombia → remote=null (no evidence)
-  - [Director de Operaciones](https://www.linkedin.com/jobs/view/4493989645) — Seguridad Omega — Cali, Valle del Cauca, Colombia → remote=false: acceso y plataformas de seguridad híbrida. • Manejo de indicadores de gestió
-- **phrase-not-in-body** (2)
-  - [Supply Planner](https://www.linkedin.com/jobs/view/4492679945) — TalentHop — United States → remote=null (no evidence)
-  - [Area Air Logistics Operations Optimization Expert](https://www.linkedin.com/jobs/view/4493670970) — Kuehne+Nagel — Bogota, D.C., Capital District, Colombia → remote=false: loyment contract. • Work Modality: Hybrid. • Benefits: Life insurance. Who w
-- **us-only** (1)
-  - [Executive Director, Supply Chain](https://www.linkedin.com/jobs/view/4493929714) — Kura Oncology, Inc. — United States → us-only: 401K
+- **detail-failed** (7)
+  - [Gerente de Consultoria em Supply Chain](https://www.linkedin.com/jobs/view/4493030926) — PwC Brasil — São Paulo, Brazil → HTTP 429
+  - [Planificador de compras regional ICA](https://www.linkedin.com/jobs/view/4494150590) — Tiendas Mass Perú — Subtanjalla, Ica, Peru → HTTP 429
+  - [Supply Planner](https://abb.wd3.myworkdayjobs.com/external_career_page/job/New-Berlin-Wisconsin-United-States-of-America/Supply-Planner_JR00054203) — abb — New Berlin, Wisconsin, United States of America → HTTP 429
+  - [Global Supply Chain Director](https://www.linkedin.com/jobs/view/4494167376) — Veo — San Francisco, CA → HTTP 429
+  - [Supply Chain Planning & Lifecycle Manager, Alastin](https://galderma.wd3.myworkdayjobs.com/broadbean_external/job/Miami/Supply-Chain-Planning---Lifecycle-Manager--Alastin_JR021845) — galderma — Miami → HTTP 429
+- **us-only** (2)
+  - [Part Time Transmission Planning Manager -- S&L Consulting](https://careers-sargentlundy.icims.com/jobs/30430/part-time-transmission-planning-manager----s%26l-consulting/job) — careers-sargentlundy — Remote, United States → us-only: 401(k) / work authorization in the U.S. for this position.
+  - [Director Supply Chain Business Analytics & Intelligence - Network Optimization](https://lambweston.wd1.myworkdayjobs.com/lamb_external/job/Kennewick-WA-USA-Kennewick-Office/Director-Supply-Chain-Business-Analytics---Intelligence---Network-Optimization_Req-271915) — lambweston — Kennewick, WA, USA (Kennewick Office) → us-only: 401(k)
+- **es-other-city-onsite** (1)
+  - [Associate Director/ Director, Gl IBP, DP&Crisis Mgmt, Taste](https://www.linkedin.com/jobs/view/4493072022) — dsm-firmenich — Greater Barcelona Metropolitan Area → remote=null (no evidence)
+- **co-other-city-onsite** (1)
+  - [Director(a) de operaciones y desarrollo de experiencias](https://www.linkedin.com/jobs/view/4494400992) — Chimaná Village — Barichara, Santander, Colombia → remote=false: o, bajo un esquema de compensación híbrido y participativo, vinculado a los r
